@@ -142,28 +142,15 @@ class ble_server():
         real_acc = np.dot(p_inv, np.array([[acc_x],
                                            [acc_y],
                                            [acc_z]]))
-        # 去除初始加速度
-        global first_transition
-        if first_transition and real_acc[2] > 100:
-            [self.offset_v_x, self.offset_v_y, self.offset_v_z] = [real_acc[0][0], real_acc[1][0], real_acc[2][0]]
-            # print([self.offset_v_x, self.offset_v_y, self.offset_v_z])
-
-        delta_time = 0.001
-        # 如果加速度足够大就积分
-        real_acc -= [[self.offset_v_x], [self.offset_v_y], [self.offset_v_z]]
-        if np.sqrt(real_acc[0] ** 2 + real_acc[1] ** 2 + real_acc[2] ** 2) > 1:
-            [self.v_x, self.v_y, self.v_z] = [self.v_x + delta_time * (real_acc[0][0] + self.last_acc_x) / 2,
-                                              self.v_y + delta_time * (real_acc[1][0] + self.last_acc_y) / 2,
-                                              self.v_z + delta_time * (real_acc[2][0] + self.last_acc_z) / 2]
-            [self.last_acc_x, self.last_acc_y, self.last_acc_z] = [real_acc[0][0], real_acc[1][0], real_acc[2][0]]
-        else:
-            [self.last_acc_x, self.last_acc_y, self.last_acc_z] = [0, 0, 0]
-        # 手动调试速度
-        if np.sqrt(self.v_x ** 2 + self.v_y ** 2 + self.v_z ** 2) < 0.75:
-            [self.v_x, self.v_y, self.v_z] = [0, 0, 0]
+        # if real_acc[2] > 100:
+        #     [self.offset_v_x, self.offset_v_y, self.offset_v_z] = [real_acc[0][0], real_acc[1][0], real_acc[2][0]]
+        #     print([self.offset_v_x, self.offset_v_y, self.offset_v_z])
+        #
+        # real_acc -= [[self.offset_v_x], [self.offset_v_y], [self.offset_v_z]]
+        
         # 向unity传输数据
         if self.target_server:
-            data_to_send = f"{self.v_x}, {self.v_y}, {self.v_z}, {quat_x}, {quat_y}, {quat_z}, {quat_w}, "
+            data_to_send = f"S, {real_acc[0][0]:.5f}, {real_acc[1][0]:.5f}, {real_acc[2][0]:.5f}, {quat_x}, {quat_y}, {quat_z}, {quat_w}, "
             self.target_server.sendall(data_to_send.encode())
 
     def get_latest_data(self):

@@ -46,10 +46,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\PythonRealTimeCommunication.cs" />
+     <Compile Include="Assets\Scripts\ShootFootball.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
      <Compile Include="Assets\Scripts\InvokePythonScript.cs" />
      <Compile Include="Assets\Settings\Input System\InputSystem.cs" />
      <Compile Include="Assets\Scripts\UpdateRotation.cs" />
+     <Compile Include="Assets\Scripts\UpdateVelocity.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Settings" />
      <Folder Include="Assets\Material" />

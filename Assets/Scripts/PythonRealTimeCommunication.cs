@@ -15,9 +15,12 @@ public class UnityPythonCommunication : MonoBehaviour
     private TcpClient _client;
     private NetworkStream _stream;
     private byte[] _receiveBuffer = new byte[1024];
+    private Vector3 _previousAcc;
     
     public UnityEvent<float[]> angleChange;
-    private static readonly int[] DataLength = new int[3] { 7, 3, 4 };
+    public UnityEvent<float[]> velocityChange;
+    public UnityEvent checkShoot;
+    private static readonly int[] DataLength = new int[3] { 8, 3, 4 };
 
     void Start()
     {
@@ -66,47 +69,73 @@ public class UnityPythonCommunication : MonoBehaviour
         _stream = _client.GetStream();
 
         // 启动数据接收
-        // StartReceiving();
         StartCoroutine(ReceiveDataCoroutine());
     }
     
-    // ReSharper disable Unity.PerformanceAnalysis
     IEnumerator ReceiveDataCoroutine()
     {
+        _previousAcc = Vector3.zero;
         while (true)
         {
-            if (_stream.CanRead)
+            if (!_stream.CanRead) continue;
+            
+            var bytesRead = _stream.Read(_receiveBuffer, 0, _receiveBuffer.Length);
+            if (bytesRead <= 0)
             {
-                var bytesRead = _stream.Read(_receiveBuffer, 0, _receiveBuffer.Length);
-                if (bytesRead > 0)
-                {
-                    var receivedData = Encoding.UTF8.GetString(_receiveBuffer, 0, bytesRead);
-                    var splitData = receivedData.Split(", ");
-                    Debug.Log(receivedData);
-                    // Debug.Log($"{splitData[0]}, {splitData[1]}, {splitData[2]}, {splitData[3]}, {splitData[4]}, " +
-                    //           $"{splitData[5]}, {splitData[6]}");
-                    if (splitData.Length >= DataLength[0])
-                    {
-                        var quat = new float[4];
-                        for (var i = 0; i < splitData.Length; i += DataLength[0])
-                        {
-                            for (var j = 0; j < DataLength[2]; j++)
-                            {
-                                quat[j] = float.Parse(splitData[DataLength[1] + j]);
-                            }
-                        }
-                        
-                        angleChange?.Invoke(quat);
-                        // Debug.Log($"{quat[0]}, {quat[1]}, {quat[2]}, {quat[3]}");
-                    }
-                }
-                else
-                {
-                    Debug.Log("连接已关闭");
-                    _client.Close();
-                }
+                Debug.Log("连接已关闭");
+                _client.Close();
             }
-
+            
+            var receivedData = Encoding.UTF8.GetString(_receiveBuffer, 0, bytesRead);
+            var splitData = receivedData.Split(", ");
+            // Debug.Log(receivedData);
+            // Debug.Log($"{splitData[0]}, {splitData[1]}, {splitData[2]}");
+            if (splitData.Length >= DataLength[0])
+            {
+                var quat = new float[4];
+                var acc = new float[3];
+                var startPos = 0;
+                while (startPos < splitData.Length && splitData[startPos] != "S")
+                {
+                    startPos++;
+                }
+            
+                if (startPos >= splitData.Length)
+                {
+                    yield return null;
+                }
+                
+                for (var i = startPos + 1; i < splitData.Length; i += DataLength[0])
+                {
+                    if (i + DataLength[1] > splitData.Length) break;
+                    if (!ConvertStringToFloat(splitData, acc, i, DataLength[1]))
+                    {
+                        continue;
+                    }
+                
+                    if (i + DataLength[1] + DataLength[2] > splitData.Length) break;
+                    if (!ConvertStringToFloat(splitData, quat, i + DataLength[1], DataLength[2]))
+                    {
+                        continue;
+                    }
+                    
+                    // Debug.Log($"{quat[0]}, {quat[1]}, {quat[2]}, {quat[3]}");
+                    // Debug.Log($"{acc[0]}, {acc[1]}, {acc[2]}");
+                    // velocityChange?.Invoke(acc);
+                    
+                    var currentAcc = new Vector3(acc[0], acc[1], acc[2]);
+                    // Debug.Log($"{_previousAcc}, {currentAcc}, {_previousAcc.sqrMagnitude}, {currentAcc.sqrMagnitude}");
+                    if (_previousAcc != Vector3.zero && _previousAcc.sqrMagnitude - currentAcc.sqrMagnitude > 3000)
+                    {
+                        checkShoot?.Invoke();
+                    }
+                    _previousAcc = currentAcc;
+                    
+                    angleChange?.Invoke(quat);
+                }
+                
+            }
+            
             yield return null;
             // yield return new WaitForSeconds(0.002f); // 等待一段时间再继续接收数据
         }
@@ -135,5 +164,18 @@ public class UnityPythonCommunication : MonoBehaviour
         {
             _client.Close();
         }
+    }
+
+    bool ConvertStringToFloat(string[] s, float[] arr, int beginPos, int len)
+    {
+        for (var i = 0; i < len; i++)
+        {
+            if (!float.TryParse(s[beginPos + i], out arr[i]))
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
