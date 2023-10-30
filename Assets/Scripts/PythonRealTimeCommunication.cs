@@ -14,19 +14,20 @@ public class UnityPythonCommunication : MonoBehaviour
     private Process _pythonProcess;
     private TcpClient _client;
     private NetworkStream _stream;
-    private byte[] _receiveBuffer = new byte[1024];
+    private readonly byte[] _receiveBuffer = new byte[1024];
+    
     private Vector3 _previousAcc;
     
     public UnityEvent<float[]> angleChange;
     public UnityEvent<float[]> velocityChange;
     public UnityEvent checkShoot;
     private static readonly int[] DataLength = new int[3] { 8, 3, 4 };
-
+    
     void Start()
     {
         StartPythonScript();
     }
-
+    
     void StartPythonScript()
     {
         // 指定 Python 脚本的路径，替换为你的 Python 脚本的实际路径
@@ -52,9 +53,8 @@ public class UnityPythonCommunication : MonoBehaviour
         // 启动 Python 进程
         _pythonProcess.Start();
         _pythonProcess.BeginOutputReadLine(); // 启动异步读取标准输出
-
         // 等待 Python 进程完成启动
-        // pythonProcess.WaitForInputIdle();
+        // _pythonProcess.WaitForInputIdle();
 
         // 等待一段时间以确保 Python 服务器已启动
         System.Threading.Thread.Sleep(2000);
@@ -88,8 +88,6 @@ public class UnityPythonCommunication : MonoBehaviour
             
             var receivedData = Encoding.UTF8.GetString(_receiveBuffer, 0, bytesRead);
             var splitData = receivedData.Split(", ");
-            // Debug.Log(receivedData);
-            // Debug.Log($"{splitData[0]}, {splitData[1]}, {splitData[2]}");
             if (splitData.Length >= DataLength[0])
             {
                 var quat = new float[4];
@@ -102,7 +100,8 @@ public class UnityPythonCommunication : MonoBehaviour
             
                 if (startPos >= splitData.Length)
                 {
-                    yield return null;
+                    // yield return null;
+                    continue;
                 }
                 
                 for (var i = startPos + 1; i < splitData.Length; i += DataLength[0])
@@ -119,13 +118,9 @@ public class UnityPythonCommunication : MonoBehaviour
                         continue;
                     }
                     
-                    // Debug.Log($"{quat[0]}, {quat[1]}, {quat[2]}, {quat[3]}");
-                    // Debug.Log($"{acc[0]}, {acc[1]}, {acc[2]}");
-                    // velocityChange?.Invoke(acc);
                     
                     var currentAcc = new Vector3(acc[0], acc[1], acc[2]);
-                    // Debug.Log($"{_previousAcc}, {currentAcc}, {_previousAcc.sqrMagnitude}, {currentAcc.sqrMagnitude}");
-                    if (_previousAcc != Vector3.zero && _previousAcc.sqrMagnitude - currentAcc.sqrMagnitude > 3000)
+                    if (_previousAcc != Vector3.zero && _previousAcc.sqrMagnitude - currentAcc.sqrMagnitude > 5000)
                     {
                         checkShoot?.Invoke();
                     }
@@ -141,7 +136,6 @@ public class UnityPythonCommunication : MonoBehaviour
         }
     }
     
-
     // 用于处理 Python 脚本的标准输出的事件处理程序
     void OutputHandler(object sendingProcess, DataReceivedEventArgs outLine)
     {

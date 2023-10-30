@@ -41,7 +41,7 @@ def HexSting2decimal(a):
 class ble_server():
 
     def __init__(self, address, name, target):
-        # def __init__(self, address, name):
+#     def __init__(self, address, name):
         self.address = address
         self.name = name
         self.disconnect_num = 0
@@ -147,7 +147,7 @@ class ble_server():
         #     print([self.offset_v_x, self.offset_v_y, self.offset_v_z])
         #
         # real_acc -= [[self.offset_v_x], [self.offset_v_y], [self.offset_v_z]]
-        
+        #  print(real_acc)
         # 向unity传输数据
         if self.target_server:
             data_to_send = f"S, {real_acc[0][0]:.5f}, {real_acc[1][0]:.5f}, {real_acc[2][0]:.5f}, {quat_x}, {quat_y}, {quat_z}, {quat_w}, "
@@ -175,7 +175,7 @@ if __name__ == "__main__":
     t_pool = []
     imu_instances = []
     imu_order = []
-
+    print(11111)
     # 创建一个服务器 Socket
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     # 绑定 IP 地址和端口
@@ -189,7 +189,7 @@ if __name__ == "__main__":
     # 连接传感器
     for device_info in imu_devices:
         imu = ble_server(device_info["address"], device_info["name"], client_socket)
-        # imu = ble_server(device_info["address"], device_info["name"])
+#         imu = ble_server(device_info["address"], device_info["name"])
         imu_instances.append(imu)
         imu_order.append(device_info["name"])
         t_pool.append(Thread(target=imu.start))

@@ -7,6 +7,7 @@ using UnityEngine;
 public class ShootFootball : MonoBehaviour
 {
     private Rigidbody _rigidbody;
+    public bool hit;
     
     public Vector3 bottomOffset;
     public float checkRadius;
@@ -14,13 +15,15 @@ public class ShootFootball : MonoBehaviour
     public LayerMask checkedLayer;
     private void Start()
     {
+        hit = false;
         _rigidbody = GetComponent<Rigidbody>();
     }
 
     public void Shoot()
     {
-        if (!onGround) return;
-        _rigidbody.AddForce(new Vector3(0, 1.5f, 0.5f), ForceMode.Impulse);
+        if (hit || !onGround) return;
+        hit = true;
+        _rigidbody.AddForce(new Vector3(0, 10f, 20f), ForceMode.Impulse);
     }
 
     private void FixedUpdate()
