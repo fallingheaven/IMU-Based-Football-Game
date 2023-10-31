@@ -7,14 +7,21 @@ using UnityEngine.Events;
 public class Goal : MonoBehaviour
 {
     public UnityEvent<int> addScore;
-    
+    public LayerMask goalLayer;
+    public int score = 1;
+
+    private void Start()
+    {
+        goalLayer = LayerMask.NameToLayer("Goal");
+    }
 
     private void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.name == "Goal")
+        // 进到球门里就得分
+        if (col.gameObject.layer == goalLayer)
         {
             Debug.Log("Goal!");
-            addScore?.Invoke(1);
+            addScore?.Invoke(score);
         }
     }
 }

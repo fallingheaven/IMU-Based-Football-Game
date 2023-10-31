@@ -1009,7 +1009,7 @@ GameObject:
   - component: {fileID: 1467471359}
   - component: {fileID: 1467471358}
   - component: {fileID: 1467471357}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Goal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1306,12 +1306,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hit: 0
-  bottomOffset: {x: 0, y: -0.5, z: 0}
-  checkRadius: 0.05
-  onGround: 0
-  checkedLayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!135 &1952954987
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1496,36 +1490,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  velocityChange:
+  shoot:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UpdateVelocity, Assembly-CSharp
-        m_MethodName: ChangeVelocity
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  checkShoot:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1952954986}
-        m_TargetAssemblyTypeName: ShootFootball, Assembly-CSharp
-        m_MethodName: Shoot
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!4 &2075371108
 Transform:
   m_ObjectHideFlags: 0

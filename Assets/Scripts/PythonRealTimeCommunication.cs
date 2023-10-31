@@ -11,23 +11,32 @@ using Debug = UnityEngine.Debug;
 
 public class UnityPythonCommunication : MonoBehaviour
 {
-    private Process _pythonProcess;
-    private TcpClient _client;
-    private NetworkStream _stream;
-    private readonly byte[] _receiveBuffer = new byte[1024];
+    #region 参变量
+        
+        private Process _pythonProcess;
+        private TcpClient _client;
+        private NetworkStream _stream;
+        private readonly byte[] _receiveBuffer = new byte[1024];
+        private static readonly int[] DataLength = new int[3] { 8, 3, 4 };
+        
+        // 用于计算加速度瞬时差值来判断踢球
+        private Vector3 _previousAcc;
+        private const float AccThreshold = 5000;
     
-    private Vector3 _previousAcc;
-    
-    public UnityEvent<float[]> angleChange;
-    public UnityEvent<float[]> velocityChange;
-    public UnityEvent checkShoot;
-    private static readonly int[] DataLength = new int[3] { 8, 3, 4 };
+        [Header("事件")]
+        public UnityEvent<float[]> angleChange;
+    //    public UnityEvent<float[]> velocityChange;
+        public UnityEvent shoot; // 执行射门
+        
+
+    #endregion
     
     void Start()
     {
         StartPythonScript();
     }
     
+    // 启动python程序，接收IMU数据
     void StartPythonScript()
     {
         // 指定 Python 脚本的路径，替换为你的 Python 脚本的实际路径
@@ -63,6 +72,7 @@ public class UnityPythonCommunication : MonoBehaviour
         ConnectToPythonServer("127.0.0.1", 8080); // 服务器地址和端口要与 Python 脚本中的一致
     }
 
+    // 连接到python的socket服务器
     void ConnectToPythonServer(string ipAddress, int port)
     {
         _client = new TcpClient(ipAddress, port);
@@ -72,35 +82,44 @@ public class UnityPythonCommunication : MonoBehaviour
         StartCoroutine(ReceiveDataCoroutine());
     }
     
+    // 开一个协程来处理数据
     IEnumerator ReceiveDataCoroutine()
     {
         _previousAcc = Vector3.zero;
         while (true)
         {
-            if (!_stream.CanRead) continue;
+            // 数据是否可读
+            if (!_stream.CanRead)
+            {
+                Debug.Log("错误数据");
+                continue;
+            }
             
+            // 接收数据
             var bytesRead = _stream.Read(_receiveBuffer, 0, _receiveBuffer.Length);
             if (bytesRead <= 0)
             {
                 Debug.Log("连接已关闭");
                 _client.Close();
+                break;
             }
             
+            // 处理数据
             var receivedData = Encoding.UTF8.GetString(_receiveBuffer, 0, bytesRead);
             var splitData = receivedData.Split(", ");
             if (splitData.Length >= DataLength[0])
             {
-                var quat = new float[4];
-                var acc = new float[3];
-                var startPos = 0;
+                var quat = new float[4]; // 四元数
+                var acc = new float[3]; // 加速度
+                var startPos = 0; // 读入数据的处理起点，这里以S为标识
                 while (startPos < splitData.Length && splitData[startPos] != "S")
                 {
                     startPos++;
                 }
             
+                // 读入数据格式不正确
                 if (startPos >= splitData.Length)
                 {
-                    // yield return null;
                     continue;
                 }
                 
@@ -118,11 +137,11 @@ public class UnityPythonCommunication : MonoBehaviour
                         continue;
                     }
                     
-                    
+                    // 处理加速度
                     var currentAcc = new Vector3(acc[0], acc[1], acc[2]);
-                    if (_previousAcc != Vector3.zero && _previousAcc.sqrMagnitude - currentAcc.sqrMagnitude > 5000)
+                    if (_previousAcc != Vector3.zero && _previousAcc.sqrMagnitude - currentAcc.sqrMagnitude > AccThreshold)
                     {
-                        checkShoot?.Invoke();
+                        shoot?.Invoke();
                     }
                     _previousAcc = currentAcc;
                     
@@ -136,7 +155,7 @@ public class UnityPythonCommunication : MonoBehaviour
         }
     }
     
-    // 用于处理 Python 脚本的标准输出的事件处理程序
+    // 用于处理 Python 脚本的标准输出的事件处理程序，这里不需要
     void OutputHandler(object sendingProcess, DataReceivedEventArgs outLine)
     {
         if (!string.IsNullOrEmpty(outLine.Data))
@@ -145,21 +164,21 @@ public class UnityPythonCommunication : MonoBehaviour
         }
     }
 
+    // 退出应用
     void OnApplicationQuit()
     {
-        Debug.Log("0");
+        Debug.Log("程序关闭");
+        _client?.Close();
+        _stream?.Close();
+        
         // 关闭 Python 进程和与 Python 服务器的连接
         if (_pythonProcess != null && !_pythonProcess.HasExited)
         {
             _pythonProcess.Kill();
         }
-
-        if (_client != null)
-        {
-            _client.Close();
-        }
     }
 
+    // 转化读入数据的
     bool ConvertStringToFloat(string[] s, float[] arr, int beginPos, int len)
     {
         for (var i = 0; i < len; i++)
