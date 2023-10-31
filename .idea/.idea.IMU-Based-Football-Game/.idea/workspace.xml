@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73c0f8d9-6576-43d8-8e0e-1fe1c216e982" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.IMU-Based-Football-Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.IMU-Based-Football-Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PythonRealTimeCommunication.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PythonRealTimeCommunication.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShootFootball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShootFootball.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/goal.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/goal.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +106,7 @@
       <workItem from="1698465868306" duration="7658000" />
       <workItem from="1698511597250" duration="393000" />
       <workItem from="1698582970088" duration="2342000" />
-      <workItem from="1698673930847" duration="2304000" />
+      <workItem from="1698673930847" duration="3060000" />
     </task>
     <servers />
   </component>
