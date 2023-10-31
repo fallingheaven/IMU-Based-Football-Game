@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73c0f8d9-6576-43d8-8e0e-1fe1c216e982" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.IMU-Based-Football-Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.IMU-Based-Football-Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Goal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Goal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PythonRealTimeCommunication.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PythonRealTimeCommunication.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShootFootball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShootFootball.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-    </list>
+    <list default="true" id="73c0f8d9-6576-43d8-8e0e-1fe1c216e982" name="更改" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,7 +104,7 @@
       <workItem from="1698511597250" duration="393000" />
       <workItem from="1698582970088" duration="2342000" />
       <workItem from="1698673930847" duration="3060000" />
-      <workItem from="1698740755911" duration="2281000" />
+      <workItem from="1698740755911" duration="2762000" />
     </task>
     <servers />
   </component>
