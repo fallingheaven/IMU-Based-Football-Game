@@ -2,38 +2,50 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ShootFootball : MonoBehaviour
 {
     private Rigidbody _rigidbody;
     
-    public bool hit;
-    
+    public bool hit = false;
+    // public bool reachable;
+    // public Vector3 hitDirection;
+    public float hitForce = 15f;
     // public Vector3 bottomOffset;
     // public float checkRadius;
     // public bool onGround;
     // public LayerMask checkedLayer;
     private void Start()
     {
-        hit = false;
+        // hit = false;
+        // reachable = false;
+    }
+
+    private void OnEnable()
+    {
         _rigidbody = GetComponent<Rigidbody>();
     }
 
-    public void Shoot()
+    public void Shoot(Vector3 position)
     {
+        Debug.Log("准备射门");
         if (hit)
         {
             return;
         }
+        Debug.Log($"成功射门, {(transform.position - position).normalized * hitForce}");
         
         hit = true;
-        _rigidbody.AddForce(new Vector3(0, 10f, 20f), ForceMode.Impulse);
+        _rigidbody.velocity = Vector3.zero;
+        _rigidbody.AddForce((transform.position - position).normalized * hitForce, ForceMode.Impulse);
     }
 
     private void FixedUpdate()
     {
         // Check();
+        // Debug.Log(_rigidbody.velocity);
     }
 
     // private void OnDrawGizmosSelected()

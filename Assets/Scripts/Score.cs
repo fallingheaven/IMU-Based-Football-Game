@@ -1,18 +1,39 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-    public long score;
-    // Start is called before the first frame update
-    void Start()
+    private static Score _instance;
+    private static long _score;
+
+    public static Score Instance
     {
-        score = 0;
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = new Score();
+            }
+
+            return _instance;
+        }
     }
 
-    public void UpdateScore(int a)
+    private void FixedUpdate()
     {
-        score += a;
+        Debug.Log(_score);
+    }
+
+    // Start is called before the first frame update
+    private void Start()
+    {
+        _score = 0;
+    }
+
+    public static void UpdateScore(int a)
+    {
+        _score += a;
     }
 }

@@ -179,7 +179,7 @@ if __name__ == "__main__":
     # 创建一个服务器 Socket
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     # 绑定 IP 地址和端口
-    server_address = ('127.0.0.1', 8080)  # 这里可以使用服务器的 IP 地址
+    server_address = ('127.0.0.1', 1234)  # 这里可以使用服务器的 IP 地址
     server_socket.bind(server_address)
     # 开始监听连接
     server_socket.listen(1)

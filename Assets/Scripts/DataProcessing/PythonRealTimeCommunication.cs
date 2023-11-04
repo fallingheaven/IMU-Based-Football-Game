@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Net.Sockets;
@@ -12,7 +13,8 @@ using Debug = UnityEngine.Debug;
 public class UnityPythonCommunication : MonoBehaviour
 {
     #region 参变量
-        
+
+        // public bool startUp = false;
         private Process _pythonProcess;
         private TcpClient _client;
         private NetworkStream _stream;
@@ -21,7 +23,7 @@ public class UnityPythonCommunication : MonoBehaviour
         
         // 用于计算加速度瞬时差值来判断踢球
         private Vector3 _previousAcc;
-        private const float AccThreshold = 5000;
+        private const float AccThreshold = 10000f;
     
         [Header("事件")]
         public UnityEvent<float[]> angleChange;
@@ -30,17 +32,18 @@ public class UnityPythonCommunication : MonoBehaviour
         
 
     #endregion
-    
-    void Start()
+
+    private void Start()
     {
+        shoot.AddListener(GameObject.Find("Player").GetComponentInChildren<KickCheck>().Kick);
         StartPythonScript();
     }
     
     // 启动python程序，接收IMU数据
-    void StartPythonScript()
+    private void StartPythonScript()
     {
         // 指定 Python 脚本的路径，替换为你的 Python 脚本的实际路径
-        string pythonPath = Path.Combine("Assets", "Scripts", "main.py");
+        string pythonPath = Path.Combine("Assets", "Scripts", "DataProcessing", "main.py");
 
         // 创建一个 ProcessStartInfo 对象，用于配置进程启动参数
         var startInfo = new ProcessStartInfo
@@ -69,11 +72,11 @@ public class UnityPythonCommunication : MonoBehaviour
         System.Threading.Thread.Sleep(2000);
 
         // 连接到 Python 服务器
-        ConnectToPythonServer("127.0.0.1", 8080); // 服务器地址和端口要与 Python 脚本中的一致
+        ConnectToPythonServer("127.0.0.1", 1234); // 服务器地址和端口要与 Python 脚本中的一致
     }
 
     // 连接到python的socket服务器
-    void ConnectToPythonServer(string ipAddress, int port)
+    private void ConnectToPythonServer(string ipAddress, int port)
     {
         _client = new TcpClient(ipAddress, port);
         _stream = _client.GetStream();
@@ -83,7 +86,7 @@ public class UnityPythonCommunication : MonoBehaviour
     }
     
     // 开一个协程来处理数据
-    IEnumerator ReceiveDataCoroutine()
+    private IEnumerator ReceiveDataCoroutine()
     {
         _previousAcc = Vector3.zero;
         while (true)
@@ -155,31 +158,31 @@ public class UnityPythonCommunication : MonoBehaviour
         }
     }
     
-    // 用于处理 Python 脚本的标准输出的事件处理程序，这里不需要
-    void OutputHandler(object sendingProcess, DataReceivedEventArgs outLine)
-    {
-        if (!string.IsNullOrEmpty(outLine.Data))
-        {
-            Debug.Log("Python Output: " + outLine.Data); // 在 Unity 控制台中显示 Python 输出
-        }
-    }
+    // // 用于处理 Python 脚本的标准输出的事件处理程序，这里不需要
+    // private void OutputHandler(object sendingProcess, DataReceivedEventArgs outLine)
+    // {
+    //     if (!string.IsNullOrEmpty(outLine.Data))
+    //     {
+    //         Debug.Log("Python Output: " + outLine.Data); // 在 Unity 控制台中显示 Python 输出
+    //     }
+    // }
 
     // 退出应用
-    void OnApplicationQuit()
+    private void OnApplicationQuit()
     {
         Debug.Log("程序关闭");
         _client?.Close();
         _stream?.Close();
         
         // 关闭 Python 进程和与 Python 服务器的连接
-        if (_pythonProcess != null && !_pythonProcess.HasExited)
+        if (_pythonProcess is { HasExited: false })
         {
             _pythonProcess.Kill();
         }
     }
 
     // 转化读入数据的
-    bool ConvertStringToFloat(string[] s, float[] arr, int beginPos, int len)
+    private bool ConvertStringToFloat(IReadOnlyList<string> s, float[] arr, int beginPos, int len)
     {
         for (var i = 0; i < len; i++)
         {

@@ -45,17 +45,22 @@
     <Analyzer Include="D:\unity\2022.3.3f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\PythonRealTimeCommunication.cs" />
-     <Compile Include="Assets\Scripts\Goal.cs" />
+     <Compile Include="Assets\Scripts\DataProcessing\PythonRealTimeCommunication.cs" />
+     <Compile Include="Assets\Scripts\KickCheck.cs" />
+     <Compile Include="Assets\Scripts\ServeFootball.cs" />
      <Compile Include="Assets\Scripts\ShootFootball.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
-     <Compile Include="Assets\Scripts\InvokePythonScript.cs" />
      <Compile Include="Assets\Settings\Input System\InputSystem.cs" />
-     <Compile Include="Assets\Scripts\UpdateRotation.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />
-     <Compile Include="Assets\Scripts\UpdateVelocity.cs" />
+     <Compile Include="Assets\Scripts\DataProcessing\UpdateRotation.cs" />
+     <Compile Include="Assets\Scripts\PhysicsCheck.cs" />
+     <Compile Include="Assets\Scripts\CharacterPool.cs" />
+     <Compile Include="Assets\Scripts\DataProcessing\UpdateVelocity.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Settings" />
+     <Folder Include="Assets\Model" />
+     <Folder Include="Assets\Scripts\DataProcessing" />
+     <Folder Include="Assets\Prefabs" />
      <Folder Include="Assets\Material" />
      <Folder Include="Assets\Scripts" />
      <Folder Include="Assets\TutorialInfo\Scripts" />
