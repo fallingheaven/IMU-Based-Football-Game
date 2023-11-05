@@ -302,6 +302,12 @@
      <Reference Include="UnityEditor.Graphs">
      <HintPath>D:\unity\2022.3.3f1c1\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
      </Reference>
+     <Reference Include="UnityEditor.WebGL.Extensions">
+     <HintPath>D:\unity\2022.3.3f1c1\Editor\Data\PlaybackEngines\WebGLSupport\UnityEditor.WebGL.Extensions.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.Android.Extensions">
+     <HintPath>D:\unity\2022.3.3f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\UnityEditor.Android.Extensions.dll</HintPath>
+     </Reference>
      <Reference Include="UnityEditor.WindowsStandalone.Extensions">
      <HintPath>D:\unity\2022.3.3f1c1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
      </Reference>
@@ -329,8 +335,20 @@
      <Reference Include="unityplastic">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\PackageCache\com.unity.collab-proxy@2.0.5\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
      </Reference>
+     <Reference Include="Python.Runtime">
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\PackageCache\com.unity.scripting.python@6.0.1\Editor\Lib\x64\Python.Runtime.dll</HintPath>
+     </Reference>
      <Reference Include="nunit.framework">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Android.Types">
+     <HintPath>D:\unity\2022.3.3f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Android.Gradle">
+     <HintPath>D:\unity\2022.3.3f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Android.GradleProject">
+     <HintPath>D:\unity\2022.3.3f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.GradleProject.dll</HintPath>
      </Reference>
      <Reference Include="mscorlib">
      <HintPath>D:\unity\2022.3.3f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\mscorlib.dll</HintPath>
@@ -787,6 +805,9 @@
      </Reference>
      <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Scripting.Python.Editor">
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Scripting.Python.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.State.Editor">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
