@@ -33,7 +33,7 @@ public class Score : MonoBehaviour
     
     private void FixedUpdate()
     {
-        Debug.Log(_score);
+        // Debug.Log(_score);
         _scoreInfo.text = $"分数：{_score}";
     }
     

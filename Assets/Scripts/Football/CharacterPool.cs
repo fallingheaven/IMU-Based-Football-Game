@@ -15,7 +15,8 @@ public class CharacterPool : MonoBehaviour
         _availableNum = poolSize;
         for (var i = 0; i < poolSize; i++)
         {
-            var character = Instantiate(characterPrefab);
+            var character = Instantiate(characterPrefab, transform, true);
+            character.name = name.Replace("(Clone)", string.Empty);
             character.SetActive(false);
             _characterPool.Add(character);
             Debug.Log("实例化完成");

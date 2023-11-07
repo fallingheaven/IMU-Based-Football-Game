@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Net.Sockets;
 using System.Text;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine.Events;
 using Debug = UnityEngine.Debug;
@@ -24,6 +25,8 @@ public class UnityPythonCommunication : MonoBehaviour
         // 用于计算加速度瞬时差值来判断踢球
         private Vector3 _previousAcc;
         private const float AccThreshold = 10000f;
+        public float[] _quat = new float[4];
+        private float[] _acc = new float[4];
     
         [Header("事件")]
         public UnityEvent<float[]> angleChange;
@@ -112,8 +115,8 @@ public class UnityPythonCommunication : MonoBehaviour
             var splitData = receivedData.Split(", ");
             if (splitData.Length >= DataLength[0])
             {
-                var quat = new float[4]; // 四元数
-                var acc = new float[3]; // 加速度
+                // var quat = new float[4]; // 四元数
+                // var acc = new float[3]; // 加速度
                 var startPos = 0; // 读入数据的处理起点，这里以S为标识
                 while (startPos < splitData.Length && splitData[startPos] != "S")
                 {
@@ -129,26 +132,26 @@ public class UnityPythonCommunication : MonoBehaviour
                 for (var i = startPos + 1; i < splitData.Length; i += DataLength[0])
                 {
                     if (i + DataLength[1] > splitData.Length) break;
-                    if (!ConvertStringToFloat(splitData, acc, i, DataLength[1]))
+                    if (!ConvertStringToFloat(splitData, _acc, i, DataLength[1]))
                     {
                         continue;
                     }
                 
                     if (i + DataLength[1] + DataLength[2] > splitData.Length) break;
-                    if (!ConvertStringToFloat(splitData, quat, i + DataLength[1], DataLength[2]))
+                    if (!ConvertStringToFloat(splitData, _quat, i + DataLength[1], DataLength[2]))
                     {
                         continue;
                     }
                     
                     // 处理加速度
-                    var currentAcc = new Vector3(acc[0], acc[1], acc[2]);
+                    var currentAcc = new Vector3(_acc[0], _acc[1], _acc[2]);
                     if (_previousAcc != Vector3.zero && _previousAcc.sqrMagnitude - currentAcc.sqrMagnitude > AccThreshold)
                     {
                         shoot?.Invoke();
                     }
                     _previousAcc = currentAcc;
                     
-                    angleChange?.Invoke(quat);
+                    angleChange?.Invoke(_quat);
                 }
                 
             }
@@ -193,5 +196,11 @@ public class UnityPythonCommunication : MonoBehaviour
         }
 
         return true;
+    }
+
+    public void Resetimu()
+    {
+        var quaternion = new Quaternion(_quat[0], _quat[1], _quat[2], _quat[3]);
+        SetIMUInitialQuaternion.InitImuQuaternion(quaternion);
     }
 }

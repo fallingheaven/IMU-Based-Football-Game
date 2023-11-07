@@ -335,9 +335,6 @@
      <Reference Include="unityplastic">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\PackageCache\com.unity.collab-proxy@2.0.5\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
      </Reference>
-     <Reference Include="Python.Runtime">
-     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\PackageCache\com.unity.scripting.python@6.0.1\Editor\Lib\x64\Python.Runtime.dll</HintPath>
-     </Reference>
      <Reference Include="nunit.framework">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
      </Reference>
@@ -805,9 +802,6 @@
      </Reference>
      <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Scripting.Python.Editor">
-     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Scripting.Python.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.State.Editor">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>

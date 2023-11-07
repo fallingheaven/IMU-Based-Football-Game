@@ -45,33 +45,73 @@
     <Analyzer Include="D:\unity\2022.3.3f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\DataProcessing\UpdateYRotation.cs" />
      <Compile Include="Assets\Scripts\DataProcessing\PythonRealTimeCommunication.cs" />
-     <Compile Include="Assets\Scripts\KickCheck.cs" />
-     <Compile Include="Assets\Scripts\ServeFootball.cs" />
-     <Compile Include="Assets\Scripts\ShootFootball.cs" />
+     <Compile Include="Assets\Scripts\Utilities\Score.cs" />
+     <Compile Include="Assets\Scripts\QuatEventSO.cs" />
+     <Compile Include="Assets\Scripts\Football\KickCheck.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+     <Compile Include="Assets\Scripts\Utilities\GetCameraInfo.cs" />
+     <Compile Include="Assets\Scripts\DataProcessing\SetIMUInitialQuaternion.cs" />
      <Compile Include="Assets\Settings\Input System\InputSystem.cs" />
-     <Compile Include="Assets\Scripts\Score.cs" />
+     <Compile Include="Assets\Scripts\Football\ShootFootball.cs" />
+     <Compile Include="Assets\Scripts\Football\PhysicsCheck.cs" />
      <Compile Include="Assets\Scripts\DataProcessing\UpdateRotation.cs" />
-     <Compile Include="Assets\Scripts\PhysicsCheck.cs" />
-     <Compile Include="Assets\Scripts\CharacterPool.cs" />
+     <Compile Include="Assets\Scripts\Football\CharacterPool.cs" />
+     <Compile Include="Assets\Scripts\Football\ServeFootball.cs" />
+     <Compile Include="Assets\Scripts\Utilities\QuaternionExtensions.cs" />
      <Compile Include="Assets\Scripts\DataProcessing\UpdateVelocity.cs" />
+     <Compile Include="Assets\Scripts\Utilities\ExtensionFunctions.cs" />
      <Folder Include="Assets" />
+     <Folder Include="Assets\Events" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <Folder Include="Assets\Settings" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+     <Folder Include="Assets\TextMesh Pro\Sprites" />
+     <Folder Include="Assets\Scripts\Utilities" />
+     <Folder Include="Assets\TextMesh Pro\Resources\Sprite Assets" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+     <Folder Include="Assets\TextMesh Pro\Resources\Fonts &amp; Materials" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+     <Folder Include="Assets\TextMesh Pro\Resources" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <Folder Include="Assets\Model" />
+     <Folder Include="Assets\TextMesh Pro" />
      <Folder Include="Assets\Scripts\DataProcessing" />
      <Folder Include="Assets\Prefabs" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <Folder Include="Assets\Material" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
      <Folder Include="Assets\Scripts" />
+     <Folder Include="Assets\TextMesh Pro\Shaders" />
      <Folder Include="Assets\UI Toolkit" />
+     <Folder Include="Assets\TextMesh Pro\Resources\Style Sheets" />
      <Folder Include="Assets\TutorialInfo\Scripts" />
+     <Folder Include="Assets\Scripts\Football" />
+     <Folder Include="Assets\TextMesh Pro\Fonts" />
      <Folder Include="Assets\TutorialInfo\Icons" />
      <Folder Include="Assets\UI Toolkit\UnityThemes" />
      <Folder Include="Assets\TutorialInfo" />
      <None Include="Assets\UI\ScoreBoard.uxml" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <Folder Include="Assets\Settings\Input System" />
      <Folder Include="Assets\Scenes" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
      <Folder Include="Assets\UI" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+     <Folder Include="Assets\TextMesh Pro\Documentation" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne.json" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
      <Reference Include="UnityEngine">
      <HintPath>D:\unity\2022.3.3f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
@@ -773,9 +813,6 @@
      </Reference>
      <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Scripting.Python.Editor">
-     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Scripting.Python.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.State.Editor">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>

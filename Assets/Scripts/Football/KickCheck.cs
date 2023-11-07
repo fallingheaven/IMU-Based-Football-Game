@@ -31,7 +31,7 @@ public class KickCheck : MonoBehaviour
     private void FixedUpdate()
     {
         // Physics.OverlapSphereNonAlloc(transform.position, checkRadius, _colliders, checkedLayer);
-        Debug.Log($"判定范围里有{_colliders.Count}个球");
+        // Debug.Log($"判定范围里有{_colliders.Count}个球");
     }
 
     public void Kick()
@@ -44,7 +44,7 @@ public class KickCheck : MonoBehaviour
         
         foreach (var football in _colliders)
         {
-            football.gameObject.GetComponent<ShootFootball>().Shoot(transform.position);
+            football.gameObject.GetComponent<ShootFootball>().Shoot();
         }
     }
 }

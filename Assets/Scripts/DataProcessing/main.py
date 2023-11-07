@@ -175,7 +175,7 @@ if __name__ == "__main__":
     t_pool = []
     imu_instances = []
     imu_order = []
-    print(11111)
+
     # 创建一个服务器 Socket
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     # 绑定 IP 地址和端口

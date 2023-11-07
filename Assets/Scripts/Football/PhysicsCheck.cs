@@ -35,27 +35,8 @@ public class PhysicsCheck : MonoBehaviour
         }
         else if (col.gameObject.layer == missLayer)
         {
-            Debug.Log("Miss~");
+            // Debug.Log("Miss~");
             onMiss.Invoke(gameObject);
         }
     }
-
-    // private void OnTriggerStay(Collider col)
-    // {
-    //      if (col.gameObject.layer == kickLayer)
-    //      {
-    //          _shoot.reachable = true;
-    //          Debug.Log("可以踢到");
-    //          _shoot.hitDirection = gameObject.transform.position - col.gameObject.transform.position;
-    //          _shoot.hitDirection.Normalize();
-    //      }
-    // }
-    //
-    // private void OnTriggerExit(Collider col)
-    // {
-    //     if (col.gameObject.layer == kickLayer)
-    //     {
-    //         _shoot.reachable = false;
-    //     }
-    // }
 }

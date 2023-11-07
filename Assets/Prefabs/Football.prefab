@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hit: 0
+  hitDirection: {x: 0.93133736, y: 1.4593918, z: -0.050607026}
   hitForce: 15
 --- !u!114 &4769286654082741308
 MonoBehaviour:
