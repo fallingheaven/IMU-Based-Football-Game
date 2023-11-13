@@ -49,6 +49,7 @@
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
      <Compile Include="Assets\Scripts\Football\ShootFootball.cs" />
      <Compile Include="Assets\Scripts\Football\PhysicsCheck.cs" />
+     <Compile Include="Assets\Scripts\SO\VoidEventSO.cs" />
      <Compile Include="Assets\Scripts\TimeCounter.cs" />
      <Compile Include="Assets\Utilities\Enums.cs" />
      <Compile Include="Assets\Scripts\Utilities\QuaternionExtensions.cs" />
@@ -67,7 +68,9 @@
      <Compile Include="Assets\Settings\Input System\InputSystem.cs" />
      <Compile Include="Assets\Scripts\DataProcessing\UpdateRotation.cs" />
      <Compile Include="Assets\Scripts\Football\CharacterPool.cs" />
+     <Compile Include="Assets\CinemaShakeManager.cs" />
      <Compile Include="Assets\Scripts\Teleport.cs" />
+     <Compile Include="Assets\CinemaShake.cs" />
      <Compile Include="Assets\Scripts\Football\ServeFootball.cs" />
      <Compile Include="Assets\Scripts\SceneLoader.cs" />
      <Compile Include="Assets\Scripts\Utilities\ExtensionFunctions.cs" />
@@ -775,6 +778,9 @@
      <Reference Include="Unity.RenderPipelines.Core.Runtime">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
      </Reference>
+     <Reference Include="com.unity.cinemachine.editor">
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.RenderPipelines.Universal.Runtime">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
      </Reference>
@@ -879,6 +885,9 @@
      </Reference>
      <Reference Include="Unity.VSCode.Editor">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Cinemachine">
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Cinemachine.dll</HintPath>
      </Reference>
      <Reference Include="Unity.ScriptableBuildPipeline.Editor">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>

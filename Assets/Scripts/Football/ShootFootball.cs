@@ -5,6 +5,7 @@ public class ShootFootball : MonoBehaviour
 {
     private Rigidbody _rigidbody;
     private AudioDefinition _kickAudio;
+    private CinemaShake _shakeCinema;
     private UnityPythonCommunication _communication;
     
     public bool hit = false;
@@ -19,12 +20,14 @@ public class ShootFootball : MonoBehaviour
         _communication = GameObject.Find("Communication").GetComponent<UnityPythonCommunication>();
         _rigidbody = GetComponent<Rigidbody>();
         _cameraTransform = GameObject.Find("Camera").GetComponent<Transform>();
+        _kickAudio = GetComponent<AudioDefinition>();
+        _shakeCinema = GetComponent<CinemaShake>();
     }
 
-    private void Start()
-    {
-        _kickAudio = GetComponent<AudioDefinition>();
-    }
+    // private void Start()
+    // {
+    //     
+    // }
 
     public void Shoot()
     {
@@ -38,6 +41,7 @@ public class ShootFootball : MonoBehaviour
         // Debug.Log($"发射 {_hitDirection}");
         
         _kickAudio.PlayAudio();
+        _shakeCinema.Shake();
         
         hit = true;
         _rigidbody.velocity = Vector3.zero;
