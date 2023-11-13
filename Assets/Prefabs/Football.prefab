@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8779345722388740547}
   - component: {fileID: 8400371369494719287}
   - component: {fileID: 4769286654082741308}
+  - component: {fileID: 7555474768728724474}
   m_Layer: 10
   m_Name: Football
   m_TagString: Untagged
@@ -148,7 +149,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hit: 0
-  hitDirection: {x: 0.93133736, y: 1.4593918, z: -0.050607026}
   hitForce: 15
 --- !u!114 &4769286654082741308
 MonoBehaviour:
@@ -178,3 +178,22 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   addedScore: 1
+--- !u!114 &7555474768728724474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317321580502127193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 365babbb4789e9349b7f757274125d8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAudioEventSO: {fileID: 11400000, guid: 037aaec0277520841987c520de49bc2a, type: 2}
+  audioClip:
+  - {fileID: 8300000, guid: d6de0d85b84d65442872985872828ffd, type: 3}
+  - {fileID: 8300000, guid: 0caa35a20b424f64b9c749f7a7a9c8c6, type: 3}
+  - {fileID: 8300000, guid: ba80d652f2f2fcc4fbc6d290d3a39f40, type: 3}
+  playOnEnable: 0
+  playOnStart: 0

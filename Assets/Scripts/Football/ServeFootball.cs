@@ -20,6 +20,8 @@ public class ServeFootball : MonoBehaviour
     private void Start()
     {
         _characterPool = GetComponent<CharacterPool>();
+        
+        // StartCoroutine(ServeBall());
     }
 
     private void FixedUpdate()
@@ -47,13 +49,22 @@ public class ServeFootball : MonoBehaviour
                 football.transform.position = initPosition;
                 football.GetComponent<ShootFootball>().hit = false;
                 Serve(football);
-
+        
                 _currentTimeGap = serveTimeGap;
                 
                 break;
             }
         }
     }
+
+    // private IEnumerator ServeBall()
+    // {
+    //     while (true)
+    //     {
+    //         
+    //     }
+    //     
+    // }
 
     private void Serve(GameObject football)
     {

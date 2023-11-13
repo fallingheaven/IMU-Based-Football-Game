@@ -1,13 +1,10 @@
 using UnityEngine;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Net.Sockets;
 using System.Text;
-using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine.Events;
 using Debug = UnityEngine.Debug;
 
@@ -29,7 +26,7 @@ public class UnityPythonCommunication : MonoBehaviour
         private float[] _acc = new float[4];
     
         [Header("事件")]
-        public UnityEvent<float[]> angleChange;
+        // public UnityEvent<float[]> angleChange;
     //    public UnityEvent<float[]> velocityChange;
         public UnityEvent shoot; // 执行射门
         
@@ -38,7 +35,7 @@ public class UnityPythonCommunication : MonoBehaviour
 
     private void Start()
     {
-        shoot.AddListener(GameObject.Find("Player").GetComponentInChildren<KickCheck>().Kick);
+        // shoot.AddListener(GameObject.Find("Player").GetComponentInChildren<KickCheck>().Kick);
         StartPythonScript();
     }
     
@@ -151,7 +148,7 @@ public class UnityPythonCommunication : MonoBehaviour
                     }
                     _previousAcc = currentAcc;
                     
-                    angleChange?.Invoke(_quat);
+                    // angleChange?.Invoke(_quat);
                 }
                 
             }
