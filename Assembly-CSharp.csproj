@@ -82,6 +82,7 @@
      <Folder Include="Assets\Scripts\Utilities" />
      <Folder Include="Assets\Audio\KickFootball" />
      <Folder Include="Assets\TextMesh Pro\Resources\Sprite Assets" />
+     <Folder Include="Assets\Materials\Materials" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
      <Folder Include="Assets\TextMesh Pro\Resources\Fonts &amp; Materials" />
      <Folder Include="Assets\AddressableAssetsData" />
@@ -128,6 +129,7 @@
      <Folder Include="Assets\Scenes" />
      <Folder Include="Assets\AddressableAssetsData\AssetGroups" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+     <Folder Include="Assets\Materials\Soccer Field With Field Texture Big.fbm" />
      <Folder Include="Assets\AddressableAssetsData\AssetGroupTemplates" />
      <Folder Include="Assets\UI" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
