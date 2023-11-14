@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class KickCheck : MonoBehaviour
 {
-    // public float checkRadius = 1f;
     public LayerMask checkedLayer;
     private List<GameObject> _colliders = new List<GameObject>();
+    public ParticleSystem kickParticle;
+    
     private void Start()
     {
         checkedLayer = LayerMask.NameToLayer("Ball");
@@ -41,6 +42,8 @@ public class KickCheck : MonoBehaviour
         {
             return;
         }
+        
+        kickParticle.Play();
         
         foreach (var football in _colliders)
         {

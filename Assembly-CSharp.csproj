@@ -45,20 +45,29 @@
     <Analyzer Include="D:\unity\2022.3.3f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RandomDir.cs" />
+     <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_LightIntensityFade.cs" />
      <Compile Include="Assets\Scripts\DataProcessing\PythonRealTimeCommunication.cs" />
+     <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_Translate.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+     <Compile Include="Assets\Scripts\CinemaShakeManager.cs" />
      <Compile Include="Assets\Scripts\Football\ShootFootball.cs" />
      <Compile Include="Assets\Scripts\Football\PhysicsCheck.cs" />
      <Compile Include="Assets\Scripts\SO\VoidEventSO.cs" />
      <Compile Include="Assets\Scripts\TimeCounter.cs" />
      <Compile Include="Assets\Utilities\Enums.cs" />
+     <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RotateCamera.cs" />
      <Compile Include="Assets\Scripts\Utilities\QuaternionExtensions.cs" />
+     <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
      <Compile Include="Assets\Scripts\Audio\AudioManager.cs" />
      <Compile Include="Assets\Scripts\DataProcessing\UpdateVelocity.cs" />
+     <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_New.cs" />
      <Compile Include="Assets\Scripts\SO\PlayAudioEventSO.cs" />
+     <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_LightFlicker.cs" />
      <Compile Include="Assets\Scripts\DataProcessing\UpdateYRotation.cs" />
      <Compile Include="Assets\Scripts\Audio\AudioDefinition.cs" />
      <Compile Include="Assets\Scripts\SO\QuatEventSO.cs" />
+     <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutoDestructShuriken.cs" />
      <Compile Include="Assets\Scripts\SO\SceneLoadEventSO.cs" />
      <Compile Include="Assets\Scripts\SO\GameSceneSO.cs" />
      <Compile Include="Assets\Scripts\Utilities\Score.cs" />
@@ -68,53 +77,115 @@
      <Compile Include="Assets\Settings\Input System\InputSystem.cs" />
      <Compile Include="Assets\Scripts\DataProcessing\UpdateRotation.cs" />
      <Compile Include="Assets\Scripts\Football\CharacterPool.cs" />
-     <Compile Include="Assets\CinemaShakeManager.cs" />
      <Compile Include="Assets\Scripts\Teleport.cs" />
-     <Compile Include="Assets\CinemaShake.cs" />
      <Compile Include="Assets\Scripts\Football\ServeFootball.cs" />
+     <Compile Include="Assets\Scripts\CinemaShake.cs" />
      <Compile Include="Assets\Scripts\SceneLoader.cs" />
+     <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutoRotate.cs" />
      <Compile Include="Assets\Scripts\Utilities\ExtensionFunctions.cs" />
+     <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\DataSO\Events" />
      <Folder Include="Assets\AddressableAssetsData\AssetGroups\Schemas" />
      <Folder Include="Assets\DataSO\GameScene" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX3 Prefabs\Magic Dark" />
      <Folder Include="Assets\Settings" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <Folder Include="Assets\TextMesh Pro\Sprites" />
      <Folder Include="Assets\Scripts\Utilities" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX4 Prefabs\Electric" />
+     <None Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Shaders\CFX3 Multiply Color.shader" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Sword Trails\Ice" />
      <Folder Include="Assets\Audio\KickFootball" />
      <Folder Include="Assets\TextMesh Pro\Resources\Sprite Assets" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets\Misc" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX Prefabs\Electric" />
      <Folder Include="Assets\Materials\Materials" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Texts" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX3 Prefabs\Environment" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders" />
+     <None Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR_SETTINGS.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Scripts" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX4 Prefabs\Misc" />
+     <None Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CartoonFX Free.txt" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Sword Trails\Fire" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Materials\Light" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX2 Prefabs\Electric" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Nature" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Liquids" />
      <Folder Include="Assets\TextMesh Pro\Resources\Fonts &amp; Materials" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX3 Prefabs" />
+     <None Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR.cginc" />
      <Folder Include="Assets\AddressableAssetsData" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Misc" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX4 Prefabs\Magic" />
      <Folder Include="Assets\Audio\CasualGameBGM05" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX Prefabs" />
+     <Folder Include="Assets\FX" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX4 Prefabs\Fire" />
      <Folder Include="Assets\TextMesh Pro\Resources" />
      <Folder Include="Assets\Model\SoccerFieldMaterials" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX2 Prefabs" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Materials\Fire" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX3 Prefabs\Light" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX Prefabs\Explosions" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX Prefabs\Hits" />
      <None Include="Assets\Audio\CasualGameBGM05\ReadMe.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Materials\Animated" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Fire" />
      <Folder Include="Assets\Model" />
      <None Include="Assets\TextMesh Pro\Fonts\7000汉字+符号+英文字符集.txt" />
      <Folder Include="Assets\TextMesh Pro" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Magic Misc" />
      <Folder Include="Assets\Scripts\DataProcessing" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX4 Prefabs\Light" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets\Meshes" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX2 Prefabs\Misc" />
      <Folder Include="Assets\DataSO" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Sword Trails\Plain" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Materials\Stretched" />
      <Folder Include="Assets\Prefabs" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Materials\Blood" />
+     <Folder Include="Assets\FX\JMO Assets" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Materials\Misc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Eerie" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX3 Prefabs\Magic Misc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+     <None Include="Assets\FX\JMO Assets\Cartoon FX Remaster\Readme Cartoon FX Remaster FREE.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
      <Folder Include="Assets\Scripts\Audio" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Light" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Shaders" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Materials\Texts" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX2 Prefabs\Skull &amp; Ghosts Effects" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Explosions" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX3 Prefabs\Misc" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Mesh" />
      <Folder Include="Assets\Settings\Audio Mixer" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
      <Folder Include="Assets\Scripts" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\UI Canvas" />
      <Folder Include="Assets\TextMesh Pro\Shaders" />
+     <None Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Texts\_Make your own text effect.txt" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX Prefabs\Misc" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Ice" />
+     <None Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR_PASSES.cginc" />
      <Folder Include="Assets\UI Toolkit" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX4 Prefabs" />
      <Folder Include="Assets\TextMesh Pro\Resources\Style Sheets" />
      <Folder Include="Assets\TutorialInfo\Scripts" />
      <Folder Include="Assets\Scripts\Football" />
@@ -126,25 +197,46 @@
      <None Include="Assets\UI\ScoreBoard.uxml" />
      <Folder Include="Assets\Utilities" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Materials" />
      <Folder Include="Assets\Settings\Input System" />
      <Folder Include="Assets\Scripts\SO" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Electric" />
      <Folder Include="Assets\Audio\CasualGameSounds" />
      <Folder Include="Assets\Scenes" />
      <Folder Include="Assets\AddressableAssetsData\AssetGroups" />
+     <None Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Shaders\CFXM_MobileParticleAdd_Alpha8.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
      <Folder Include="Assets\Materials\Soccer Field With Field Texture Big.fbm" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX4 Prefabs\Water" />
      <Folder Include="Assets\AddressableAssetsData\AssetGroupTemplates" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX3 Prefabs\Fire" />
      <Folder Include="Assets\UI" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX3 Prefabs\Electric" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Materials\Symbols" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Sword Trails" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX2 Prefabs\Water" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX2 Prefabs\Pickup Items" />
      <Folder Include="Assets\AddressableAssetsData\DataBuilders" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs" />
      <Folder Include="Assets\Model\SoccerFieldMaterials\Materials" />
+     <None Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR_URP.cginc" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Materials\Water" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Impacts" />
      <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX2 Prefabs\Debris Hits" />
      <Folder Include="Assets\TextMesh Pro\Documentation" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX2 Prefabs\Blood" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets\Graphics" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Textures" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Materials\Electric" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne.json" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
      <Folder Include="Assets\Materials" />
+     <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX2 Prefabs\Explosions" />
      <Reference Include="UnityEngine">
      <HintPath>D:\unity\2022.3.3f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
@@ -772,38 +864,68 @@
      <Reference Include="System.Xml.Serialization">
      <HintPath>D:\unity\2022.3.3f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.RenderPipelines.Core.Runtime">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="com.unity.cinemachine.editor">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.Burst.Editor">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.Burst">
-     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+     <Reference Include="Unity.ResourceManager">
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.ResourceManager.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.ScriptableBuildPipeline">
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Rider.Editor">
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.Core.Editor">
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VisualScripting.Flow">
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Mathematics.Editor">
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+     </Reference>
+     <Reference Include="PPv2URPConverters">
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.TextMeshPro">
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VSCode.Editor">
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.Universal.Editor">
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+     </Reference>
+     <Reference Include="Coffee.UIParticle">
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Coffee.UIParticle.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="Unity.PlasticSCM.Editor">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.ResourceManager">
-     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.ResourceManager.dll</HintPath>
+     <Reference Include="Unity.Burst">
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline.Editor">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Shared.Editor">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.ScriptableBuildPipeline">
-     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
      </Reference>
      <Reference Include="Unity.ShaderGraph.Editor">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
@@ -823,20 +945,8 @@
      <Reference Include="Unity.VisualScripting.Core.Editor">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.Rider.Editor">
-     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.RenderPipelines.Core.Editor">
-     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.Flow">
-     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.VisualScripting.Flow.Editor">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Mathematics.Editor">
-     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
@@ -856,20 +966,14 @@
      <Reference Include="Unity.Addressables.Editor">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Addressables.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.VisualScripting.State.Editor">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="PPv2URPConverters">
-     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Mathematics">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.TextMeshPro">
-     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro.Editor">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
@@ -877,14 +981,8 @@
      <Reference Include="Unity.Searcher.Editor">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.VisualScripting.State">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VSCode.Editor">
-     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Cinemachine">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Cinemachine.dll</HintPath>
@@ -895,11 +993,32 @@
      <Reference Include="Unity.Addressables">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Addressables.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.RenderPipelines.Universal.Editor">
-     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
-     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="CFXR.WelcomeScreen.csproj">
+      <Project>{e39d9788-dc5b-3b42-6800-858169452486}</Project>
+      <Name>CFXR.WelcomeScreen</Name>
+    </ProjectReference>
+    <ProjectReference Include="ToonyColorsPro.Demo.Editor.csproj">
+      <Project>{ef45fc7b-270e-bf31-b618-bb046cab775d}</Project>
+      <Name>ToonyColorsPro.Demo.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="CFXRRuntime.csproj">
+      <Project>{4db8e663-9822-1d37-4275-1b061524c5c8}</Project>
+      <Name>CFXRRuntime</Name>
+    </ProjectReference>
+    <ProjectReference Include="CFXRDemo.csproj">
+      <Project>{cc7286de-a4cc-ad99-8b10-121c2fa0ecdd}</Project>
+      <Name>CFXRDemo</Name>
+    </ProjectReference>
+    <ProjectReference Include="KinoBloom.Runtime.csproj">
+      <Project>{ab91b6f1-0d7c-f2f8-bccb-1d17a491f589}</Project>
+      <Name>KinoBloom.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="CFXREditor.csproj">
+      <Project>{0c3dfb7e-674c-11fb-d0a5-c07ca35993b6}</Project>
+      <Name>CFXREditor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

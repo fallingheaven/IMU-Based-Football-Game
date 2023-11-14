@@ -8,9 +8,16 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.IMU-Based-Football-Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.IMU-Based-Football-Game/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Football.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Football.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CinemaShake.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CinemaShake.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CinemaShakeManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CinemaShakeManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Materials/Soccer_ball_UV 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Materials/Soccer_ball_UV 1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Materials/soccer texture 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Materials/soccer texture 1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SoccerField.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SoccerField.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Football/ShootFootball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Football/ShootFootball.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Football/KickCheck.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Football/KickCheck.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IMU-Based-Football-Game.sln" beforeDir="false" afterPath="$PROJECT_DIR$/IMU-Based-Football-Game.sln" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
@@ -27,13 +34,13 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/655570467a334bb384e367c156617d53171e00/04/fbec6fc8/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/655570467a334bb384e367c156617d53171e00/23/5f06d577/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/655570467a334bb384e367c156617d53171e00/79/9ecdb37e/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/CinemaShake.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/CinemaShakeManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/FX/JMO Assets/Welcome Screen/CFXR_WelcomeScreen.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Audio/AudioDefinition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SO/GameSceneSO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SO/PlayAudioEventSO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SO/QuatEventSO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Teleport.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.coffee.ui-particle@4e4b9eb2a7/Scripts/UIParticle.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@14.0.8/Runtime/Common/CommandBufferPool.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@14.0.8/Runtime/RenderGraph/RenderGraphObjectPool.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@14.0.8/Runtime/XR/XRLayout.cs" root0="SKIP_HIGHLIGHTING" />
@@ -149,6 +156,7 @@
       <workItem from="1699861399543" duration="4721000" />
       <workItem from="1699885766828" duration="2616000" />
       <workItem from="1699888841538" duration="786000" />
+      <workItem from="1699960701675" duration="1629000" />
     </task>
     <servers />
   </component>
