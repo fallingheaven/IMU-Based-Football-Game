@@ -64,7 +64,7 @@ public class ShootFootball : MonoBehaviour
         var initimuMatrix = SetIMUInitialQuaternion.imuInitQuaternionInv.ConvertToMatrix();
         var cameraMatrix = _cameraQuaternion.ConvertToMatrix();
 
-        _hitDirection = SwapYAndZAxesInMatrix(imuMatrix * initimuMatrix) * cameraMatrix * Vector3.forward;
+        _hitDirection = SwapYAndZAxesInMatrix(imuMatrix * initimuMatrix) *  Vector3.forward;
     }
     
     private Matrix4x4 SwapYAndZAxesInMatrix(Matrix4x4 originalMatrix)
