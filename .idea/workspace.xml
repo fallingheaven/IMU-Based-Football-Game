@@ -5,16 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76609cde-0c08-41ec-b5ef-1796cbb0f8e7" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/IMU-Based-Football-Game.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.IMU-Based-Football-Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.IMU-Based-Football-Game/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Football.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Football.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FX/JMO Assets/Welcome Screen/CFXR_WelcomeScreen.uxml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FX/JMO Assets/Welcome Screen/CFXR_WelcomeScreen.uxml.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Goal.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Goal.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Materials/Soccer_ball_UV.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Materials/Soccer_ball_UV.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Materials/soccer texture.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Materials/soccer texture.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Persistent.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Persistent.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SoccerField.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SoccerField.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CinemaShakeManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CinemaShakeManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataProcessing/PythonRealTimeCommunication.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataProcessing/PythonRealTimeCommunication.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataProcessing/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataProcessing/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShootFootball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShootFootball.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Football/CharacterPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Football/CharacterPool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Audio Mixer/MainAudioMixer.mixer" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Audio Mixer/MainAudioMixer.mixer" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +99,7 @@
       <workItem from="1699085550113" duration="691000" />
       <workItem from="1699247118110" duration="1332000" />
       <workItem from="1699279486116" duration="604000" />
+      <workItem from="1700315149354" duration="2457000" />
     </task>
     <servers />
   </component>

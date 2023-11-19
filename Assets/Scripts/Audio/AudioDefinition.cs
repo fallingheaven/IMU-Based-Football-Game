@@ -1,11 +1,15 @@
-using System;
 using UnityEngine;
 
+// 相当于是音频的属性
 public class AudioDefinition : MonoBehaviour
 {
+    // 播放声音的事件
     public PlayAudioEventSO playAudioEventSO;
+    // 内含的声音集合
     public AudioClip[] audioClip;
+    // 用于音效
     public bool playOnEnable;
+    // 用于BGM
     public bool playOnStart;
 
     private void OnEnable()

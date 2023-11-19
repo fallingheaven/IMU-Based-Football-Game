@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edd23825ce76e9b47af992476f83f260, type: 3}
   m_Name: SoccerField
   m_EditorClassIdentifier: 
+  sceneType: 0
   sceneReference:
     m_AssetGUID: 04cca609dba72b64a9980966596add06
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+  initialPosition: {x: -2.7, y: 1.4, z: 36}

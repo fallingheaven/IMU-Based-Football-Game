@@ -10,7 +10,7 @@ public class CharacterPool : MonoBehaviour
 
     private readonly List<GameObject> _characterPool = new List<GameObject>();
 
-    private void Awake()
+    private void Start()
     {
         _availableNum = poolSize;
         for (var i = 0; i < poolSize; i++)

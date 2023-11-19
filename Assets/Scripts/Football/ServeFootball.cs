@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ServeFootball : MonoBehaviour
@@ -11,17 +8,27 @@ public class ServeFootball : MonoBehaviour
     private CharacterPool _characterPool;
 
     public Vector3 initPosition;
-    public Vector3 serveForce;
-    private void Awake()
-    {
-        // serving = false;
-    }
+    public Vector3 serveVelocity;
+    public float absoluteVelocity;
+    public GameObject player;
 
     private void Start()
     {
         _characterPool = GetComponent<CharacterPool>();
+        player = GameObject.Find("Kick Checker");
+        SetServeVelocity();
+    }
+
+    private void SetServeVelocity()
+    {
+        var playerPosition = player.transform.position;
+        serveVelocity = new Vector3(playerPosition.x - initPosition.x, 0, playerPosition.z - initPosition.z).normalized;
+        serveVelocity *= absoluteVelocity;
         
-        // StartCoroutine(ServeBall());
+        var estimatedTime = (playerPosition.x - initPosition.x) / serveVelocity.x;
+
+        serveVelocity.y = 9.81f * estimatedTime / 2 + 0.5f;
+        // serveVelocity.x += 0.8f;
     }
 
     private void FixedUpdate()
@@ -56,20 +63,14 @@ public class ServeFootball : MonoBehaviour
             }
         }
     }
-
-    // private IEnumerator ServeBall()
-    // {
-    //     while (true)
-    //     {
-    //         
-    //     }
-    //     
-    // }
+    
 
     private void Serve(GameObject football)
     {
         var _rigidbody = football.GetComponent<Rigidbody>();
-        _rigidbody.velocity = Vector3.zero;
-        _rigidbody.AddForce(serveForce, ForceMode.Impulse);
+        _rigidbody.rotation = Quaternion.identity;
+        _rigidbody.velocity = serveVelocity;
+        // _rigidbody.velocity = Vector3.zero;
+        // _rigidbody.AddForce(serveForce, ForceMode.Impulse);
     }
 }

@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using UnityEngine;
 
 public class ShootFootball : MonoBehaviour
@@ -11,6 +11,7 @@ public class ShootFootball : MonoBehaviour
     public bool hit = false;
     private Vector3 _hitDirection;
     public float hitForce = 15f;
+    public float hitPauseTime;
 
     private Transform _cameraTransform;
     private Quaternion _cameraQuaternion;
@@ -24,21 +25,14 @@ public class ShootFootball : MonoBehaviour
         _shakeCinema = GetComponent<CinemaShake>();
     }
 
-    // private void Start()
-    // {
-    //     
-    // }
-
     public void Shoot()
     {
-        // Debug.Log("准备射门");
         if (hit)
         {
             return;
         }
-        
-        // Debug.Log($"成功射门, {(transform.position - position).normalized * hitForce}");
-        // Debug.Log($"发射 {_hitDirection}");
+
+        StartCoroutine(HitPause());
         
         _kickAudio.PlayAudio();
         _shakeCinema.Shake();
@@ -53,9 +47,16 @@ public class ShootFootball : MonoBehaviour
     {
         _cameraQuaternion = _cameraTransform.rotation;
         ChangeShootDirection(_communication._quat);
-        // Debug.Log($"{_hitDirection}");
     }
 
+    private IEnumerator HitPause()
+    {
+        Time.timeScale = 0;
+        // WaitForSecondsRealtime不受事件缩放影响
+        yield return new WaitForSecondsRealtime(hitPauseTime / 60f);
+        Time.timeScale = 1;
+    }
+    
     private void ChangeShootDirection(float[] quat)
     {
         var quaternion = new Quaternion(quat[0], quat[1], quat[2], quat[3]);
@@ -64,8 +65,6 @@ public class ShootFootball : MonoBehaviour
         var cameraMatrix = _cameraQuaternion.ConvertToMatrix();
 
         _hitDirection = SwapYAndZAxesInMatrix(imuMatrix * initimuMatrix) * cameraMatrix * Vector3.forward;
-        // Debug.Log($"更新发射方向 {_hitDirection}");
-        // Debug.Log(SetIMUInitialQuaternion.imuInitQuaternionInv);
     }
     
     private Matrix4x4 SwapYAndZAxesInMatrix(Matrix4x4 originalMatrix)

@@ -16,13 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 142b2a6385410cc40a6d1fe4b7f32939
-  m_SerializeEntries:
-  - m_GUID: 662411b4fc6b7c94796cdcda237ef54b
-    m_Address: Assets/Prefabs/Football.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Object
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 922b8dfea37618245af8b92b5f1fdb8b, type: 2}
   m_SchemaSet:

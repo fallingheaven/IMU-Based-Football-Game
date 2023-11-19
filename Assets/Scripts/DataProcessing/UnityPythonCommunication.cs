@@ -26,24 +26,21 @@ public class UnityPythonCommunication : MonoBehaviour
         private float[] _acc = new float[4];
     
         [Header("事件")]
-        // public UnityEvent<float[]> angleChange;
-    //    public UnityEvent<float[]> velocityChange;
         public UnityEvent shoot; // 执行射门
         
 
     #endregion
 
-    private void Start()
+    private void OnEnable()
     {
-        // shoot.AddListener(GameObject.Find("Player").GetComponentInChildren<KickCheck>().Kick);
-        StartPythonScript();
+        // StartPythonScript();
     }
     
     // 启动python程序，接收IMU数据
-    private void StartPythonScript()
+    public void StartPythonScript()
     {
         // 指定 Python 脚本的路径，替换为你的 Python 脚本的实际路径
-        string pythonPath = Path.Combine("Assets", "Scripts", "DataProcessing", "main.py");
+        var pythonPath = Path.Combine("Assets", "Scripts", "DataProcessing", "main.py");
 
         // 创建一个 ProcessStartInfo 对象，用于配置进程启动参数
         var startInfo = new ProcessStartInfo
@@ -112,8 +109,6 @@ public class UnityPythonCommunication : MonoBehaviour
             var splitData = receivedData.Split(", ");
             if (splitData.Length >= DataLength[0])
             {
-                // var quat = new float[4]; // 四元数
-                // var acc = new float[3]; // 加速度
                 var startPos = 0; // 读入数据的处理起点，这里以S为标识
                 while (startPos < splitData.Length && splitData[startPos] != "S")
                 {
@@ -147,14 +142,11 @@ public class UnityPythonCommunication : MonoBehaviour
                         shoot?.Invoke();
                     }
                     _previousAcc = currentAcc;
-                    
-                    // angleChange?.Invoke(_quat);
                 }
                 
             }
             
             yield return null;
-            // yield return new WaitForSeconds(0.002f); // 等待一段时间再继续接收数据
         }
     }
     

@@ -29,12 +29,6 @@ public class KickCheck : MonoBehaviour
         _colliders.Remove(col.gameObject);
     }
 
-    private void FixedUpdate()
-    {
-        // Physics.OverlapSphereNonAlloc(transform.position, checkRadius, _colliders, checkedLayer);
-        // Debug.Log($"判定范围里有{_colliders.Count}个球");
-    }
-
     public void Kick()
     {
         Debug.Log("Shoot!");

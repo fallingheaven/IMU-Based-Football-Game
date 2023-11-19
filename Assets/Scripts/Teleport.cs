@@ -15,7 +15,7 @@ public class Teleport : MonoBehaviour
 
     public void TeleportAction()
     {
-        Debug.Log($"场景传送，到{sceneToLoad.sceneReference.SubObjectName}");
+        // Debug.Log($"场景传送，到{sceneToLoad.sceneReference.editorAsset.name}");
 
         if (sceneToLoad.sceneType == SceneType.GameScene)
         {

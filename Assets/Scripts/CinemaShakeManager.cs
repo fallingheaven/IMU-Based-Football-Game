@@ -13,16 +13,16 @@ public class CinemaShakeManager : MonoBehaviour
     private Vector3 _maximumTranslationShake = Vector3.one * 0.5f;
     private Vector3 _maximumAngularShake = Vector3.one * 2;
     private float _traumaExponent = 2;
-    private float _recoverySpeed = 2.5f;
-    private float _maximumStress = 0.6f;
+    private float _recoverySpeed = 1.0f;
+    private float _maximumStress = 0.4f;
     private void OnEnable()
     {
-        voidEventSO.OnEventRaised += ShakeCinema;
+        voidEventSO.onEventRaised += ShakeCinema;
     }
 
     private void OnDisable()
     {
-        voidEventSO.OnEventRaised -= ShakeCinema;
+        voidEventSO.onEventRaised -= ShakeCinema;
     }
 
     private void Awake()

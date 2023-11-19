@@ -16,18 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: b299dab454fde5441b1bcc5498ab71cf
-  m_SerializeEntries:
-  - m_GUID: 04cca609dba72b64a9980966596add06
-    m_Address: SoccerField
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Game
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b9b24cb7f2ecd7d4287df602fde51d09
-    m_Address: Main Menu
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 922b8dfea37618245af8b92b5f1fdb8b, type: 2}
   m_SchemaSet:
