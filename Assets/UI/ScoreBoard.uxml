@@ -1,5 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); justify-content: space-between; align-self: flex-end; align-items: auto; width: 20%; height: 20%;">
-        <ui:Label tabindex="-1" text=" " display-tooltip-when-elided="true" name="ScoreLabel" style="height: 20%; position: relative; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; width: 100%; -unity-background-image-tint-color: rgb(255, 255, 255); background-color: rgba(255, 255, 255, 0.59); font-size: 35px; -unity-text-align: middle-center; -unity-font-style: bold; white-space: nowrap; text-overflow: clip; visibility: visible; overflow: visible; display: flex; left: 0; top: 0; right: 0; bottom: 0; justify-content: flex-start; align-items: auto; align-self: auto; flex-direction: column; flex-wrap: nowrap;" />
-    </ui:VisualElement>
-</ui:UXML>

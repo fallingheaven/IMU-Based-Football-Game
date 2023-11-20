@@ -367,21 +367,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  shoot:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 619735707}
-        m_TargetAssemblyTypeName: KickCheck, Assembly-CSharp
-        m_MethodName: Kick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  imuKickEventSO: {fileID: 11400000, guid: 9b5006213fdd12545889e13285ac2ce7, type: 2}
 --- !u!4 &200499059
 Transform:
   m_ObjectHideFlags: 0
@@ -772,6 +758,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   kickParticle: {fileID: 1289597022}
+  imuKickEventSO: {fileID: 11400000, guid: 9b5006213fdd12545889e13285ac2ce7, type: 2}
 --- !u!135 &619735708
 SphereCollider:
   m_ObjectHideFlags: 0

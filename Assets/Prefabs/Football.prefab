@@ -164,12 +164,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17c71e1ad74e6d340a376f7dbc93ceb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onMiss:
-    m_PersistentCalls:
-      m_Calls: []
-  onGoal:
-    m_PersistentCalls:
-      m_Calls: []
+  ReturnFootballEventSO: {fileID: 11400000, guid: a017de5da615d1c49a0a12c1e723c5ef,
+    type: 2}
+  updateScoreEventSO: {fileID: 11400000, guid: 17983899c588d0347ada92961d0e49f5, type: 2}
   goalLayer:
     serializedVersion: 2
     m_Bits: 0

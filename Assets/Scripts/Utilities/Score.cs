@@ -1,44 +1,38 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Score : MonoBehaviour
 {
-    private static Score _instance;
-    private static long _score;
-    private VisualElement _scoreBoard;
-    private Label _scoreInfo;
-        
-    public static Score Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                _instance = new Score();
-            }
-
-            return _instance;
-        }
-    }
+    public FloatEventSO scoreChangeEventSO;
+    public float score;
+    private TextMeshProUGUI _scoreInfo;
+    [Header("事件监听")]
+    public FloatEventSO updateScoreEventSO;
     
+    private void OnEnable()
+    {
+        updateScoreEventSO.OnEventRaised += UpdateScore;
+    }
+
+    private void OnDisable()
+    {
+        updateScoreEventSO.OnEventRaised -= UpdateScore;
+    }
+
     private void Start()
     {
-        _score = 0;
-        _scoreBoard = GetComponent<UIDocument>().rootVisualElement;
-        _scoreInfo = _scoreBoard.Q<Label>("ScoreLabel");
+        score = 0;
+        _scoreInfo = GetComponent<TextMeshProUGUI>();
     }
     
     private void FixedUpdate()
     {
-        // Debug.Log(_score);
-        _scoreInfo.text = $"分数：{_score}";
+        _scoreInfo.text = $"分数：{score}";
     }
-    
-    public static void UpdateScore(int a)
+
+    private void UpdateScore(float a)
     {
-        _score += a;
+        score += a;
+        scoreChangeEventSO.RaiseEvent(score);
     }
 }

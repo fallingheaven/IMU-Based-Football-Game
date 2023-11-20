@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +7,19 @@ public class KickCheck : MonoBehaviour
     public LayerMask checkedLayer;
     private List<GameObject> _colliders = new List<GameObject>();
     public ParticleSystem kickParticle;
-    
+    [Header("事件监听")] 
+    public VoidEventSO imuKickEventSO;
+
+    private void OnEnable()
+    {
+        imuKickEventSO.onEventRaised += Kick;
+    }
+
+    private void OnDisable()
+    {
+        imuKickEventSO.onEventRaised -= Kick;
+    }
+
     private void Start()
     {
         checkedLayer = LayerMask.NameToLayer("Ball");

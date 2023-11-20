@@ -5,14 +5,12 @@ using System.Diagnostics;
 using System.IO;
 using System.Net.Sockets;
 using System.Text;
-using UnityEngine.Events;
 using Debug = UnityEngine.Debug;
 
 public class UnityPythonCommunication : MonoBehaviour
 {
     #region 参变量
-
-        // public bool startUp = false;
+    
         private Process _pythonProcess;
         private TcpClient _client;
         private NetworkStream _stream;
@@ -26,16 +24,11 @@ public class UnityPythonCommunication : MonoBehaviour
         private float[] _acc = new float[4];
     
         [Header("事件")]
-        public UnityEvent shoot; // 执行射门
+        // public UnityEvent shoot; // 执行射门
+        public VoidEventSO imuKickEventSO;
         
-
     #endregion
 
-    private void OnEnable()
-    {
-        // StartPythonScript();
-    }
-    
     // 启动python程序，接收IMU数据
     public void StartPythonScript()
     {
@@ -139,7 +132,7 @@ public class UnityPythonCommunication : MonoBehaviour
                     var currentAcc = new Vector3(_acc[0], _acc[1], _acc[2]);
                     if (_previousAcc != Vector3.zero && _previousAcc.sqrMagnitude - currentAcc.sqrMagnitude > AccThreshold)
                     {
-                        shoot?.Invoke();
+                        imuKickEventSO.RaiseEvent();
                     }
                     _previousAcc = currentAcc;
                 }

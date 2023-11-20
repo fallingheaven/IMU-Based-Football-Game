@@ -48,10 +48,11 @@
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RandomDir.cs" />
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_LightIntensityFade.cs" />
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_Translate.cs" />
+     <Compile Include="Assets\Scripts\Camera\CinemaShake.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
-     <Compile Include="Assets\Scripts\CinemaShakeManager.cs" />
      <Compile Include="Assets\Scripts\Football\ShootFootball.cs" />
      <Compile Include="Assets\Scripts\Football\PhysicsCheck.cs" />
+     <Compile Include="Assets\Scripts\Scene Load\SceneLoader.cs" />
      <Compile Include="Assets\Scripts\SO\VoidEventSO.cs" />
      <Compile Include="Assets\Scripts\TimeCounter.cs" />
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RotateCamera.cs" />
@@ -62,8 +63,10 @@
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_New.cs" />
      <Compile Include="Assets\Scripts\SO\PlayAudioEventSO.cs" />
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_LightFlicker.cs" />
+     <Compile Include="Assets\Scripts\Utilities\SetActive.cs" />
      <Compile Include="Assets\Scripts\DataProcessing\UpdateYRotation.cs" />
      <Compile Include="Assets\Scripts\Audio\AudioDefinition.cs" />
+     <Compile Include="Assets\Scripts\Scene Load\Teleport.cs" />
      <Compile Include="Assets\Scripts\SO\QuatEventSO.cs" />
      <Compile Include="Assets\Scripts\DataProcessing\UnityPythonCommunication.cs" />
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutoDestructShuriken.cs" />
@@ -72,19 +75,16 @@
      <Compile Include="Assets\Scripts\Utilities\Score.cs" />
      <Compile Include="Assets\Scripts\Football\KickCheck.cs" />
      <Compile Include="Assets\Scripts\SO\GameObjectEventSO.cs" />
-     <Compile Include="Assets\Scripts\Utilities\GetCameraInfo.cs" />
      <Compile Include="Assets\Scripts\DataProcessing\SetIMUInitialQuaternion.cs" />
+     <Compile Include="Assets\Scripts\Camera\CinemaShakeManager.cs" />
      <Compile Include="Assets\Settings\Input System\InputSystem.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\DataProcessing\UpdateRotation.cs" />
      <Compile Include="Assets\Scripts\Football\CharacterPool.cs" />
-     <Compile Include="Assets\Scripts\Teleport.cs" />
      <Compile Include="Assets\Scripts\Football\ServeFootball.cs" />
      <Compile Include="Assets\Scripts\Utilities\Enums.cs" />
      <Compile Include="Assets\Scripts\UpdateLoadSlider.cs" />
-     <Compile Include="Assets\Scripts\CinemaShake.cs" />
-     <Compile Include="Assets\Scripts\SetActive.cs" />
-     <Compile Include="Assets\Scripts\SceneLoader.cs" />
+     <Compile Include="Assets\Scripts\SO\FloatEventSO.cs" />
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutoRotate.cs" />
      <Compile Include="Assets\Scripts\Utilities\ExtensionFunctions.cs" />
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
@@ -125,6 +125,7 @@
      <None Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR.cginc" />
      <Folder Include="Assets\AddressableAssetsData" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+     <Folder Include="Assets\Scripts\Camera" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Misc" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX4 Prefabs\Magic" />
      <Folder Include="Assets\Audio\CasualGameBGM05" />
@@ -147,6 +148,7 @@
      <Folder Include="Assets\Model" />
      <None Include="Assets\TextMesh Pro\Fonts\7000汉字+符号+英文字符集.txt" />
      <Folder Include="Assets\TextMesh Pro" />
+     <Folder Include="Assets\Scripts\Scene Load" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Magic Misc" />
      <Folder Include="Assets\Scripts\DataProcessing" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX4 Prefabs\Light" />
@@ -199,7 +201,6 @@
      <Folder Include="Assets\Audio" />
      <Folder Include="Assets\UI Toolkit\UnityThemes" />
      <Folder Include="Assets\TutorialInfo" />
-     <None Include="Assets\UI\ScoreBoard.uxml" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Materials" />
      <Folder Include="Assets\Settings\Input System" />
@@ -214,7 +215,6 @@
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX4 Prefabs\Water" />
      <Folder Include="Assets\AddressableAssetsData\AssetGroupTemplates" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX3 Prefabs\Fire" />
-     <Folder Include="Assets\UI" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX3 Prefabs\Electric" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Materials\Symbols" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets" />
@@ -491,7 +491,16 @@
      <HintPath>D:\unity\2022.3.3f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Android.Types">
+     <HintPath>D:\unity\2022.3.3f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Android.Gradle">
+     <HintPath>D:\unity\2022.3.3f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Android.GradleProject">
+     <HintPath>D:\unity\2022.3.3f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.GradleProject.dll</HintPath>
      </Reference>
      <Reference Include="netstandard">
      <HintPath>D:\unity\2022.3.3f1c1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
@@ -860,133 +869,133 @@
      <HintPath>D:\unity\2022.3.3f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
      </Reference>
      <Reference Include="Coffee.UIParticle">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Coffee.UIParticle.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Coffee.UIParticle.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipelines.Core.Runtime">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="com.unity.cinemachine.editor">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst.Editor">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
      </Reference>
      <Reference Include="Unity.PlasticSCM.Editor">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.ResourceManager">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.ResourceManager.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.ResourceManager.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline.Editor">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Shared.Editor">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.ScriptableBuildPipeline">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
      </Reference>
      <Reference Include="Unity.ShaderGraph.Editor">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualStudio.Editor">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.UI">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Core">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.UI">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Core.Editor">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Rider.Editor">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipelines.Core.Editor">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Flow">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Flow.Editor">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Mathematics.Editor">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
      </Reference>
      <Reference Include="Unity.InputSystem">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
      </Reference>
      <Reference Include="Unity.InputSystem.ForUI">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.InputSystem.ForUI.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.InputSystem.ForUI.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Addressables.Editor">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Addressables.Editor.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Addressables.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.State.Editor">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
      </Reference>
      <Reference Include="PPv2URPConverters">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Mathematics">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro.Editor">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Searcher.Editor">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.State">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VSCode.Editor">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Cinemachine">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Cinemachine.dll</HintPath>
      </Reference>
      <Reference Include="Unity.ScriptableBuildPipeline.Editor">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Addressables">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Addressables.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Addressables.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipelines.Universal.Editor">
-     <HintPath>D:\unity\project\soccer\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
