@@ -4,6 +4,7 @@ using UnityEngine;
 
 public static class QuaternionExtensions
 {
+    // 用于四元数转化为矩阵
     public static Matrix4x4 ConvertToMatrix(this Quaternion quaternion)
     {
         Matrix4x4 matrix = new Matrix4x4();

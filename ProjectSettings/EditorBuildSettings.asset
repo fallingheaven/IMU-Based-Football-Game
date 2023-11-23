@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Persistent.unity
     guid: a866bfde29e88eb479b547453f0b2b3b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SoccerField.unity
     guid: 04cca609dba72b64a9980966596add06
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main Menu.unity
     guid: b9b24cb7f2ecd7d4287df602fde51d09
   m_configObjects:

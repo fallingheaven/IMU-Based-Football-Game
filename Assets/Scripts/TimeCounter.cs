@@ -1,7 +1,7 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
+// 计时器，暂时用不上
 public class TimeCounter: MonoBehaviour
 {
     private TimeCounter _timeCounter;

@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 465669460079327237}
   - component: {fileID: 8779345722388740547}
   - component: {fileID: 8400371369494719287}
-  - component: {fileID: 4769286654082741308}
   - component: {fileID: 7555474768728724474}
   - component: {fileID: -5249041059457773736}
+  - component: {fileID: -7779662927379920634}
   m_Layer: 10
   m_Name: Football
   m_TagString: Untagged
@@ -149,34 +149,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6451d413e6dc86b46aecc59cb6dcb854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  getCameraTransfromEventSO: {fileID: 11400000, guid: 74c0982f727e0da4d88bdc9bbef0b618,
+    type: 2}
   hit: 0
   hitForce: 25
   hitPauseTime: 1
---- !u!114 &4769286654082741308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317321580502127193}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17c71e1ad74e6d340a376f7dbc93ceb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ReturnFootballEventSO: {fileID: 11400000, guid: a017de5da615d1c49a0a12c1e723c5ef,
-    type: 2}
-  updateScoreEventSO: {fileID: 11400000, guid: 17983899c588d0347ada92961d0e49f5, type: 2}
-  goalLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  missLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  kickLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  addedScore: 1
 --- !u!114 &7555474768728724474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,4 +185,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26083257d4195244fa3980f3cbd8bc06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  voidEventSO: {fileID: 11400000, guid: 779e018520443bd428765897735b9a8a, type: 2}
+  CinemaShakeEventSO: {fileID: 11400000, guid: 779e018520443bd428765897735b9a8a, type: 2}
+--- !u!114 &-7779662927379920634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317321580502127193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ea718ec0f6442f4488b90855487d40a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  returnFootballEventSO: {fileID: 11400000, guid: a017de5da615d1c49a0a12c1e723c5ef,
+    type: 2}
+  missLayer:
+    serializedVersion: 2
+    m_Bits: 256

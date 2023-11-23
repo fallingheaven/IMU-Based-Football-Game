@@ -1,11 +1,12 @@
 using TMPro;
 using UnityEngine;
 
+// 算是单例模式
 public class Score : MonoBehaviour
 {
     public FloatEventSO scoreChangeEventSO;
     public float score;
-    private TextMeshProUGUI _scoreInfo;
+    private TextMeshProUGUI _scoreInfo;// 用于更新分数板
     [Header("事件监听")]
     public FloatEventSO updateScoreEventSO;
     

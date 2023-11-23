@@ -3,26 +3,29 @@ using Random = UnityEngine.Random;
 
 public class CinemaShakeManager : MonoBehaviour
 {
-    public VoidEventSO voidEventSO;
-    private Vector3 _originalPosition;
-    private Quaternion _originalRotation;
+    [Header("事件监听")]
+    public VoidEventSO CameraShakeEventSO;
     
-    private float _seed;
-    private float _trauma = 0;
-    private float _frequency = 15;
-    private Vector3 _maximumTranslationShake = Vector3.one * 0.5f;
-    private Vector3 _maximumAngularShake = Vector3.one * 2;
-    private float _traumaExponent = 2;
-    private float _recoverySpeed = 1.0f;
-    private float _maximumStress = 0.4f;
+    private Vector3 _originalPosition; // 摄像机初始位置， 用于恢复
+    private Quaternion _originalRotation; // 摄像机初始角度，用于恢复
+
+    private float _seed; // 震动随机种子
+    private float _trauma = 0; // 当前抖动力度
+    private float _maximumStress = 0.4f; // 最大抖动力度
+    private float _frequency = 15; // 抖动频率
+    private Vector3 _maximumTranslationShake = Vector3.one * 0.5f; // 最大位移抖动
+    private Vector3 _maximumAngularShake = Vector3.one * 2; // 醉倒角度抖动
+    private float _traumaExponent = 2; // 二次方衰减指数
+    private float _recoverySpeed = 1.0f; // 恢复速度（系数）
+    
     private void OnEnable()
     {
-        voidEventSO.onEventRaised += ShakeCinema;
+        CameraShakeEventSO.onEventRaised += ShakeCinema;
     }
 
     private void OnDisable()
     {
-        voidEventSO.onEventRaised -= ShakeCinema;
+        CameraShakeEventSO.onEventRaised -= ShakeCinema;
     }
 
     private void Awake()

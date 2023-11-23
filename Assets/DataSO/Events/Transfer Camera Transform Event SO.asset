@@ -9,13 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edd23825ce76e9b47af992476f83f260, type: 3}
-  m_Name: MainMenu
+  m_Script: {fileID: 11500000, guid: 19129b0fe55c3a744bcd1c50507311df, type: 3}
+  m_Name: Transfer Camera Transform Event SO
   m_EditorClassIdentifier: 
-  sceneType: 1
-  sceneReference:
-    m_AssetGUID: b9b24cb7f2ecd7d4287df602fde51d09
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
-  initialPosition: {x: -3, y: 1, z: 0}

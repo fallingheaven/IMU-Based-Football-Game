@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class CinemaShake : MonoBehaviour
 {
-    public VoidEventSO voidEventSO;
+    public VoidEventSO CinemaShakeEventSO;
 
     public void Shake()
     {
-        voidEventSO.RaiseEvent();
+        CinemaShakeEventSO.RaiseEvent();
     }
 }

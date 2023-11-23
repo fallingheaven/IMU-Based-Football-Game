@@ -30,7 +30,7 @@ public class AudioDefinition : MonoBehaviour
 
     public void PlayAudio()
     {
-        if (audioClip.Length > 1)
+        if (audioClip.Length > 1)// 不只一个音效选择
         {
             var kind = new System.Random().Next(0, audioClip.Length);
             playAudioEventSO.RaiseEvent(audioClip[kind]);

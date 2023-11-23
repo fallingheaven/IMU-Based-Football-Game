@@ -1,15 +1,16 @@
 using UnityEngine;
 
+// 发球器
 public class ServeFootball : MonoBehaviour
 {
-    public float serveTimeGap;
-    private float _currentTimeGap;
-    public bool serving;
+    public float serveTimeGap; // 发球间隔
+    private float _currentTimeGap; // 当前间隔剩余
+    public bool serving; // 发球状态
     private CharacterPool _characterPool;
 
-    public Vector3 initPosition;
-    public Vector3 serveVelocity;
-    public float absoluteVelocity;
+    public Vector3 initPosition; // 发球位置
+    public Vector3 serveVelocity; // 发球速度矢量
+    public float absoluteVelocity; // 发球速度大小
     public GameObject player;
 
     private void Start()
@@ -19,6 +20,7 @@ public class ServeFootball : MonoBehaviour
         SetServeVelocity();
     }
 
+    // 用于将球准确地踢到player判定区域里
     private void SetServeVelocity()
     {
         var playerPosition = player.transform.position;
@@ -28,7 +30,6 @@ public class ServeFootball : MonoBehaviour
         var estimatedTime = (playerPosition.x - initPosition.x) / serveVelocity.x;
 
         serveVelocity.y = 9.81f * estimatedTime / 2 + 0.5f;
-        // serveVelocity.x += 0.8f;
     }
 
     private void FixedUpdate()
@@ -47,12 +48,10 @@ public class ServeFootball : MonoBehaviour
             }
             case true when _currentTimeGap <= 0:
             {
-                var football = _characterPool.GetCharacterFromPool();
-                if (football == null)
-                {
-                    break;
-                }
+                if (_characterPool.availableNum <= 0) break;
                 
+                // 取一个可用的球发射出去
+                var football = _characterPool.GetCharacterFromPool();
                 football.transform.position = initPosition;
                 football.GetComponent<ShootFootball>().hit = false;
                 Serve(football);
@@ -64,7 +63,7 @@ public class ServeFootball : MonoBehaviour
         }
     }
     
-
+    // 发射
     private void Serve(GameObject football)
     {
         var _rigidbody = football.GetComponent<Rigidbody>();

@@ -15,7 +15,7 @@ public class UnityPythonCommunication : MonoBehaviour
         private TcpClient _client;
         private NetworkStream _stream;
         private readonly byte[] _receiveBuffer = new byte[1024];
-        private static readonly int[] DataLength = new int[3] { 8, 3, 4 };
+        private static readonly int[] DataLength = new int[] { 8, 3, 4 };
         
         // 用于计算加速度瞬时差值来判断踢球
         private Vector3 _previousAcc;
@@ -24,7 +24,6 @@ public class UnityPythonCommunication : MonoBehaviour
         private float[] _acc = new float[4];
     
         [Header("事件")]
-        // public UnityEvent shoot; // 执行射门
         public VoidEventSO imuKickEventSO;
         
     #endregion
@@ -32,6 +31,7 @@ public class UnityPythonCommunication : MonoBehaviour
     // 启动python程序，接收IMU数据
     public void StartPythonScript()
     {
+        Debug.Log("开始连接");
         // 指定 Python 脚本的路径，替换为你的 Python 脚本的实际路径
         var pythonPath = Path.Combine("Assets", "Scripts", "DataProcessing", "main.py");
 
@@ -70,7 +70,7 @@ public class UnityPythonCommunication : MonoBehaviour
     {
         _client = new TcpClient(ipAddress, port);
         _stream = _client.GetStream();
-
+        
         // 启动数据接收
         StartCoroutine(ReceiveDataCoroutine());
     }
@@ -84,7 +84,7 @@ public class UnityPythonCommunication : MonoBehaviour
             // 数据是否可读
             if (!_stream.CanRead)
             {
-                Debug.Log("错误数据");
+                // Debug.Log("错误数据");
                 continue;
             }
             
@@ -180,6 +180,7 @@ public class UnityPythonCommunication : MonoBehaviour
         return true;
     }
 
+    // 重置IMU初始姿态
     public void Resetimu()
     {
         var quaternion = new Quaternion(_quat[0], _quat[1], _quat[2], _quat[3]);

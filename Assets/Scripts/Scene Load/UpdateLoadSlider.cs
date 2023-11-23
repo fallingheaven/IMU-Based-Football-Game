@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+// 用于实现加载条不断增长的效果
 public class UpdateLoadSlider : MonoBehaviour
 {
     public Slider slider;

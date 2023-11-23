@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource FXSource;
     public AudioSource BGMSource;
 
+    // 固定写法
     public void OnEnable()
     {
         FXEvent.onEventRaised += OnFXEvent;
@@ -21,12 +22,14 @@ public class AudioManager : MonoBehaviour
         BGMEvent.onEventRaised -= OnBGMEvent;
     }
 
+    // 替换BGM并播放
     private void OnBGMEvent(AudioClip audioClip)
     {
         BGMSource.clip = audioClip;
         BGMSource.Play();
     }
 
+    // 替换音效并播放
     private void OnFXEvent(AudioClip audioClip)
     {
         FXSource.clip = audioClip;
