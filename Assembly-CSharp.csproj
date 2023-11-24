@@ -49,8 +49,10 @@
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_LightIntensityFade.cs" />
      <Compile Include="Assets\Scripts\SO\TransformEventSO.cs" />
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_Translate.cs" />
+     <Compile Include="Assets\Scripts\Score\Score.cs" />
      <Compile Include="Assets\Scripts\Goal\Score Goal.cs" />
      <Compile Include="Assets\Scripts\Goal\IFootballChecker.cs" />
+     <Compile Include="Assets\Scripts\Score\GoldCoin.cs" />
      <Compile Include="Assets\Scripts\Camera\CinemaShake.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
      <Compile Include="Assets\Scripts\Scene Load\UpdateLoadSlider.cs" />
@@ -76,7 +78,6 @@
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutoDestructShuriken.cs" />
      <Compile Include="Assets\Scripts\SO\SceneLoadEventSO.cs" />
      <Compile Include="Assets\Scripts\SO\GameSceneSO.cs" />
-     <Compile Include="Assets\Scripts\Utilities\Score.cs" />
      <Compile Include="Assets\Scripts\Football\KickCheck.cs" />
      <Compile Include="Assets\Scripts\SO\GameObjectEventSO.cs" />
      <Compile Include="Assets\Scripts\DataProcessing\SetIMUInitialQuaternion.cs" />
@@ -241,6 +242,7 @@
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets\Graphics" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Textures" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+     <Folder Include="Assets\Scripts\Score" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Materials\Electric" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne.json" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />

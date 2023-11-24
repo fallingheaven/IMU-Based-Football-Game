@@ -6,44 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="73c0f8d9-6576-43d8-8e0e-1fe1c216e982" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.IMU-Based-Football-Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.IMU-Based-Football-Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Scenes.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Scenes.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DataSO/GameScene/MainMenu.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DataSO/GameScene/MainMenu.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Football.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Football.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Score Goal.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Score Goal.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Teleport Goal.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Teleport Goal.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Persistent.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Persistent.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SoccerField.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SoccerField.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Audio/AudioDefinition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/AudioDefinition.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Audio/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/AudioManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/CinemaShake.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/CinemaShake.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/CinemaShakeManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/CinemaShakeManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataProcessing/SetIMUInitialQuaternion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataProcessing/SetIMUInitialQuaternion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataProcessing/UnityPythonCommunication.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataProcessing/UnityPythonCommunication.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataProcessing/UpdateRotation.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataProcessing/UpdateRotation.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataProcessing/UpdateVelocity.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataProcessing/UpdateVelocity.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataProcessing/UpdateYRotation.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataProcessing/UpdateYRotation.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Football/CharacterPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Football/CharacterPool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Football/KickCheck.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Football/KickCheck.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Football/PhysicsCheck.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Football/PhysicsCheck.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Football/ServeFootball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Football/ServeFootball.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Football/ShootFootball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Football/ShootFootball.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SO/SceneLoadEventSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SO/SceneLoadEventSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scene Load/SceneLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scene Load/SceneLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scene Load/Teleport.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scene Load/Teleport.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TimeCounter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TimeCounter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UpdateLoadSlider.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UpdateLoadSlider.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/Enums.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/Enums.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/QuaternionExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/QuaternionExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/Score.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/Score.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/SetActive.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/SetActive.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/Score.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/Score.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +26,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/72/8d4688de/Single.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/655570467a334bb384e367c156617d53171e00/04/fbec6fc8/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/655570467a334bb384e367c156617d53171e00/08/35374893/Random.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/655570467a334bb384e367c156617d53171e00/23/5f06d577/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/655570467a334bb384e367c156617d53171e00/79/9ecdb37e/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/655570467a334bb384e367c156617d53171e00/fe/8a5ec6df/LayerMask.cs" root0="SKIP_HIGHLIGHTING" />
@@ -243,6 +214,7 @@
       <workItem from="1700649965027" duration="8265000" />
       <workItem from="1700732392809" duration="3095000" />
       <workItem from="1700750275310" duration="2768000" />
+      <workItem from="1700817827240" duration="3332000" />
     </task>
     <servers />
   </component>

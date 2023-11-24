@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7098,7 +7098,6 @@ MonoBehaviour:
   mainMenu: {fileID: 11400000, guid: 8a61114af641f2547b7bc57c01fa5c45, type: 2}
   fadeDuration: 0
   player: {fileID: 1098463930}
-  slier: {fileID: 1710642024}
   updateLoadSlider: {fileID: 1661029047}
   loadSceneSlider: {fileID: 1661029042}
 --- !u!4 &1856549578
