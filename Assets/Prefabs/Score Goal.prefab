@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6695534230926417486}
   - component: {fileID: 4850370761672831014}
   - component: {fileID: 6233080572113490544}
+  - component: {fileID: 1491481068052059748}
   m_Layer: 0
   m_Name: Gold Coin
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 341232010835666372}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.54, z: 58}
+  m_LocalPosition: {x: 0, y: 5, z: 58}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -128,6 +129,27 @@ MonoBehaviour:
   leftTopPoint: {x: -8.5, y: 2.5, z: 0}
   rightBottomPoint: {x: 8.5, y: -2.5, z: 0}
   center: {x: 0, y: 4.54, z: 58}
+--- !u!95 &1491481068052059748
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341232010835666372}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 29ede83fe21c1534dac3d05985e7993f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4619964967430443601
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -29,8 +28,8 @@ public class GoldCoin : MonoBehaviour
         transform.position = new Vector3(Random.Range(center.x + leftTopPoint.x, center.x + rightBottomPoint.x),
                                          Random.Range(center.y + leftTopPoint.y, center.y + rightBottomPoint.y),
                                          Random.Range(center.z + leftTopPoint.z, center.z + rightBottomPoint.z));
-        Debug.Log(transform.position);
-        Debug.Log("重置位置");
+        // Debug.Log(transform.position);
+        // Debug.Log("重置金币位置");
     }
 
     private void OnDrawGizmos()

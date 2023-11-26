@@ -218,6 +218,7 @@
      <None Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Shaders\CFXM_MobileParticleAdd_Alpha8.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
      <Folder Include="Assets\Materials\Soccer Field With Field Texture Big.fbm" />
+     <Folder Include="Assets\Animations\LoadScene" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX4 Prefabs\Water" />
      <Folder Include="Assets\AddressableAssetsData\AssetGroupTemplates" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX3 Prefabs\Fire" />
@@ -225,6 +226,7 @@
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Materials\Symbols" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Sword Trails" />
+     <Folder Include="Assets\Animations" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX2 Prefabs\Water" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX2 Prefabs\Pickup Items" />

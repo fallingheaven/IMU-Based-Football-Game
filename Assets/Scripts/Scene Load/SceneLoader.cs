@@ -1,32 +1,37 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
 
 public class SceneLoader : MonoBehaviour
 {
     [Header("事件监听")] 
-    public SceneLoadEventSO sceneLoadEventSO;
-    public GameSceneSO mainMenu; // 一开始要显示的主菜单
+        
+        public SceneLoadEventSO sceneLoadEventSO;
+        public GameSceneSO mainMenu; // 一开始要显示的主菜单
 
-    [Header("场景加载")]
-    private GameSceneSO _currentScene; // 当前的场景
-    private GameSceneSO _sceneToLoad; // 要加载的场景
-    private bool _fadeScreen; // 是否淡入淡出（还没做）
-    public float fadeDuration; // 淡入淡出持续时间
-    public GameObject player;
-
-    [Header("加载界面")]
-    public UpdateLoadSlider updateLoadSlider; // 加载的条
-    public GameObject loadSceneSlider;
-
+        [Header("场景加载")] 
+        public Animator transition;
+        public float fadeDuration; // 淡入淡出持续时间
+        public GameObject player;
+        private GameSceneSO _currentScene; // 当前的场景
+        private GameSceneSO _sceneToLoad; // 要加载的场景
+        private bool _fadeScreen; // 是否淡入淡出（还没做）
+        
+        private AsyncOperationHandle<SceneInstance> _loadHandle;
+    
+    [Header("加载界面")] 
+    
+        public UpdateLoadSlider updateLoadSlider; // 加载的条
+        public GameObject loadSceneSlider;
+        
     private void Awake()
     {
         // 场景初始化加载主菜单
         _currentScene = mainMenu;
-        mainMenu.sceneReference.LoadSceneAsync(LoadSceneMode.Additive, true);
+        _loadHandle = mainMenu.sceneReference.LoadSceneAsync(LoadSceneMode.Additive, true);
         player.transform.position = mainMenu.initialPosition;
     }
 
@@ -57,65 +62,69 @@ public class SceneLoader : MonoBehaviour
     {
         if (_fadeScreen)
         {
-            //TODO: 场景渐入渐出
+            transition.SetTrigger("Start");
         }
-
+        
         yield return new WaitForSeconds(fadeDuration);
         
-        yield return _currentScene.sceneReference.UnLoadScene();
+        loadSceneSlider.SetActive(true);
+        yield return Addressables.UnloadSceneAsync(_loadHandle);
+        // yield return _currentScene.sceneReference.UnLoadScene();
         
         // 本来想做先加载场景，等进度条满了再激活场景，但不知为何如果写了false，就加载不成功了，只好写true了
-        var operation = _sceneToLoad.sceneReference.LoadSceneAsync(LoadSceneMode.Additive, true);
+        // 后注：完成了！
+        _loadHandle = _sceneToLoad.sceneReference.LoadSceneAsync(LoadSceneMode.Additive, false);
 
-        SceneManager.sceneLoaded += OnSceneLoaded;
-            
-        StartCoroutine(StartLoadSceneSlider(operation));
+        // _loadHandle.Completed += OnSceneLoaded;
+        // SceneManager.sceneLoaded += OnSceneLoaded;
+
+        StartCoroutine(StartLoadSceneSlider(_loadHandle));
     }
-
-    // 加载完成场景后关闭加载条，设置玩家初始位置
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        // if (scene.name != _sceneToLoad.sceneReference.editorAsset.name) return;
-        // Debug.Log("加载完成");
-        
-        // 取消订阅事件，以防止多次调用
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-
-        // 激活加载的场景
-        SetSceneActive(scene.name);
-
-        // 隐藏加载界面
-        loadSceneSlider.SetActive(false);
-
-        player.transform.position = _sceneToLoad.initialPosition;
-    }
-
-    private void SetSceneActive(string sceneName)
-    {
-        // Debug.Log(sceneName);
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneName));
-    }
+    
 
     // 加载进度条
-    private IEnumerator StartLoadSceneSlider(AsyncOperationHandle<SceneInstance> operation)
+    private IEnumerator StartLoadSceneSlider(AsyncOperationHandle<SceneInstance> loadHandle)
     {
         // Debug.Log("开始加载场景");
-        loadSceneSlider.SetActive(true);
         
-        while (!operation.IsDone)
+        while (!loadHandle.IsDone)
         {
-            updateLoadSlider.SetValue(operation.PercentComplete);
-            // Debug.Log(operation.PercentComplete);
+            updateLoadSlider.SetValue(loadHandle.PercentComplete);
+            // Debug.Log(loadHandle.PercentComplete);
         
             yield return null;
         }
         
         updateLoadSlider.SetValue(1f);
-        // while (slider.value < 1f)
-        // {
-        //     Debug.Log(slider.value);
-        //     // if(slider.value >= 1f) yield break;
-        //     yield return null;
-        // }
+        while (updateLoadSlider.slider.value < 1f)
+        {
+            yield return null;
+        }
+
+        StartCoroutine(OnSceneLoaded(_loadHandle));
+        // OnSceneLoaded(loadHandle);
     }
+    
+    // 加载完成场景后关闭加载条，设置玩家初始位置
+    private IEnumerator OnSceneLoaded(AsyncOperationHandle<SceneInstance> handle)
+     {
+         transition.SetTrigger("End");
+         // if (scene.name != _sceneToLoad.sceneReference.editorAsset.name) return;
+         // Debug.Log("加载完成");
+         
+         // 取消订阅事件，以防止多次调用
+         // handle.Completed -= OnSceneLoaded;
+         // SceneManager.sceneLoaded -= OnSceneLoaded;
+ 
+         // 激活加载的场景
+         _loadHandle.Result.ActivateAsync();
+         // SetSceneActive(scene.name);
+ 
+         // 隐藏加载界面
+         loadSceneSlider.SetActive(false);
+ 
+         player.transform.position = _sceneToLoad.initialPosition;
+
+         yield return null;
+     }
 }

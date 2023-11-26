@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 // 得分判定球门
@@ -18,6 +19,14 @@ public class ScoreGoal : MonoBehaviour, IFootballChecker
         if (col.gameObject.layer != footballLayer) return;
         
         updateScoreEventSO.RaiseEvent(addedScore);
-        returnFootballEventSO.RaiseEvent(col.gameObject);
+
+        StartCoroutine(ReturnFootball(col.gameObject));
+    }
+
+    private IEnumerator ReturnFootball(GameObject football)
+    {
+        yield return new WaitForSeconds(0.75f);
+        
+        returnFootballEventSO.RaiseEvent(football);
     }
 }
