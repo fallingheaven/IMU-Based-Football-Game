@@ -6,17 +6,21 @@ public class KickCheck : MonoBehaviour
     public LayerMask checkedLayer; // 检测的图层，这里是足球图层
     private List<GameObject> _colliders = new List<GameObject>();
     public ParticleSystem kickParticle; // 特效粒子
+    
     [Header("事件监听")] 
     public VoidEventSO imuKickEventSO;
+    public VoidEventSO clearColliderEventSO;
 
     private void OnEnable()
     {
         imuKickEventSO.onEventRaised += Kick;
+        clearColliderEventSO.onEventRaised += ClearCollider;
     }
 
     private void OnDisable()
     {
         imuKickEventSO.onEventRaised -= Kick;
+        clearColliderEventSO.onEventRaised -= ClearCollider;
     }
 
     private void Start()
@@ -43,6 +47,7 @@ public class KickCheck : MonoBehaviour
     // 把数组中所有的球都踢出去
     private void Kick()
     {
+        Debug.Log(_colliders.Count);
         // Debug.Log("Shoot!");
         if (_colliders is not { Count: > 0 })
         {
@@ -55,5 +60,10 @@ public class KickCheck : MonoBehaviour
         {
             football.gameObject.GetComponent<ShootFootball>().Shoot();
         }
+    }
+
+    private void ClearCollider()
+    {
+        _colliders.Clear();
     }
 }

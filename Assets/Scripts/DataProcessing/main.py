@@ -50,11 +50,11 @@ class ble_server():
         self.fps_data = []
         self.data_buffer = []
 
-        [self.v_x, self.v_y, self.v_z] = [0, 0, 0]
+        # [self.v_x, self.v_y, self.v_z] = [0, 0, 0]
         # self.current_time = float(0)
         # self.last_time = float(0)
-        [self.offset_v_x, self.offset_v_y, self.offset_v_z] = [0, 0, 0]
-        [self.last_acc_x, self.last_acc_y, self.last_acc_z] = [0, 0, 0]
+        # [self.offset_v_x, self.offset_v_y, self.offset_v_z] = [0, 0, 0]
+        # [self.last_acc_x, self.last_acc_y, self.last_acc_z] = [0, 0, 0]
 
         self.target_server = target
 
@@ -142,12 +142,6 @@ class ble_server():
         real_acc = np.dot(p_inv, np.array([[acc_x],
                                            [acc_y],
                                            [acc_z]]))
-        # if real_acc[2] > 100:
-        #     [self.offset_v_x, self.offset_v_y, self.offset_v_z] = [real_acc[0][0], real_acc[1][0], real_acc[2][0]]
-        #     print([self.offset_v_x, self.offset_v_y, self.offset_v_z])
-        #
-        # real_acc -= [[self.offset_v_x], [self.offset_v_y], [self.offset_v_z]]
-        #  print(real_acc)
         # 向unity传输数据
         if self.target_server:
             data_to_send = f"S, {real_acc[0][0]:.5f}, {real_acc[1][0]:.5f}, {real_acc[2][0]:.5f}, {quat_x}, {quat_y}, {quat_z}, {quat_w}, "

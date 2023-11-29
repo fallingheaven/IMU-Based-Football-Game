@@ -12,7 +12,7 @@ public class SceneLoader : MonoBehaviour
         public SceneLoadEventSO sceneLoadEventSO;
         public GameSceneSO mainMenu; // 一开始要显示的主菜单
 
-        [Header("场景加载")] 
+    [Header("场景加载")] 
         public Animator transition;
         public float fadeDuration; // 淡入淡出持续时间
         public GameObject player;
@@ -21,6 +21,8 @@ public class SceneLoader : MonoBehaviour
         private bool _fadeScreen; // 是否淡入淡出（还没做）
         
         private AsyncOperationHandle<SceneInstance> _loadHandle;
+
+        public VoidEventSO clearColliderEventSO; // 在场景加载完才能再清空判定区
     
     [Header("加载界面")] 
     
@@ -124,6 +126,8 @@ public class SceneLoader : MonoBehaviour
          loadSceneSlider.SetActive(false);
  
          player.transform.position = _sceneToLoad.initialPosition;
+         
+         clearColliderEventSO.RaiseEvent();
 
          yield return null;
      }

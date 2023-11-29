@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RandomDir.cs" />
+     <Compile Include="Assets\Scripts\Utilities\PlayerRealWorldDirection.cs" />
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_LightIntensityFade.cs" />
      <Compile Include="Assets\Scripts\SO\TransformEventSO.cs" />
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_Translate.cs" />
@@ -93,6 +94,7 @@
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutoRotate.cs" />
      <Compile Include="Assets\Scripts\Utilities\ExtensionFunctions.cs" />
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
+     <Compile Include="Assets\SetPlayerRealWorldDirection.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\DataSO\Events" />
      <Folder Include="Assets\AddressableAssetsData\AssetGroups\Schemas" />
@@ -162,6 +164,7 @@
      <Folder Include="Assets\DataSO" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets" />
+     <Folder Include="Assets\Animations\Gold Coin" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Sword Trails\Plain" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Materials\Stretched" />
      <Folder Include="Assets\Prefabs" />
@@ -170,6 +173,7 @@
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Materials\Misc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+     <Folder Include="Assets\Art Asset\Image" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Eerie" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX3 Prefabs\Magic Misc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -212,6 +216,7 @@
      <Folder Include="Assets\Scripts\Goal" />
      <Folder Include="Assets\Scripts\SO" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Electric" />
+     <Folder Include="Assets\Art Asset" />
      <Folder Include="Assets\Audio\CasualGameSounds" />
      <Folder Include="Assets\Scenes" />
      <Folder Include="Assets\AddressableAssetsData\AssetGroups" />
