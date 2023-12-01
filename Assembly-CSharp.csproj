@@ -50,7 +50,6 @@
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_LightIntensityFade.cs" />
      <Compile Include="Assets\Scripts\SO\TransformEventSO.cs" />
      <Compile Include="Assets\Scripts\Utilities\Wind.cs" />
-     <Compile Include="Assets\PauseMenu.cs" />
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_Translate.cs" />
      <Compile Include="Assets\Animations\Dotween UI Animator\DOTween\Modules\DOTweenModulePhysics2D.cs" />
      <Compile Include="Assets\Scripts\Score\Score.cs" />
@@ -83,7 +82,6 @@
      <Compile Include="Assets\Scripts\SO\QuatEventSO.cs" />
      <Compile Include="Assets\Scripts\Football\SetStableFootball.cs" />
      <Compile Include="Assets\Scripts\DataProcessing\UnityPythonCommunication.cs" />
-     <Compile Include="Assets\OpenDropDown.cs" />
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutoDestructShuriken.cs" />
      <Compile Include="Assets\Scripts\SO\SceneLoadEventSO.cs" />
      <Compile Include="Assets\Scripts\SO\GameSceneSO.cs" />
@@ -99,6 +97,7 @@
      <Compile Include="Assets\Scripts\Football\ServeFootball.cs" />
      <Compile Include="Assets\Scripts\Utilities\Enums.cs" />
      <Compile Include="Assets\Scripts\Utilities\TransferCameraTransform.cs" />
+     <Compile Include="Assets\Scripts\UI\OpenDropDown.cs" />
      <Compile Include="Assets\Animations\Dotween UI Animator\DOTween\Modules\DOTweenModuleAudio.cs" />
      <Compile Include="Assets\Animations\Dotween UI Animator\DOTween\Modules\DOTweenModuleEPOOutline.cs" />
      <Compile Include="Assets\Scripts\SO\FloatEventSO.cs" />
@@ -162,6 +161,7 @@
      <Folder Include="Assets\Art Assets\UI" />
      <Folder Include="Assets\Art Assets\UI\Extra Clean UI\DemoScene" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX2 Prefabs" />
+     <Folder Include="Assets\Scripts\UI" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Materials\Fire" />
      <Folder Include="Assets\Resources" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX3 Prefabs\Light" />
@@ -258,6 +258,7 @@
      <Folder Include="Assets\Animations\LoadScene" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX4 Prefabs\Water" />
      <Folder Include="Assets\AddressableAssetsData\AssetGroupTemplates" />
+     <Folder Include="Assets\Animations\UI" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX3 Prefabs\Fire" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX3 Prefabs\Electric" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Materials\Symbols" />
