@@ -924,9 +924,6 @@
      <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
      </Reference>
-     <Reference Include="Coffee.UIParticle">
-     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Coffee.UIParticle.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.RenderPipelines.Core.Runtime">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
      </Reference>

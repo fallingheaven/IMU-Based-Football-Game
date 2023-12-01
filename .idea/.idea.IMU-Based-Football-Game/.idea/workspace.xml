@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73c0f8d9-6576-43d8-8e0e-1fe1c216e982" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.IMU-Based-Football-Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.IMU-Based-Football-Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/UI/Extra Clean UI/DemoScene/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/UI/Extra Clean UI/DemoScene/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/Close Button.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/Close Button.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/Pause button.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/Pause button.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Persistent.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Persistent.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -229,7 +228,7 @@
       <workItem from="1701271494840" duration="1286000" />
       <workItem from="1701274130409" duration="945000" />
       <workItem from="1701338770791" duration="4804000" />
-      <workItem from="1701399491696" duration="6479000" />
+      <workItem from="1701399491696" duration="7242000" />
     </task>
     <servers />
   </component>
