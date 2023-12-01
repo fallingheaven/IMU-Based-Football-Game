@@ -47,7 +47,7 @@ public class KickCheck : MonoBehaviour
     // 把数组中所有的球都踢出去
     private void Kick()
     {
-        Debug.Log(_colliders.Count);
+        // Debug.Log(_colliders.Count);
         // Debug.Log("Shoot!");
         if (_colliders is not { Count: > 0 })
         {

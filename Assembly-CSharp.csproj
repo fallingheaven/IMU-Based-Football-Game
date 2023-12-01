@@ -49,7 +49,10 @@
      <Compile Include="Assets\Scripts\Utilities\PlayerRealWorldDirection.cs" />
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_LightIntensityFade.cs" />
      <Compile Include="Assets\Scripts\SO\TransformEventSO.cs" />
+     <Compile Include="Assets\Scripts\Utilities\Wind.cs" />
+     <Compile Include="Assets\PauseMenu.cs" />
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_Translate.cs" />
+     <Compile Include="Assets\Animations\Dotween UI Animator\DOTween\Modules\DOTweenModulePhysics2D.cs" />
      <Compile Include="Assets\Scripts\Score\Score.cs" />
      <Compile Include="Assets\Scripts\Goal\Score Goal.cs" />
      <Compile Include="Assets\Scripts\Goal\IFootballChecker.cs" />
@@ -60,6 +63,9 @@
      <Compile Include="Assets\Scripts\Football\ShootFootball.cs" />
      <Compile Include="Assets\Scripts\Scene Load\SceneLoader.cs" />
      <Compile Include="Assets\Scripts\SO\VoidEventSO.cs" />
+     <Compile Include="Assets\Scripts\Utilities\SetPlayerRealWorldDirection.cs" />
+     <Compile Include="Assets\Animations\Dotween UI Animator\DOTween\Modules\DOTweenModuleSprite.cs" />
+     <Compile Include="Assets\Scripts\SO\WindSO.cs" />
      <Compile Include="Assets\Scripts\TimeCounter.cs" />
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RotateCamera.cs" />
      <Compile Include="Assets\Scripts\Goal\Miss Goal.cs" />
@@ -71,11 +77,13 @@
      <Compile Include="Assets\Scripts\SO\PlayAudioEventSO.cs" />
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_LightFlicker.cs" />
      <Compile Include="Assets\Scripts\Utilities\SetActive.cs" />
+     <Compile Include="Assets\Scripts\Utilities\WindChange.cs" />
      <Compile Include="Assets\Scripts\Audio\AudioDefinition.cs" />
      <Compile Include="Assets\Scripts\Scene Load\Teleport.cs" />
      <Compile Include="Assets\Scripts\SO\QuatEventSO.cs" />
      <Compile Include="Assets\Scripts\Football\SetStableFootball.cs" />
      <Compile Include="Assets\Scripts\DataProcessing\UnityPythonCommunication.cs" />
+     <Compile Include="Assets\OpenDropDown.cs" />
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutoDestructShuriken.cs" />
      <Compile Include="Assets\Scripts\SO\SceneLoadEventSO.cs" />
      <Compile Include="Assets\Scripts\SO\GameSceneSO.cs" />
@@ -87,14 +95,19 @@
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Football\CharacterPool.cs" />
      <Compile Include="Assets\Scripts\Goal\Teleport Goal.cs" />
+     <Compile Include="Assets\Animations\Dotween UI Animator\DOTween\Modules\DOTweenModulePhysics.cs" />
      <Compile Include="Assets\Scripts\Football\ServeFootball.cs" />
      <Compile Include="Assets\Scripts\Utilities\Enums.cs" />
      <Compile Include="Assets\Scripts\Utilities\TransferCameraTransform.cs" />
+     <Compile Include="Assets\Animations\Dotween UI Animator\DOTween\Modules\DOTweenModuleAudio.cs" />
+     <Compile Include="Assets\Animations\Dotween UI Animator\DOTween\Modules\DOTweenModuleEPOOutline.cs" />
      <Compile Include="Assets\Scripts\SO\FloatEventSO.cs" />
+     <Compile Include="Assets\Animations\Dotween UI Animator\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutoRotate.cs" />
      <Compile Include="Assets\Scripts\Utilities\ExtensionFunctions.cs" />
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
-     <Compile Include="Assets\SetPlayerRealWorldDirection.cs" />
+     <Compile Include="Assets\Animations\Dotween UI Animator\DOTween\Modules\DOTweenModuleUI.cs" />
+     <Compile Include="Assets\Animations\Dotween UI Animator\DOTween\Modules\DOTweenModuleUtils.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\DataSO\Events" />
      <Folder Include="Assets\AddressableAssetsData\AssetGroups\Schemas" />
@@ -109,6 +122,8 @@
      <None Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Shaders\CFX3 Multiply Color.shader" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Sword Trails\Ice" />
      <Folder Include="Assets\Audio\KickFootball" />
+     <None Include="Assets\Art Assets\UI\Extra Clean UI\Fonts\HowToInstall.txt" />
+     <Folder Include="Assets\Animations\Dotween UI Animator\DOTween\Modules" />
      <Folder Include="Assets\TextMesh Pro\Resources\Sprite Assets" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets\Misc" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX Prefabs\Electric" />
@@ -120,11 +135,13 @@
      <None Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR_SETTINGS.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Scripts" />
+     <Folder Include="Assets\Art Assets\UI\Belevich\2D Casual Game UI HD" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX4 Prefabs\Misc" />
      <None Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CartoonFX Free.txt" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Sword Trails\Fire" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Materials\Light" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX2 Prefabs\Electric" />
+     <Folder Include="Assets\Art Assets\UI\Belevich\2D Casual Game UI HD\Scenes" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Nature" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Liquids" />
      <Folder Include="Assets\TextMesh Pro\Resources\Fonts &amp; Materials" />
@@ -141,18 +158,24 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX4 Prefabs\Fire" />
      <Folder Include="Assets\TextMesh Pro\Resources" />
-     <Folder Include="Assets\Model\SoccerFieldMaterials" />
+     <Folder Include="Assets\Art Assets\Model\SoccerFieldMaterials" />
+     <Folder Include="Assets\Art Assets\UI" />
+     <Folder Include="Assets\Art Assets\UI\Extra Clean UI\DemoScene" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX2 Prefabs" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Materials\Fire" />
+     <Folder Include="Assets\Resources" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX3 Prefabs\Light" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX Prefabs\Explosions" />
+     <Folder Include="Assets\DataSO\Props" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX Prefabs\Hits" />
      <None Include="Assets\Audio\CasualGameBGM05\ReadMe.txt" />
+     <Folder Include="Assets\Art Assets\UI\Belevich\2D Casual Game UI HD\Sprite" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Materials\Animated" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster" />
+     <Folder Include="Assets\Art Assets\UI\White Black GUI\Black Icons" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Fire" />
-     <Folder Include="Assets\Model" />
+     <Folder Include="Assets\Art Assets\Model" />
      <None Include="Assets\TextMesh Pro\Fonts\7000汉字+符号+英文字符集.txt" />
      <Folder Include="Assets\TextMesh Pro" />
      <Folder Include="Assets\Scripts\Scene Load" />
@@ -162,6 +185,7 @@
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets\Meshes" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX2 Prefabs\Misc" />
      <Folder Include="Assets\DataSO" />
+     <Folder Include="Assets\Art Assets\UI\resource_default" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets" />
      <Folder Include="Assets\Animations\Gold Coin" />
@@ -170,10 +194,11 @@
      <Folder Include="Assets\Prefabs" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Materials\Blood" />
      <Folder Include="Assets\FX\JMO Assets" />
+     <None Include="Assets\Animations\Dotween UI Animator\DOTween\readme.txt" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Materials\Misc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
-     <Folder Include="Assets\Art Asset\Image" />
+     <Folder Include="Assets\Art Assets\Image" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Eerie" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX3 Prefabs\Magic Misc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -181,6 +206,8 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
      <Folder Include="Assets\Scripts\Audio" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Light" />
+     <Folder Include="Assets\Art Assets\UI\White Black GUI\White Icons" />
+     <Folder Include="Assets\Animations\Dotween UI Animator" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Shaders" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)" />
@@ -211,17 +238,22 @@
      <Folder Include="Assets\UI Toolkit\UnityThemes" />
      <Folder Include="Assets\TutorialInfo" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+     <Folder Include="Assets\Art Assets\UI\Extra Clean UI\Fonts" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Materials" />
      <Folder Include="Assets\Settings\Input System" />
      <Folder Include="Assets\Scripts\Goal" />
      <Folder Include="Assets\Scripts\SO" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Electric" />
-     <Folder Include="Assets\Art Asset" />
+     <Folder Include="Assets\Art Assets\UI\Belevich\2D Casual Game UI HD\Original artwork" />
+     <Folder Include="Assets\Art Assets\UI\Extra Clean UI\Demo" />
+     <Folder Include="Assets\Art Assets" />
      <Folder Include="Assets\Audio\CasualGameSounds" />
      <Folder Include="Assets\Scenes" />
      <Folder Include="Assets\AddressableAssetsData\AssetGroups" />
+     <Folder Include="Assets\Art Assets\UI\Extra Clean UI" />
      <None Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Shaders\CFXM_MobileParticleAdd_Alpha8.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+     <Folder Include="Assets\Animations\Dotween UI Animator\DOTween" />
      <Folder Include="Assets\Materials\Soccer Field With Field Texture Big.fbm" />
      <Folder Include="Assets\Animations\LoadScene" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX4 Prefabs\Water" />
@@ -229,6 +261,7 @@
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX3 Prefabs\Fire" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX3 Prefabs\Electric" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Materials\Symbols" />
+     <Folder Include="Assets\Art Assets\UI\Belevich" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Sword Trails" />
      <Folder Include="Assets\Animations" />
@@ -237,8 +270,9 @@
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX2 Prefabs\Pickup Items" />
      <Folder Include="Assets\AddressableAssetsData\DataBuilders" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+     <Folder Include="Assets\Art Assets\UI\White Black GUI" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs" />
-     <Folder Include="Assets\Model\SoccerFieldMaterials\Materials" />
+     <Folder Include="Assets\Art Assets\Model\SoccerFieldMaterials\Materials" />
      <None Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR_URP.cginc" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Materials\Water" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Impacts" />
@@ -251,6 +285,7 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
      <Folder Include="Assets\Scripts\Score" />
      <Folder Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Materials\Electric" />
+     <Folder Include="Assets\Art Assets\UI\Extra Clean UI\Gimp Files" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne.json" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
      <Folder Include="Assets\Materials" />
@@ -503,6 +538,9 @@
      </Reference>
      <Reference Include="UnityEditor.UnityConnectModule">
      <HintPath>D:\unity\2022.3.3f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
+     </Reference>
+     <Reference Include="DOTween">
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Assets\Animations\Dotween UI Animator\DOTween\DOTween.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>

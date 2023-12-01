@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 
 public class ShootFootball : MonoBehaviour
@@ -14,7 +13,7 @@ public class ShootFootball : MonoBehaviour
     private UnityPythonCommunication _communication; // 和imu互通传数据的
     
     [Header("踢球参数")]
-    public bool hit = false; // 暂时没用
+    public bool hit;
     private Vector3 _hitDirection; // 踢球方向
     public float hitForce = 15f; // 踢球力度
     public float hitPauseTime; // 踢球时的时停，增加打击感
@@ -27,6 +26,9 @@ public class ShootFootball : MonoBehaviour
 
     private void OnEnable()
     {
+        
+        hit = false;
+        
         _communication = GameObject.Find("Communication").GetComponent<UnityPythonCommunication>();
         _rigidbody = GetComponent<Rigidbody>();
         _kickAudio = GetComponent<AudioDefinition>();
@@ -39,7 +41,6 @@ public class ShootFootball : MonoBehaviour
 
     private void OnDisable()
     {
-        // Debug.Log(0);
         // _trailRenderer.emitting = false;
         // _trail.Stop();
         
@@ -64,8 +65,9 @@ public class ShootFootball : MonoBehaviour
         hit = true;
         _rigidbody.velocity = Vector3.zero;
         
-        // _rigidbody.AddForce(_hitDirection.normalized * hitForce, ForceMode.Impulse);
         _rigidbody.AddForce(ModifyDirection().normalized * hitForce, ForceMode.Impulse);
+        
+        
     }
 
     // 不断更新摄像机四元数
@@ -73,7 +75,6 @@ public class ShootFootball : MonoBehaviour
     {
         _cameraQuaternion = _cameraTransform.rotation;
         ChangeShootDirection(_communication._quat);
-        // Debug.Log(_hitDirection);
     }
 
     // 打击时停

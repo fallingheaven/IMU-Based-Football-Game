@@ -2,22 +2,14 @@ using UnityEngine;
 using UnityEngine.Events;
 
 // 计时器，暂时用不上
-public class TimeCounter: MonoBehaviour
+public class TimeCounter
 {
     private TimeCounter _timeCounter;
     private float _currentTime;
     private bool _onCount = false;
     private UnityEvent _eventToDo;
-    public TimeCounter Instance
-    {
-        get
-        {
-            _timeCounter ??= this;
-            return _timeCounter;
-        }
-    }
     
-    private void Update()
+    public void FixedUpdate()
     {
         if (!_onCount)
         {

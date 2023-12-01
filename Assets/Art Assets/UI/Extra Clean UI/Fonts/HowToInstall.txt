@@ -1,0 +1,1 @@
+Copy these files to Windows/Fonts folder. If you have win 10 it will be installed automaticaly.If not, right click > Install
