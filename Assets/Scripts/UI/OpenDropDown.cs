@@ -1,15 +1,14 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class OpenDropDown : MonoBehaviour
 {
     // public Button[] direction;
     public List<GameObject> buttons;
     public float fadeTime;
+    public float gapTime;
     private bool _reveal;
     
     private void Start()
@@ -52,7 +51,7 @@ public class OpenDropDown : MonoBehaviour
         {
             button.transform.DOScale(1f, fadeTime).SetEase(Ease.OutBounce);
             
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(gapTime);
         }
 
         _reveal = true;
@@ -64,7 +63,7 @@ public class OpenDropDown : MonoBehaviour
         {
             var button = buttons[i];
             button.transform.DOScale(0f, fadeTime).SetEase(Ease.OutExpo);
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(gapTime);
             button.SetActive(false);
         }
 

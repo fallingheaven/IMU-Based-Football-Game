@@ -52,11 +52,13 @@
      <Compile Include="Assets\Scripts\Utilities\Wind.cs" />
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_Translate.cs" />
      <Compile Include="Assets\Animations\Dotween UI Animator\DOTween\Modules\DOTweenModulePhysics2D.cs" />
+     <Compile Include="Assets\Scripts\UI\RevealPauseMenu.cs" />
      <Compile Include="Assets\Scripts\Score\Score.cs" />
      <Compile Include="Assets\Scripts\Goal\Score Goal.cs" />
      <Compile Include="Assets\Scripts\Goal\IFootballChecker.cs" />
      <Compile Include="Assets\Scripts\Score\GoldCoin.cs" />
      <Compile Include="Assets\Scripts\Camera\CinemaShake.cs" />
+     <Compile Include="Assets\Scripts\UI\RevealUI.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
      <Compile Include="Assets\Scripts\Scene Load\UpdateLoadSlider.cs" />
      <Compile Include="Assets\Scripts\Football\ShootFootball.cs" />
@@ -85,6 +87,7 @@
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutoDestructShuriken.cs" />
      <Compile Include="Assets\Scripts\SO\SceneLoadEventSO.cs" />
      <Compile Include="Assets\Scripts\SO\GameSceneSO.cs" />
+     <Compile Include="Assets\Scripts\UI\RevealMenuInfo.cs" />
      <Compile Include="Assets\Scripts\Football\KickCheck.cs" />
      <Compile Include="Assets\Scripts\SO\GameObjectEventSO.cs" />
      <Compile Include="Assets\Scripts\DataProcessing\SetIMUInitialQuaternion.cs" />
