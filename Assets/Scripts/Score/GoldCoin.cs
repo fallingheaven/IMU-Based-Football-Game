@@ -4,7 +4,7 @@ using Random = UnityEngine.Random;
 public class GoldCoin : MonoBehaviour
 {
     public LayerMask footballLayer;
-    public FloatEventSO scoreChangeEventSO;
+    public FloatEventSO updateScoreEventSO;
     public float coinScore;
     public Vector3 leftTopPoint, rightBottomPoint;
     public Vector3 center;
@@ -16,10 +16,10 @@ public class GoldCoin : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        Debug.Log(col.gameObject.name);
+        // Debug.Log(col.gameObject.name);
         // if (col.gameObject.layer != footballLayer) return;
         
-        scoreChangeEventSO.RaiseEvent(coinScore);
+        updateScoreEventSO.RaiseEvent(coinScore);
         ResetPosition();
     }
 

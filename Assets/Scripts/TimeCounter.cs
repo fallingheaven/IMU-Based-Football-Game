@@ -38,4 +38,9 @@ public class TimeCounter
     {
         _onCount = false;
     }
+
+    public bool End()
+    {
+        return !_onCount;
+    }
 }

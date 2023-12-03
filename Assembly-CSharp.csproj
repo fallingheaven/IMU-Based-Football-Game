@@ -48,6 +48,7 @@
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RandomDir.cs" />
      <Compile Include="Assets\Scripts\Utilities\PlayerRealWorldDirection.cs" />
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_LightIntensityFade.cs" />
+     <Compile Include="Assets\ScoreChange.cs" />
      <Compile Include="Assets\Scripts\SO\TransformEventSO.cs" />
      <Compile Include="Assets\Scripts\Utilities\Wind.cs" />
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_Translate.cs" />
@@ -58,6 +59,7 @@
      <Compile Include="Assets\Scripts\Goal\IFootballChecker.cs" />
      <Compile Include="Assets\Scripts\Score\GoldCoin.cs" />
      <Compile Include="Assets\Scripts\Camera\CinemaShake.cs" />
+     <Compile Include="Assets\Scripts\Score\AddedScoreUI.cs" />
      <Compile Include="Assets\Scripts\UI\RevealUI.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
      <Compile Include="Assets\Scripts\Scene Load\UpdateLoadSlider.cs" />
@@ -90,6 +92,7 @@
      <Compile Include="Assets\Scripts\UI\RevealMenuInfo.cs" />
      <Compile Include="Assets\Scripts\Football\KickCheck.cs" />
      <Compile Include="Assets\Scripts\SO\GameObjectEventSO.cs" />
+     <Compile Include="Assets\Scripts\UI\RevealAddedScore.cs" />
      <Compile Include="Assets\Scripts\DataProcessing\SetIMUInitialQuaternion.cs" />
      <Compile Include="Assets\Scripts\Camera\CinemaShakeManager.cs" />
      <Compile Include="Assets\Settings\Input System\InputSystem.cs" />
@@ -106,6 +109,7 @@
      <Compile Include="Assets\Scripts\SO\FloatEventSO.cs" />
      <Compile Include="Assets\Animations\Dotween UI Animator\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutoRotate.cs" />
+     <Compile Include="Assets\ComboRecord.cs" />
      <Compile Include="Assets\Scripts\Utilities\ExtensionFunctions.cs" />
      <Compile Include="Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
      <Compile Include="Assets\Animations\Dotween UI Animator\DOTween\Modules\DOTweenModuleUI.cs" />

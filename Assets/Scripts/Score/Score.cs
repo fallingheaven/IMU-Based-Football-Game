@@ -4,8 +4,10 @@ using UnityEngine;
 // 算是单例模式
 public class Score : MonoBehaviour
 {
-    public FloatEventSO scoreChangeEventSO;
     public float score;
+    public FloatEventSO scoreChangeEventSO;
+    
+    private char[] _scoreString = { '0', '0', '0', '0', '0', '0' };
     private TextMeshProUGUI _scoreInfo;// 用于更新分数板
     [Header("事件监听")]
     public FloatEventSO updateScoreEventSO;
@@ -28,7 +30,19 @@ public class Score : MonoBehaviour
     
     private void FixedUpdate()
     {
-        _scoreInfo.text = $"分数：{score}";
+        var tmp = score;
+        if (tmp >= 999999) tmp = 999999;
+        
+        var i = _scoreString.Length - 1;
+        while (tmp >= 1)
+        {
+            _scoreString[i] = (char)('0' + tmp % 10);
+            tmp /= 10;
+            i--;
+        }
+        // Debug.Log(score);
+        // Debug.Log(new string(_scoreString));
+        _scoreInfo.text = $"分数：        {new string(_scoreString)}"; // 8个空格
     }
 
     private void UpdateScore(float a)

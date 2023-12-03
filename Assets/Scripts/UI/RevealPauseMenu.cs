@@ -6,20 +6,19 @@ using UnityEngine;
 public class RevealPauseMenu : MonoBehaviour, IRevealUI
 {
     public float fadeTime;
-    private Vector3 _transformLocalPosition;
-
-    private void OnEnable()
-    {
-        _transformLocalPosition = transform.localPosition;
-    }
+    private bool _fading = false;
+    private bool _finished = false;
 
     public void Reveal()
     {
-        if (gameObject.activeSelf) return;
+        if (_fading || _finished) return;
+        _fading = true;
         
-        transform.localPosition = new Vector3(_transformLocalPosition.x, -1080, _transformLocalPosition.z);
+        var _localPosition = transform.localPosition;
+        transform.localPosition = new Vector3(_localPosition.x, -1080, _localPosition.z);
         transform.localScale = Vector3.one;
         gameObject.SetActive(true);
+        
         StartCoroutine(RevealMenu());
     }
 
@@ -30,15 +29,19 @@ public class RevealPauseMenu : MonoBehaviour, IRevealUI
 
     private IEnumerator RevealMenu()
     {
-        transform.DOLocalMoveY(0, fadeTime).SetEase(Ease.OutExpo);
-        yield return null;
+        Tweener tweener = transform.DOLocalMoveY(0, fadeTime).SetEase(Ease.OutExpo);
+        yield return tweener.WaitForCompletion();
+        _fading = false;
+        _finished = true;
     }
 
     private IEnumerator HideMenu()
     {
         Tweener tweener = transform.DOScale(0, fadeTime).SetEase(Ease.OutExpo);
         yield return tweener.WaitForCompletion();
-        
+
+        _finished = false;
+        if (_fading) yield break;
         gameObject.SetActive(false);
     }
 }
