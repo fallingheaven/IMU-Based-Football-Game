@@ -5,7 +5,7 @@ public class SetStableFootball : MonoBehaviour
 {
     private CharacterPool _characterPool;
     public Vector3 initPosition;
-    private void Start()
+    private void OnEnable()
     {
         _characterPool = GetComponent<CharacterPool>();
     }
@@ -15,6 +15,10 @@ public class SetStableFootball : MonoBehaviour
         if (_characterPool.availableNum <= 0) return;
         
         var football = _characterPool.GetCharacterFromPool();
+        
+        var _rigidbody = football.GetComponent<Rigidbody>();
+        _rigidbody.rotation = Quaternion.identity;
+        _rigidbody.velocity = Vector3.zero;
         football.transform.position = initPosition;
     }
 }

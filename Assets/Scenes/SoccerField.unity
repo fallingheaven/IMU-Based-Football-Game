@@ -559,10 +559,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: "\u52A0\u5206\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7127d7bd64a78df4495c133a4f23fa58, type: 2}
+  m_sharedMaterial: {fileID: 4558144866395307962, guid: 7127d7bd64a78df4495c133a4f23fa58,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -673,7 +674,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -50, y: -30}
+  m_AnchoredPosition: {x: -50, y: -50}
   m_SizeDelta: {x: 1000, y: 50}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &554957791
@@ -696,7 +697,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u5F97\u5206\uFF1A        000000"
+  m_text: "\u5206\u6570\uFF1A        000000"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7127d7bd64a78df4495c133a4f23fa58, type: 2}
   m_sharedMaterial: {fileID: 4558144866395307962, guid: 7127d7bd64a78df4495c133a4f23fa58,
@@ -732,7 +733,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 4
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1697,7 +1698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeTime: 0.15
   comboGap: 3
-  scoreChangeEventSO: {fileID: 11400000, guid: 701ce4335fb39aa40a9f5ebc91cf4517, type: 2}
+  updateScoreEventSO: {fileID: 11400000, guid: 701ce4335fb39aa40a9f5ebc91cf4517, type: 2}
 --- !u!114 &1574594598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2011,6 +2012,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 227972a782058ef4097fe4c81ce1daff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bombChance: 0.5
+  bomb: {fileID: 366987266019751376, guid: d40305144f9edcd42bd250b15a23388f, type: 3}
   serveTimeGap: 1
   serving: 1
   initPosition: {x: 15, y: 1.5, z: 55}

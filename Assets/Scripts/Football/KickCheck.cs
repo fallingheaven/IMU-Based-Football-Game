@@ -3,10 +3,11 @@ using UnityEngine;
 
 public class KickCheck : MonoBehaviour
 {
-    public LayerMask checkedLayer; // 检测的图层，这里是足球图层
+    // public LayerMask BallLayer; // 检测的图层，这里是足球图层
     private List<GameObject> _colliders = new List<GameObject>();
     public ParticleSystem kickParticle; // 特效粒子
-    
+    public FloatEventSO updateScoreEventSO;
+        
     [Header("事件监听")] 
     public VoidEventSO imuKickEventSO;
     public VoidEventSO clearColliderEventSO;
@@ -25,17 +26,17 @@ public class KickCheck : MonoBehaviour
 
     private void Start()
     {
-        checkedLayer = LayerMask.NameToLayer("Ball");
+        // BallLayer = LayerMask.NameToLayer("Ball");
     }
     
 
     private void OnTriggerEnter(Collider col)
     {
+        var ball = col.gameObject.GetComponent<Ball>();
+        if (ball == null) return;
+        
         // 每进入到判定区域就尝试加入到数组
-        if (col.gameObject.layer == checkedLayer)
-        {
-            _colliders.Add(col.gameObject);
-        }
+        _colliders.Add(col.gameObject);
     }
 
     private void OnTriggerExit(Collider col)
@@ -58,8 +59,22 @@ public class KickCheck : MonoBehaviour
         
         foreach (var football in _colliders)
         {
-            football.gameObject.GetComponent<ShootFootball>().Shoot();
+            if (football == null) break;
+            
+            var ball = football.GetComponent<Ball>();
+            
+            if (ball.type != BallType.Bomb)
+            {
+                football.gameObject.GetComponent<ShootFootball>().Shoot();
+            }
+            else
+            {
+                updateScoreEventSO.RaiseEvent(ball.score);
+                football.gameObject.GetComponent<Explode>().PlayExplodeAnimation();
+            }
         }
+        
+        ClearCollider();
     }
 
     private void ClearCollider()

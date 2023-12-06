@@ -21,6 +21,8 @@ public class ShootFootball : MonoBehaviour
     private Transform _cameraTransform;
     private Quaternion _cameraQuaternion;
 
+    public SettingDataSO settingData;
+
     // private TrailRenderer _trailRenderer;
     // private ParticleSystem _trail;
 
@@ -66,8 +68,6 @@ public class ShootFootball : MonoBehaviour
         _rigidbody.velocity = Vector3.zero;
         
         _rigidbody.AddForce(ModifyDirection().normalized * hitForce, ForceMode.Impulse);
-        
-        
     }
 
     // 不断更新摄像机四元数
@@ -104,19 +104,19 @@ public class ShootFootball : MonoBehaviour
         var yColumn = originalMatrix.GetColumn(1);
         var zColumn = originalMatrix.GetColumn(2);
 
-        switch (PlayerRealWorldDirection.CurrentDirection)
+        switch (settingData.direction)
         {
-            case PlayerRealWorldDirection.Direction.Null:
-            case PlayerRealWorldDirection.Direction.East:
-            case PlayerRealWorldDirection.Direction.West:
+            case Direction.Null:
+            case Direction.East:
+            case Direction.West:
             {
                 // 交换 y 和 z 列
                 originalMatrix.SetColumn(1, zColumn);
                 originalMatrix.SetColumn(2, yColumn);
                 break;
             }
-            case PlayerRealWorldDirection.Direction.South:
-            case PlayerRealWorldDirection.Direction.North:
+            case Direction.South:
+            case Direction.North:
             {
                 // 交换 x 和 y 列
                 originalMatrix.SetColumn(0, yColumn);
@@ -134,14 +134,14 @@ public class ShootFootball : MonoBehaviour
     private Vector3 ModifyDirection()
     {
         var cameraMatrix = _cameraQuaternion.ConvertToMatrix();
-        return cameraMatrix * PlayerRealWorldDirection.CurrentDirection switch
+        return cameraMatrix * (settingData.direction switch
         {
-            PlayerRealWorldDirection.Direction.Null =>  new Vector3(_hitDirection.x,  _hitDirection.y, _hitDirection.z),
-            PlayerRealWorldDirection.Direction.East =>  new Vector3(_hitDirection.x, -_hitDirection.z, _hitDirection.y),
-            PlayerRealWorldDirection.Direction.West =>  new Vector3(_hitDirection.x,  _hitDirection.z, _hitDirection.y),
-            PlayerRealWorldDirection.Direction.South => new Vector3(-_hitDirection.y, -_hitDirection.z, _hitDirection.x),
-            PlayerRealWorldDirection.Direction.North => new Vector3(-_hitDirection.y,  _hitDirection.z, _hitDirection.x),
+            Direction.Null  => new Vector3(  _hitDirection.x,  _hitDirection.y, _hitDirection.z),
+            Direction.East  => new Vector3(  _hitDirection.x, -_hitDirection.z, _hitDirection.y),
+            Direction.West  => new Vector3(  _hitDirection.x,  _hitDirection.z, _hitDirection.y),
+            Direction.South => new Vector3(-_hitDirection.y, -_hitDirection.z, _hitDirection.x),
+            Direction.North => new Vector3(-_hitDirection.y,  _hitDirection.z, _hitDirection.x),
             _ => throw new ArgumentOutOfRangeException()
-        };
+        });
     }
 }

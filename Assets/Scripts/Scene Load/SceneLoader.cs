@@ -62,6 +62,8 @@ public class SceneLoader : MonoBehaviour
     // 先卸载当前场景再加载新场景
     private IEnumerator UnloadCurrentScene()
     {
+        clearColliderEventSO.RaiseEvent();
+        
         if (_fadeScreen)
         {
             transition.SetTrigger("Start");
@@ -104,7 +106,6 @@ public class SceneLoader : MonoBehaviour
         }
 
         StartCoroutine(OnSceneLoaded(_loadHandle));
-        // OnSceneLoaded(loadHandle);
     }
     
     // 加载完成场景后关闭加载条，设置玩家初始位置

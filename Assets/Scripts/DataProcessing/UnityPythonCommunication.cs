@@ -10,7 +10,8 @@ using Debug = UnityEngine.Debug;
 public class UnityPythonCommunication : MonoBehaviour
 {
     #region 参变量
-    
+
+        public SettingDataSO settingData;
         private Process _pythonProcess;
         private TcpClient _client;
         private NetworkStream _stream;
@@ -19,7 +20,6 @@ public class UnityPythonCommunication : MonoBehaviour
         
         // 用于计算加速度瞬时差值来判断踢球
         private Vector3 _previousAcc;
-        private const float AccThreshold = 10000f;
         public float[] _quat = new float[4];
         private float[] _acc = new float[4];
     
@@ -92,7 +92,7 @@ public class UnityPythonCommunication : MonoBehaviour
             var bytesRead = _stream.Read(_receiveBuffer, 0, _receiveBuffer.Length);
             if (bytesRead <= 0)
             {
-                Debug.Log("连接已关闭");
+                // Debug.Log("连接已关闭");
                 _client.Close();
                 break;
             }
@@ -130,7 +130,8 @@ public class UnityPythonCommunication : MonoBehaviour
                     
                     // 处理加速度
                     var currentAcc = new Vector3(_acc[0], _acc[1], _acc[2]);
-                    if (_previousAcc != Vector3.zero && _previousAcc.sqrMagnitude - currentAcc.sqrMagnitude > AccThreshold)
+                    if (_previousAcc != Vector3.zero &&
+                        _previousAcc.sqrMagnitude - currentAcc.sqrMagnitude > settingData.imuSensitivity)
                     {
                         imuKickEventSO.RaiseEvent();
                     }

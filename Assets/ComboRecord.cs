@@ -12,7 +12,7 @@ public class ComboRecord : MonoBehaviour
     private int _combo = 0;
     private TextMeshProUGUI _textMeshProUGUI;
     [Header("事件监听")]
-    public FloatEventSO scoreChangeEventSO;
+    public FloatEventSO updateScoreEventSO;
 
     private void Start()
     {
@@ -22,16 +22,17 @@ public class ComboRecord : MonoBehaviour
 
     private void OnEnable()
     {
-        scoreChangeEventSO.OnEventRaised += RefreshCombo;
+        updateScoreEventSO.OnEventRaised += RefreshCombo;
     }
 
     private void OnDisable()
     {
-        scoreChangeEventSO.OnEventRaised -= RefreshCombo;
+        updateScoreEventSO.OnEventRaised -= RefreshCombo;
     }
 
     private void FixedUpdate()
     {
+        // Debug.Log(_combo);
         _timeCounter.FixedUpdate();
         
         if (_timeCounter.End())
@@ -49,6 +50,14 @@ public class ComboRecord : MonoBehaviour
 
     private void RefreshCombo(float addedScore)
     {
+        // Debug.Log(addedScore);
+        if (addedScore <= 0)
+        {
+            _combo = 0;
+            _textMeshProUGUI.text = "";
+            return;
+        }
+
         _combo++;
         _timeCounter.StartTimeCount(comboGap);
         StartCoroutine(RefreshAnimation());

@@ -45,10 +45,10 @@
     <Analyzer Include="D:\unity\2022.3.3f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\Kino Bloom\Editor\BloomGraphDrawer.cs" />
-     <Compile Include="Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\Kino Bloom\Editor\BloomEditor.cs" />
-     <None Include="Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\Kino Bloom\Editor\KinoBloom.Editor.asmdef" />
-     <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\Kino Bloom\Editor" />
+     <Compile Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\Kino Bloom\Editor\BloomGraphDrawer.cs" />
+     <Compile Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\Kino Bloom\Editor\BloomEditor.cs" />
+     <None Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\Kino Bloom\Editor\KinoBloom.Editor.asmdef" />
+     <Folder Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\Kino Bloom\Editor" />
      <Reference Include="UnityEngine">
      <HintPath>D:\unity\2022.3.3f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>

@@ -45,13 +45,13 @@
     <Analyzer Include="D:\unity\2022.3.3f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets\Scripts\CFXR_Effect.CameraShake.cs" />
-     <Compile Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets\Scripts\CFXR_EmissionBySurface.cs" />
-     <Compile Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets\Scripts\CFXR_Effect.cs" />
-     <Compile Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets\Scripts\CFXR_ParticleText.cs" />
-     <Compile Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets\Scripts\CFXR_ParticleTextFontAsset.cs" />
-     <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets\Scripts" />
-     <None Include="Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets\Scripts\CFXR Runtime.asmdef" />
+     <Compile Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets\Scripts\CFXR_ParticleText.cs" />
+     <Compile Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets\Scripts\CFXR_EmissionBySurface.cs" />
+     <Compile Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets\Scripts\CFXR_Effect.cs" />
+     <Compile Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets\Scripts\CFXR_ParticleTextFontAsset.cs" />
+     <Compile Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets\Scripts\CFXR_Effect.CameraShake.cs" />
+     <Folder Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets\Scripts" />
+     <None Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Assets\Scripts\CFXR Runtime.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>D:\unity\2022.3.3f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>

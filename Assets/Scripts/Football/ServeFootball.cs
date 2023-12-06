@@ -3,6 +3,9 @@ using UnityEngine;
 // 发球器
 public class ServeFootball : MonoBehaviour
 {
+    public float bombChance;
+    public GameObject bomb;
+    
     public float serveTimeGap; // 发球间隔
     private float _currentTimeGap; // 当前间隔剩余
     public bool serving; // 发球状态
@@ -50,6 +53,16 @@ public class ServeFootball : MonoBehaviour
             {
                 if (_characterPool.availableNum <= 0) break;
                 
+                // 如果随机到炸弹
+                if (Random.Range(0, 1f) <= bombChance)
+                {
+                    var tmpBomb = Instantiate(bomb, initPosition, Quaternion.identity);
+                    Serve(tmpBomb);
+
+                    _currentTimeGap = serveTimeGap;
+                    break;
+                }
+                
                 // 取一个可用的球发射出去
                 var football = _characterPool.GetCharacterFromPool();
                 football.transform.position = initPosition;
@@ -69,7 +82,5 @@ public class ServeFootball : MonoBehaviour
         var _rigidbody = football.GetComponent<Rigidbody>();
         _rigidbody.rotation = Quaternion.identity;
         _rigidbody.velocity = serveVelocity;
-        // _rigidbody.velocity = Vector3.zero;
-        // _rigidbody.AddForce(serveForce, ForceMode.Impulse);
     }
 }

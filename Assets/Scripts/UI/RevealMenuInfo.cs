@@ -15,6 +15,7 @@ public class RevealMenuInfo : MonoBehaviour, IRevealUI
         
         var _localPosition = transform.localPosition;
         transform.localPosition = new Vector3(-1900, _localPosition.y, _localPosition.z);
+        
         gameObject.SetActive(true);
         StartCoroutine(RevealPanel());
     }

@@ -49,7 +49,7 @@ public class OpenDropDown : MonoBehaviour
 
         foreach (var button in buttons)
         {
-            button.transform.DOScale(1f, fadeTime).SetEase(Ease.OutBounce);
+            button.transform.DOScale(1f, fadeTime).SetEase(Ease.OutExpo);
             
             yield return new WaitForSeconds(gapTime);
         }

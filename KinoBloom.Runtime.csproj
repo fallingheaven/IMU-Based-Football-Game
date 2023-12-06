@@ -45,13 +45,13 @@
     <Analyzer Include="D:\unity\2022.3.3f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\Kino Bloom\Bloom.cs" />
-     <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\Kino Bloom\Shader" />
-     <None Include="Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\Kino Bloom\Shader\Bloom.shader" />
-     <None Include="Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\Kino Bloom\Shader\Bloom.cginc" />
-     <None Include="Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\Kino Bloom\KinoBloom.Runtime.asmdef" />
-     <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\Kino Bloom" />
-     <None Include="Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\Kino Bloom\Kino Bloom License.txt" />
+     <Compile Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\Kino Bloom\Bloom.cs" />
+     <Folder Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\Kino Bloom\Shader" />
+     <None Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\Kino Bloom\Shader\Bloom.shader" />
+     <None Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\Kino Bloom\Shader\Bloom.cginc" />
+     <None Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\Kino Bloom\KinoBloom.Runtime.asmdef" />
+     <Folder Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\Kino Bloom" />
+     <None Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\Kino Bloom\Kino Bloom License.txt" />
      <Reference Include="UnityEngine">
      <HintPath>D:\unity\2022.3.3f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>

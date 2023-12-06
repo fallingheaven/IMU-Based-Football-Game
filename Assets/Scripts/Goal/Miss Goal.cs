@@ -13,8 +13,26 @@ public class MissGoal : MonoBehaviour, IFootballChecker
     
     public void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.layer != footballLayer) return;
-        
-        returnFootballEventSO.RaiseEvent(col.gameObject);
+        switch (col.gameObject.GetComponent<Ball>().type)
+        {
+            case BallType.Football:
+            {
+                returnFootballEventSO.RaiseEvent(col.gameObject);
+                break;
+            }
+            case BallType.Bomb:
+            {
+                Destroy(col.gameObject);
+                break;
+            }
+            case BallType.Goldball:
+            {
+                break;
+            }
+            default:
+            {
+                break;
+            }
+        }
     }
 }

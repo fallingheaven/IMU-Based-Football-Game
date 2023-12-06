@@ -45,12 +45,12 @@
     <Analyzer Include="D:\unity\2022.3.3f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\CFXR_Demo_Rotate.cs" />
-     <Compile Include="Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\CFXR_Demo_Translate.cs" />
-     <Compile Include="Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\CFXR_Demo.cs" />
-     <None Include="Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\CFXR Demo.asmdef" />
-     <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets" />
-     <Folder Include="Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\UI" />
+     <Compile Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\CFXR_Demo_Rotate.cs" />
+     <Compile Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\CFXR_Demo_Translate.cs" />
+     <Compile Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\CFXR_Demo.cs" />
+     <None Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\CFXR Demo.asmdef" />
+     <Folder Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets" />
+     <Folder Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX Remaster\Demo Assets\UI" />
      <Reference Include="UnityEngine">
      <HintPath>D:\unity\2022.3.3f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
