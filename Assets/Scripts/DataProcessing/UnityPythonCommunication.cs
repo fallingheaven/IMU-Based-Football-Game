@@ -1,11 +1,10 @@
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Net.Sockets;
 using System.Text;
-using Debug = UnityEngine.Debug;
+using System.Threading;
 
 public class UnityPythonCommunication : MonoBehaviour
 {
@@ -25,13 +24,30 @@ public class UnityPythonCommunication : MonoBehaviour
     
         [Header("事件")]
         public VoidEventSO imuKickEventSO;
-        
+        public VoidEventSO onConnectedEventSO;
+
+        private bool _isReceiving = false;
+        private bool _stopReceiving = false;
+        private readonly ManualResetEvent _receiveCompleteEvent = new ManualResetEvent(false);
+    
     #endregion
 
     // 启动python程序，接收IMU数据
     public void StartPythonScript()
     {
-        Debug.Log("开始连接");
+        UnityMainThreadDispatcher.Initialize();
+        
+        // Debug.Log("Start");
+        // 在后台线程中执行耗时操作
+        var backgroundThread = new Thread(OnStartPythonScript);
+        backgroundThread.Start();
+        
+        // StartCoroutine(OnStartPythonScript());
+    }
+
+    private void OnStartPythonScript()
+    {
+        // Debug.Log("开始连接");
         // 指定 Python 脚本的路径，替换为你的 Python 脚本的实际路径
         var pythonPath = Path.Combine("Assets", "Scripts", "DataProcessing", "main.py");
 
@@ -59,28 +75,44 @@ public class UnityPythonCommunication : MonoBehaviour
         // _pythonProcess.WaitForInputIdle();
 
         // 等待一段时间以确保 Python 服务器已启动
-        System.Threading.Thread.Sleep(2000);
+        System.Threading.Thread.Sleep(1000);
 
         // 连接到 Python 服务器
         ConnectToPythonServer("127.0.0.1", 1234); // 服务器地址和端口要与 Python 脚本中的一致
     }
-
+    
     // 连接到python的socket服务器
     private void ConnectToPythonServer(string ipAddress, int port)
     {
         _client = new TcpClient(ipAddress, port);
         _stream = _client.GetStream();
-        
+
+        while (_stream.CanRead)
+        {
+            var bytesRead = _stream.Read(_receiveBuffer, 0, _receiveBuffer.Length);
+            if (bytesRead <= 0) continue;
+            
+            UnityMainThreadDispatcher.Enqueue(() =>
+            {
+                onConnectedEventSO.RaiseEvent();
+            });
+            
+            break;
+        }
+
+        _isReceiving = true;
         // 启动数据接收
-        StartCoroutine(ReceiveDataCoroutine());
+        ReceiveDataCoroutine();
+        // StartCoroutine(ReceiveDataCoroutine());
     }
     
-    // 开一个协程来处理数据
-    private IEnumerator ReceiveDataCoroutine()
+    // 处理数据
+    private void ReceiveDataCoroutine()
     {
         _previousAcc = Vector3.zero;
-        while (true)
+        while (!_stopReceiving)
         {
+            // Debug.Log(_stream.CanRead);
             // 数据是否可读
             if (!_stream.CanRead)
             {
@@ -133,15 +165,20 @@ public class UnityPythonCommunication : MonoBehaviour
                     if (_previousAcc != Vector3.zero &&
                         _previousAcc.sqrMagnitude - currentAcc.sqrMagnitude > settingData.imuSensitivity)
                     {
-                        imuKickEventSO.RaiseEvent();
+                        UnityMainThreadDispatcher.Enqueue(() =>
+                        {
+                            imuKickEventSO.RaiseEvent();
+                        });
                     }
                     _previousAcc = currentAcc;
                 }
                 
             }
             
-            yield return null;
+            // yield return null;
         }
+
+        _receiveCompleteEvent.Set();
     }
     
     // // 用于处理 Python 脚本的标准输出的事件处理程序，这里不需要
@@ -156,7 +193,15 @@ public class UnityPythonCommunication : MonoBehaviour
     // 退出应用
     private void OnApplicationQuit()
     {
-        Debug.Log("程序关闭");
+        // 标志停止接受数据
+        _stopReceiving = true;
+        if (!_isReceiving) _receiveCompleteEvent.Set();
+        _isReceiving = false;
+        
+        // 等待数据接收循环完成
+        _receiveCompleteEvent.WaitOne();
+        
+        // Debug.Log("程序关闭");
         _client?.Close();
         _stream?.Close();
         

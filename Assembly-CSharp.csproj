@@ -92,6 +92,7 @@
      <Compile Include="Assets\Scripts\SO\GameSceneSO.cs" />
      <Compile Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_New.cs" />
      <Compile Include="Assets\Scripts\UI\RevealMenuInfo.cs" />
+     <Compile Include="Assets\Scripts\GameProcess\GameTarget.cs" />
      <Compile Include="Assets\Scripts\UI\Score\Score.cs" />
      <Compile Include="Assets\Scripts\Football\KickCheck.cs" />
      <Compile Include="Assets\Scripts\SO\GameObjectEventSO.cs" />
@@ -103,6 +104,7 @@
      <Compile Include="Assets\Scripts\UI\Setting\Sensitivity\SensitivityAnimationResponse.cs" />
      <Compile Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
      <Compile Include="Assets\Scripts\Football\CharacterPool.cs" />
+     <Compile Include="Assets\Scripts\Utilities\UnityMainThreadDispatcher.cs" />
      <Compile Include="Assets\Scripts\Goal\Teleport Goal.cs" />
      <Compile Include="Assets\Scripts\SO\SettingDataSO.cs" />
      <Compile Include="Assets\Animations\Dotween UI Animator\DOTween\Modules\DOTweenModulePhysics.cs" />
@@ -115,6 +117,7 @@
      <Compile Include="Assets\Scripts\SO\FloatEventSO.cs" />
      <Compile Include="Assets\Scripts\UI\Score\RevealAddedScore.cs" />
      <Compile Include="Assets\Animations\Dotween UI Animator\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
+     <Compile Include="Assets\Scripts\UI\ConnectionSuccess.cs" />
      <Compile Include="Assets\ComboRecord.cs" />
      <Compile Include="Assets\Scripts\Utilities\ExtensionFunctions.cs" />
      <Compile Include="Assets\Scripts\UI\IRevealUI.cs" />
@@ -199,6 +202,7 @@
      <Folder Include="Assets\Art Assets\Model" />
      <None Include="Assets\TextMesh Pro\Fonts\7000汉字+符号+英文字符集.txt" />
      <Folder Include="Assets\TextMesh Pro" />
+     <Folder Include="Assets\Scripts\GameProcess" />
      <Folder Include="Assets\Scripts\Scene Load" />
      <Folder Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Magic Misc" />
      <Folder Include="Assets\Scripts\DataProcessing" />
@@ -276,6 +280,7 @@
      <Folder Include="Assets\Audio\CasualGameSounds" />
      <Folder Include="Assets\Scenes" />
      <Folder Include="Assets\AddressableAssetsData\AssetGroups" />
+     <Folder Include="Assets\DataSO\GameProcess" />
      <Folder Include="Assets\Art Assets\UI\Extra Clean UI" />
      <None Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX (legacy)\Shaders\CFXM_MobileParticleAdd_Alpha8.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
