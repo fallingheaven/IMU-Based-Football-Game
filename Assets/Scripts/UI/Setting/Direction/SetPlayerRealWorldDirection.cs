@@ -11,7 +11,7 @@ public class SetPlayerRealWorldDirection : MonoBehaviour
     public void ChangeDirection()
     {
         settingData.direction = direction;
-        text.text = $"{SharedDictionary.directionDictionary[settingData.direction]}";
+        text.text = $"{SharedDictionary.DirectionDictionary[settingData.direction]}";
         // Debug.Log(text.text);
         openDropDown.OnSelected();
         // Debug.Log(direction);

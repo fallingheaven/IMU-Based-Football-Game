@@ -14,6 +14,6 @@ public class ResetSetting : MonoBehaviour
         settingData.imuSensitivity = resetData.imuSensitivity;
         settingData.direction = resetData.direction;
         sensitivitySlider.value = 0f;
-        text.text = SharedDictionary.directionDictionary[resetData.direction];
+        text.text = SharedDictionary.DirectionDictionary[resetData.direction];
     }
 }

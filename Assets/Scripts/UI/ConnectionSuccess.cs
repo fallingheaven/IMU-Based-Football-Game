@@ -31,7 +31,7 @@ public class ConnectionSuccess : MonoBehaviour
         for (var i = 0; i < transform.childCount; i++)
         {
             var child = transform.GetChild(i);
-            Tween tween = child.transform.DOScale(0f, hideTime).SetEase(Ease.OutExpo);
+            Tween tween = child.transform.DOScale(0f, hideTime).SetEase(Ease.OutExpo).SetUpdate(true);
         }
         
         for (var i = 0; i < transform.childCount; i++)
@@ -49,9 +49,9 @@ public class ConnectionSuccess : MonoBehaviour
         successUI.gameObject.SetActive(true);
         successUI.transform.localScale = Vector3.zero;
         
-        Tween tween = successUI.transform.DOScale(1f, revealTime).SetEase(Ease.OutExpo);
+        Tween tween = successUI.transform.DOScale(1f, revealTime).SetEase(Ease.OutExpo).SetUpdate(true);
         yield return tween.WaitForCompletion();
-        tween = successUI.transform.DOScale(0f, hideTime).SetEase(Ease.OutExpo);
+        tween = successUI.transform.DOScale(0f, hideTime).SetEase(Ease.OutExpo).SetUpdate(true);
         yield return tween.WaitForCompletion();
         
         gameObject.SetActive(false);

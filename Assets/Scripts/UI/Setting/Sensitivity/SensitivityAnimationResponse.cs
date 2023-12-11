@@ -30,8 +30,8 @@ public class SensitivityAnimationResponse : MonoBehaviour
     {
         image.DOKill();
         
-        Tween tween = image.transform.DOScale(4f, fadeTime).SetEase(Ease.OutExpo);
+        Tween tween = image.transform.DOScale(4f, fadeTime).SetEase(Ease.OutExpo).SetUpdate(true);
         yield return tween.WaitForCompletion();
-        image.transform.DOScale(0f, fadeTime).SetEase(Ease.OutExpo);
+        image.transform.DOScale(0f, fadeTime).SetEase(Ease.OutExpo).SetUpdate(true);
     }
 }

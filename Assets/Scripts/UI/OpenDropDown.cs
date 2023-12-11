@@ -49,9 +49,9 @@ public class OpenDropDown : MonoBehaviour
 
         foreach (var button in buttons)
         {
-            button.transform.DOScale(1f, fadeTime).SetEase(Ease.OutExpo);
+            button.transform.DOScale(1f, fadeTime).SetEase(Ease.OutExpo).SetUpdate(true);
             
-            yield return new WaitForSeconds(gapTime);
+            yield return new WaitForSecondsRealtime(gapTime);
         }
 
         _reveal = true;
@@ -62,8 +62,8 @@ public class OpenDropDown : MonoBehaviour
         for (var i = buttons.Count - 1; i >= 0; i--)
         {
             var button = buttons[i];
-            button.transform.DOScale(0f, fadeTime).SetEase(Ease.OutExpo);
-            yield return new WaitForSeconds(gapTime);
+            button.transform.DOScale(0f, fadeTime).SetEase(Ease.OutExpo).SetUpdate(true);
+            yield return new WaitForSecondsRealtime(gapTime);
             button.SetActive(false);
         }
 

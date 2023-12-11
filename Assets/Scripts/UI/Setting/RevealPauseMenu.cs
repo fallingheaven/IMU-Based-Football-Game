@@ -37,9 +37,9 @@ public class RevealPauseMenu : MonoBehaviour, IRevealUI
     private IEnumerator RevealMenu()
     {
         // Tweener tweener = transform.DOLocalMoveY(0, fadeTime).SetEase(Ease.OutExpo);
-        Tweener tweener = _canvasGroup.DOFade(1, fadeTime).SetEase(Ease.OutExpo);
-        yield return new WaitForSeconds(fadeTime / 4);
-        transform.DOScale(1f, fadeTime / 2).SetEase(Ease.Linear);
+        Tweener tweener = _canvasGroup.DOFade(1, fadeTime).SetEase(Ease.OutExpo).SetUpdate(true);
+        yield return new WaitForSecondsRealtime(fadeTime / 4);
+        transform.DOScale(1f, fadeTime / 2).SetEase(Ease.Linear).SetUpdate(true);
         yield return tweener.WaitForCompletion();
         
         _fading = false;
@@ -49,8 +49,8 @@ public class RevealPauseMenu : MonoBehaviour, IRevealUI
     private IEnumerator HideMenu()
     {
         // Tweener tweener = transform.DOScale(0, fadeTime).SetEase(Ease.OutExpo);
-        Tweener tweener = _canvasGroup.DOFade(0, fadeTime).SetEase(Ease.OutExpo);
-        transform.DOScale(0.95f, fadeTime / 2).SetEase(Ease.Linear);
+        Tweener tweener = _canvasGroup.DOFade(0, fadeTime).SetEase(Ease.OutExpo).SetUpdate(true);
+        transform.DOScale(0.95f, fadeTime / 2).SetEase(Ease.Linear).SetUpdate(true);
         yield return tweener.WaitForCompletion();
         
 

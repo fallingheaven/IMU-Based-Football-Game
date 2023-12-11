@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10ead9cc9c402414b96b13598e0d0138, type: 3}
-  m_Name: Game Target
+  m_Script: {fileID: 11500000, guid: 6127e87b3f666004491d3c1230169c50, type: 3}
+  m_Name: Score Data SO
   m_EditorClassIdentifier: 
-  currentLevel: 4
-  initialTarget: 5
-  currentTarget: 20.505024
-  difficultyDegree: 0
+  currentScore: 20
+  previousScore: []

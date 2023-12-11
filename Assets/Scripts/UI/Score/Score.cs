@@ -4,7 +4,8 @@ using UnityEngine;
 // 算是单例模式
 public class Score : MonoBehaviour
 {
-    public float score;
+    // public float score;
+    public ScoreDataSO scoreData;
     public FloatEventSO scoreChangeEventSO;
     
     private char[] _scoreString = { '0', '0', '0', '0', '0', '0' };
@@ -24,13 +25,13 @@ public class Score : MonoBehaviour
 
     private void Start()
     {
-        score = 0;
+        scoreData.currentScore = 0;
         _scoreInfo = GetComponent<TextMeshProUGUI>();
     }
     
     private void FixedUpdate()
     {
-        var tmp = score;
+        var tmp = scoreData.currentScore;
         if (tmp >= 999999) tmp = 999999;
         
         var i = _scoreString.Length - 1;
@@ -53,9 +54,9 @@ public class Score : MonoBehaviour
 
     private void UpdateScore(float a)
     {
-        score += a;
-        if (score < 0) score = 0;
+        scoreData.currentScore += a;
+        if (scoreData.currentScore < 0) scoreData.currentScore = 0;
         
-        scoreChangeEventSO.RaiseEvent(score);
+        scoreChangeEventSO.RaiseEvent(scoreData.currentScore);
     }
 }

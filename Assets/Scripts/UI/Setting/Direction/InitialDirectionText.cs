@@ -7,6 +7,6 @@ public class InitialDirectionText : MonoBehaviour
     
     private void OnEnable()
     {
-        GetComponent<TextMeshProUGUI>().text = $"{SharedDictionary.directionDictionary[settingData.direction]}";
+        GetComponent<TextMeshProUGUI>().text = $"{SharedDictionary.DirectionDictionary[settingData.direction]}";
     }
 }

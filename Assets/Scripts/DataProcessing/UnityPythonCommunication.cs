@@ -5,6 +5,7 @@ using System.IO;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+using Debug = UnityEngine.Debug;
 
 public class UnityPythonCommunication : MonoBehaviour
 {
@@ -35,6 +36,12 @@ public class UnityPythonCommunication : MonoBehaviour
     // 启动python程序，接收IMU数据
     public void StartPythonScript()
     {
+        if (_client is { Connected: true })
+        {
+            Debug.Log("已占用连接");
+            return;
+        }
+        
         UnityMainThreadDispatcher.Initialize();
         
         // Debug.Log("Start");
@@ -84,23 +91,26 @@ public class UnityPythonCommunication : MonoBehaviour
     // 连接到python的socket服务器
     private void ConnectToPythonServer(string ipAddress, int port)
     {
+        _isReceiving = true;
         _client = new TcpClient(ipAddress, port);
         _stream = _client.GetStream();
 
-        while (_stream.CanRead)
+        while (true)
         {
+            // Debug.Log("未连接");
+            // if (!_client.Connected) continue;
             var bytesRead = _stream.Read(_receiveBuffer, 0, _receiveBuffer.Length);
             if (bytesRead <= 0) continue;
             
             UnityMainThreadDispatcher.Enqueue(() =>
             {
+                // Debug.Log("已连接");
                 onConnectedEventSO.RaiseEvent();
             });
             
             break;
         }
-
-        _isReceiving = true;
+        // Debug.Log("其实连接上了");
         // 启动数据接收
         ReceiveDataCoroutine();
         // StartCoroutine(ReceiveDataCoroutine());
@@ -167,6 +177,9 @@ public class UnityPythonCommunication : MonoBehaviour
                     {
                         UnityMainThreadDispatcher.Enqueue(() =>
                         {
+                            // Debug.Log($"{_previousAcc.sqrMagnitude - currentAcc.sqrMagnitude}," +
+                            //           $"{settingData.imuSensitivity}" + 
+                            //           $"{_previousAcc.sqrMagnitude - currentAcc.sqrMagnitude > settingData.imuSensitivity}");
                             imuKickEventSO.RaiseEvent();
                         });
                     }
@@ -193,6 +206,7 @@ public class UnityPythonCommunication : MonoBehaviour
     // 退出应用
     private void OnApplicationQuit()
     {
+        Time.timeScale = 1f;
         // 标志停止接受数据
         _stopReceiving = true;
         if (!_isReceiving) _receiveCompleteEvent.Set();

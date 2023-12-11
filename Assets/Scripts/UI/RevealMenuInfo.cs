@@ -27,14 +27,14 @@ public class RevealMenuInfo : MonoBehaviour, IRevealUI
     
     private IEnumerator RevealPanel()
     {
-        Tweener tweener = transform.DOLocalMoveX(-1400, fadeTime).SetEase(Ease.OutExpo);
+        Tweener tweener = transform.DOLocalMoveX(-1400, fadeTime).SetEase(Ease.OutExpo).SetUpdate(true);
         yield return tweener.WaitForCompletion();
         _fading = false;
     }
 
     private IEnumerator HidePanel()
     {
-        Tweener tweener = transform.DOLocalMoveX(-1900, fadeTime).SetEase(Ease.OutExpo);
+        Tweener tweener = transform.DOLocalMoveX(-1900, fadeTime).SetEase(Ease.OutExpo).SetUpdate(true);
         yield return tweener.WaitForCompletion();
 
         if (_fading) yield break;

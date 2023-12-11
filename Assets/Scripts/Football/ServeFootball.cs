@@ -8,7 +8,7 @@ public class ServeFootball : MonoBehaviour
     
     public float serveTimeGap; // 发球间隔
     private float _currentTimeGap; // 当前间隔剩余
-    public bool serving; // 发球状态
+    public bool serving = false; // 发球状态
     private CharacterPool _characterPool;
 
     public Vector3 initPosition; // 发球位置
@@ -82,5 +82,10 @@ public class ServeFootball : MonoBehaviour
         var _rigidbody = football.GetComponent<Rigidbody>();
         _rigidbody.rotation = Quaternion.identity;
         _rigidbody.velocity = serveVelocity;
+    }
+
+    public void StartServe()
+    {
+        serving = true;
     }
 }

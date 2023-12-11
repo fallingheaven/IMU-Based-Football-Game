@@ -5,7 +5,8 @@ using UnityEngine.Events;
 public class TimeCounter
 {
     private TimeCounter _timeCounter;
-    private float _currentTime;
+    // private float _currentTime;
+    public float _currentTime;
     private bool _onCount = false;
     private UnityEvent _eventToDo;
     

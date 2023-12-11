@@ -192,6 +192,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: b256045ea782a0440ba4ec894f328e80,
         type: 2}
+    - target: {fileID: 5154650816374103923, guid: 28c3b19958d62d741b36be06a43a5b44,
+        type: 3}
+      propertyPath: nextLevelEventSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 8977ab2945f8ca0409641ecfa70464b5,
+        type: 2}
     - target: {fileID: 6314779035773738191, guid: 28c3b19958d62d741b36be06a43a5b44,
         type: 3}
       propertyPath: m_Name
@@ -419,7 +425,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701047275}
   m_LocalRotation: {x: -0.7071068, y: -0, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: 6.5, y: 22.8, z: 56.1}
+  m_LocalPosition: {x: 6.5, y: 13.1, z: 56.1}
   m_LocalScale: {x: 5, y: 2, z: 8.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1699,6 +1705,7 @@ MonoBehaviour:
   availableNum: 0
   ReturnFootballEventSO: {fileID: 11400000, guid: a017de5da615d1c49a0a12c1e723c5ef,
     type: 2}
+  nextLevelEventSO: {fileID: 11400000, guid: 48af9d2b7e1c6454bbc9e26b56f2620e, type: 2}
 --- !u!4 &1902082470
 Transform:
   m_ObjectHideFlags: 0
@@ -1726,7 +1733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 182d22dbde1289848ad4cb5441633f37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initPosition: {x: -2, y: 3, z: 0}
+  initPosition: {x: -1.5, y: 5, z: 0}
 --- !u!1 &2109832659
 GameObject:
   m_ObjectHideFlags: 0

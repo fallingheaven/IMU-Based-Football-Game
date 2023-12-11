@@ -32,17 +32,17 @@ public class RevealSensitivityPanel : MonoBehaviour, IRevealUI
 
     private IEnumerator RevealPanel()
     {
-        Tweener tweener = _canvasGroup.DOFade(1, fadeTime).SetEase(Ease.OutExpo);
-        yield return new WaitForSeconds(fadeTime / 4);
-        transform.DOScale(0.6f, fadeTime / 2).SetEase(Ease.Linear);
+        Tweener tweener = _canvasGroup.DOFade(1, fadeTime).SetEase(Ease.OutExpo).SetUpdate(true);
+        yield return new WaitForSecondsRealtime(fadeTime / 4);
+        transform.DOScale(0.6f, fadeTime / 2).SetEase(Ease.Linear).SetUpdate(true);
         
         _fading = false;
     }
 
     private IEnumerator HidePanel()
     {
-        Tweener tweener = _canvasGroup.DOFade(0, fadeTime).SetEase(Ease.OutExpo);
-        transform.DOScale(0.5f, fadeTime / 2).SetEase(Ease.Linear);
+        Tweener tweener = _canvasGroup.DOFade(0, fadeTime).SetEase(Ease.OutExpo).SetUpdate(true);
+        transform.DOScale(0.5f, fadeTime / 2).SetEase(Ease.Linear).SetUpdate(true);
         yield return tweener.WaitForCompletion();
 
         if (_fading) yield break;

@@ -18,3 +18,11 @@ public enum Direction
     South,
     North
 };
+
+public enum Difficulty
+{
+    Easy,
+    Normal,
+    Hard,
+    Crazy
+}

@@ -8,22 +8,31 @@ public class CharacterPool : MonoBehaviour
     public GameObject characterPrefab; // 需要生成的对象
     public int poolSize; // 池子大小
     public int availableNum; // 当前可用数量，用于判断
+    
     [Header("事件监听")]
     public GameObjectEventSO ReturnFootballEventSO;
+    public VoidEventSO nextLevelEventSO;
     
     private readonly List<GameObject> _characterPool = new List<GameObject>();
 
     private void OnEnable()
     {
         ReturnFootballEventSO.OnEventRaised += ReturnCharacterToPool;
+        nextLevelEventSO.onEventRaised += NextLevel;
     }
 
     private void OnDisable()
     {
         ReturnFootballEventSO.OnEventRaised -= ReturnCharacterToPool;
+        nextLevelEventSO.onEventRaised -= NextLevel;
     }
 
     private void Start()
+    {
+        Init();
+    }
+
+    private void Init()
     {
         // 实例化池子，放在父物体（本物体）下
         availableNum = poolSize;
@@ -37,7 +46,7 @@ public class CharacterPool : MonoBehaviour
         }
         // Debug.Log("实例化全部完成");
     }
-
+    
     // 从池子里取对象
     public GameObject GetCharacterFromPool()
     {
@@ -60,9 +69,23 @@ public class CharacterPool : MonoBehaviour
     // 退回池子
     private void ReturnCharacterToPool(GameObject character)
     {
+        if (character == null) return;
+        
         availableNum++;
         character.GetComponent<Rigidbody>().velocity = Vector3.zero;
         character.transform.position = Vector3.zero;
         character.SetActive(false);
+    }
+
+    private void NextLevel()
+    {
+        foreach (var football in _characterPool)
+        {
+            Destroy(football.gameObject);
+        }
+        
+        _characterPool.Clear();
+        
+        Init();
     }
 }

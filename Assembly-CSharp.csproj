@@ -45,9 +45,11 @@
     <Analyzer Include="D:\unity\2022.3.3f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\UI\Setting\Difficulty Degree\SetDifficultyDegree.cs" />
      <Compile Include="Assets\Scripts\Football\Ball.cs" />
      <Compile Include="Assets\ScoreChange.cs" />
      <Compile Include="Assets\Scripts\SO\TransformEventSO.cs" />
+     <Compile Include="Assets\Scripts\UI\Setting\Difficulty Degree\InitialDifficultyDegree.cs" />
      <Compile Include="Assets\Scripts\Utilities\Wind.cs" />
      <Compile Include="Assets\Animations\Dotween UI Animator\DOTween\Modules\DOTweenModulePhysics2D.cs" />
      <Compile Include="Assets\Scripts\Goal\Score Goal.cs" />
@@ -60,6 +62,7 @@
      <Compile Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutoRotate.cs" />
      <Compile Include="Assets\Scripts\Scene Load\UpdateLoadSlider.cs" />
      <Compile Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RotateCamera.cs" />
+     <Compile Include="Assets\Scripts\GameProcess\GameManager.cs" />
      <Compile Include="Assets\Scripts\Football\ShootFootball.cs" />
      <Compile Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RandomDir.cs" />
      <Compile Include="Assets\Scripts\Scene Load\SceneLoader.cs" />
@@ -77,12 +80,14 @@
      <Compile Include="Assets\Scripts\Audio\AudioManager.cs" />
      <Compile Include="Assets\Scripts\Football\FootballPhyscisCheck.cs" />
      <Compile Include="Assets\Scripts\UI\Setting\Sensitivity\ChangeSensitivity.cs" />
+     <Compile Include="Assets\Scripts\SO\ScoreDataSO.cs" />
      <Compile Include="Assets\Scripts\UI\Setting\RevealPauseMenu.cs" />
      <Compile Include="Assets\Scripts\SO\PlayAudioEventSO.cs" />
      <Compile Include="Assets\Scripts\Football\Explode.cs" />
      <Compile Include="Assets\Scripts\Utilities\SetActive.cs" />
      <Compile Include="Assets\Scripts\Utilities\WindChange.cs" />
      <Compile Include="Assets\Scripts\Audio\AudioDefinition.cs" />
+     <Compile Include="Assets\Scripts\Utilities\PauseGame.cs" />
      <Compile Include="Assets\Scripts\Scene Load\Teleport.cs" />
      <Compile Include="Assets\Scripts\SO\QuatEventSO.cs" />
      <Compile Include="Assets\Scripts\Football\SetStableFootball.cs" />
@@ -100,7 +105,6 @@
      <Compile Include="Assets\Scripts\UI\Score\GoldCoin.cs" />
      <Compile Include="Assets\Scripts\Camera\CinemaShakeManager.cs" />
      <Compile Include="Assets\Settings\Input System\InputSystem.cs" />
-     <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\UI\Setting\Sensitivity\SensitivityAnimationResponse.cs" />
      <Compile Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
      <Compile Include="Assets\Scripts\Football\CharacterPool.cs" />
@@ -111,14 +115,15 @@
      <Compile Include="Assets\Scripts\Football\ServeFootball.cs" />
      <Compile Include="Assets\Scripts\Utilities\Enums.cs" />
      <Compile Include="Assets\Scripts\Utilities\TransferCameraTransform.cs" />
+     <Compile Include="Assets\Scripts\UI\RevealNewLevelUI.cs" />
      <Compile Include="Assets\Scripts\UI\OpenDropDown.cs" />
      <Compile Include="Assets\Animations\Dotween UI Animator\DOTween\Modules\DOTweenModuleAudio.cs" />
      <Compile Include="Assets\Animations\Dotween UI Animator\DOTween\Modules\DOTweenModuleEPOOutline.cs" />
      <Compile Include="Assets\Scripts\SO\FloatEventSO.cs" />
+     <Compile Include="Assets\Scripts\ComboRecord.cs" />
      <Compile Include="Assets\Scripts\UI\Score\RevealAddedScore.cs" />
      <Compile Include="Assets\Animations\Dotween UI Animator\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
      <Compile Include="Assets\Scripts\UI\ConnectionSuccess.cs" />
-     <Compile Include="Assets\ComboRecord.cs" />
      <Compile Include="Assets\Scripts\Utilities\ExtensionFunctions.cs" />
      <Compile Include="Assets\Scripts\UI\IRevealUI.cs" />
      <Compile Include="Assets\Scripts\Utilities\SharedDictionary.cs" />
@@ -132,6 +137,7 @@
      <Folder Include="Assets\DataSO\GameScene" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <Folder Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX3 Prefabs\Magic Dark" />
+     <Folder Include="Assets\Scripts\UI\Setting\Difficulty Degree" />
      <Folder Include="Assets\Settings" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <Folder Include="Assets\TextMesh Pro\Sprites" />

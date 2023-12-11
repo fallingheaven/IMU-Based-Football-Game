@@ -18,7 +18,7 @@ public class SceneLoader : MonoBehaviour
         public GameObject player;
         private GameSceneSO _currentScene; // 当前的场景
         private GameSceneSO _sceneToLoad; // 要加载的场景
-        private bool _fadeScreen; // 是否淡入淡出（还没做）
+        private bool _fadeScreen; // 是否淡入淡出
         
         private AsyncOperationHandle<SceneInstance> _loadHandle;
 
@@ -28,6 +28,8 @@ public class SceneLoader : MonoBehaviour
     
         public UpdateLoadSlider updateLoadSlider; // 加载的条
         public GameObject loadSceneSlider;
+        public VoidEventSO newGameEventSO;
+        // public VoidEventSO nextLevelEventSO;
         
     private void Awake()
     {
@@ -85,7 +87,6 @@ public class SceneLoader : MonoBehaviour
         StartCoroutine(StartLoadSceneSlider(_loadHandle));
     }
     
-
     // 加载进度条
     private IEnumerator StartLoadSceneSlider(AsyncOperationHandle<SceneInstance> loadHandle)
     {
@@ -120,7 +121,7 @@ public class SceneLoader : MonoBehaviour
          // SceneManager.sceneLoaded -= OnSceneLoaded;
  
          // 激活加载的场景
-         _loadHandle.Result.ActivateAsync();
+         yield return _loadHandle.Result.ActivateAsync();
          // SetSceneActive(scene.name);
  
          // 隐藏加载界面
@@ -129,7 +130,9 @@ public class SceneLoader : MonoBehaviour
          player.transform.position = _sceneToLoad.initialPosition;
          
          clearColliderEventSO.RaiseEvent();
-
+         newGameEventSO.RaiseEvent();
+         // nextLevelEventSO.RaiseEvent();
+         
          yield return null;
      }
 }
