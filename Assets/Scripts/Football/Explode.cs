@@ -6,6 +6,9 @@ public class Explode : MonoBehaviour
 {
     public ParticleSystem explode;
     public GameObject mainPart;
+    
+    public GameObjectEventSO returnBombEventSO;
+    
     private Rigidbody _rigidbody;
     private SphereCollider _collider;
 
@@ -18,7 +21,7 @@ public class Explode : MonoBehaviour
     public void PlayExplodeAnimation()
     {
         _rigidbody.velocity = Vector3.zero;
-        Destroy(_collider);
+        _collider.enabled = false;
         
         StartCoroutine(PlayAnimation());
     }
@@ -26,9 +29,8 @@ public class Explode : MonoBehaviour
     private IEnumerator PlayAnimation()
     {
         explode.Play();
-        Destroy(mainPart);
-        // Debug.Log(explode.time);
+        mainPart.SetActive(false);
         yield return new WaitForSeconds(1f);
-        Destroy(gameObject);
+        returnBombEventSO.RaiseEvent(gameObject);
     }
 }

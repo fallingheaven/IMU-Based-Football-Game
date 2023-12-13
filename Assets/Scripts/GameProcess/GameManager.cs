@@ -7,16 +7,16 @@ public class GameManager : MonoBehaviour
 {
     public GameTarget gameTarget;
     public ScoreDataSO scoreData;
-    public SceneLoadEventSO sceneLoadEventSO;
+    // public SceneLoadEventSO sceneLoadEventSO;
     public VoidEventSO startLevelEventSO;
+    public VoidEventSO gameOverEventSO; 
+    public VoidEventSO nextLevelEventSO;
+    public float levelTime;
 
     [Header("事件监听")]
-    public VoidEventSO nextLevelEventSO;
     public VoidEventSO newGameEventSO;
     
     [Header("场景返回")]
-    public GameSceneSO mainMenu;
-    public Animator transition;
     private readonly TimeCounter _levelTimeCounter = new TimeCounter();
     
     private readonly Dictionary<Difficulty, float> _difficultyGrowDegree = new Dictionary<Difficulty, float>()
@@ -30,15 +30,16 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         // nextLevelEventSO.onEventRaised += StartNextLevel;
-        newGameEventSO.onEventRaised += StartNextLevel;
-        newGameEventSO.onEventRaised += ResetLevel;
+        newGameEventSO.onEventRaised += NewGame;
+        // newGameEventSO.onEventRaised += StartNextLevel;
+        
     }
-    
+
     private void OnDisable()
     {
         // nextLevelEventSO.onEventRaised -= StartNextLevel;
-        newGameEventSO.onEventRaised -= StartNextLevel;
-        newGameEventSO.onEventRaised -= ResetLevel;
+        newGameEventSO.onEventRaised -= NewGame;
+        // newGameEventSO.onEventRaised -= StartNextLevel;
     }
 
     private void FixedUpdate()
@@ -54,7 +55,8 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("游戏结束");
             ResetLevel();
-            sceneLoadEventSO.RaiseSceneLoadEvent(mainMenu, true);
+            // sceneLoadEventSO.RaiseSceneLoadEvent(mainMenu, true);
+            gameOverEventSO.RaiseEvent();
         }
 
         else if (scoreData.currentScore >= gameTarget.currentTarget)
@@ -65,14 +67,21 @@ public class GameManager : MonoBehaviour
             nextLevelEventSO.RaiseEvent();
         }
     }
-
+    
+    private void NewGame()
+    {
+        ResetLevel();
+        StartNextLevel();
+        Debug.Log(gameTarget.currentLevel);
+    }
+    
     private IEnumerator NextLevelTransition()
     {
         // transition.SetTrigger("Start");
         // yield return new WaitForSeconds(1f);
         // transition.SetTrigger("End");
         
-        _levelTimeCounter.StartTimeCount(10f);
+        _levelTimeCounter.StartTimeCount(levelTime);
         startLevelEventSO.RaiseEvent();
         yield return null;
     }
@@ -80,18 +89,18 @@ public class GameManager : MonoBehaviour
     private void StartNextLevel()
     {
         // Debug.Log("开始下一关");
-        StartCoroutine(NextLevelTransition());
-        
         gameTarget.currentLevel++;
         gameTarget.currentTarget += gameTarget.initialTarget *(float)
                                    Math.Pow(_difficultyGrowDegree[gameTarget.difficultyDegree],
                                    gameTarget.currentLevel);
+        
+        StartCoroutine(NextLevelTransition());
     }
     
     private void ResetLevel()
     {
         gameTarget.currentLevel = 0f;
-        gameTarget.currentTarget = gameTarget.initialTarget;
+        gameTarget.currentTarget = 0f;
         scoreData.currentScore = 0f;
     }
 

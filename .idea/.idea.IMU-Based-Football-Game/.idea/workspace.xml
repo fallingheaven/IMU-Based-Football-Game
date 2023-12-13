@@ -5,40 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73c0f8d9-6576-43d8-8e0e-1fe1c216e982" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameProcess/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.IMU-Based-Football-Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.IMU-Based-Football-Game/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Gold Coin/Coin Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Gold Coin/Coin Idle.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ComboRecord.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ComboRecord.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ComboRecord.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ComboRecord.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DataSO/GameProcess/Game Target.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DataSO/GameProcess/Game Target.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Football.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Football.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Score Goal.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Score Goal.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bomb.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Bomb.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Persistent.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Persistent.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SoccerField.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SoccerField.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataProcessing/UnityPythonCommunication.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataProcessing/UnityPythonCommunication.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Football/CharacterPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Football/CharacterPool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Football/Explode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Football/Explode.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Football/ServeFootball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Football/ServeFootball.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameProcess/GameManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameProcess/GameTarget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameProcess/GameTarget.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scene Load/SceneLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scene Load/SceneLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TimeCounter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TimeCounter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ConnectionSuccess.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ConnectionSuccess.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/OpenDropDown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/OpenDropDown.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameProcess/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameProcess/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SO/SettingDataSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SO/SettingDataSO.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/RevealMenuInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/RevealMenuInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Score/Score.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Score/Score.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Setting/Direction/InitialDirectionText.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Setting/Direction/InitialDirectionText.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Setting/Direction/SetPlayerRealWorldDirection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Setting/Direction/SetPlayerRealWorldDirection.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Setting/ResetSetting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Setting/ResetSetting.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Setting/RevealPauseMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Setting/RevealPauseMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Setting/Sensitivity/ChangeSensitivity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Setting/Sensitivity/ChangeSensitivity.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Setting/Sensitivity/RevealSensitivityPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Setting/Sensitivity/RevealSensitivityPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Setting/Sensitivity/SensitivityAnimationResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Setting/Sensitivity/SensitivityAnimationResponse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/Enums.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/Enums.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/SharedDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/SharedDictionary.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IMU-Based-Football-Game.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/IMU-Based-Football-Game.sln.DotSettings.user" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,11 +40,10 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/655570467a334bb384e367c156617d53171e00/fe/8a5ec6df/LayerMask.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Hero-Breakout/Assets/Scripts/Music/AudioDefinition.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Hero-Breakout/Assets/Scripts/Music/AudioManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/ComboRecord.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScoreChange.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Audio/AudioDefinition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Football/Explode.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameProcess/BackToMainMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Goal/IFootballChecker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Goal/Miss Goal.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Goal/Score Goal.cs" root0="FORCE_HIGHLIGHTING" />
@@ -79,12 +59,15 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SO/WindSO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ConnectionSuccess.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/IRevealUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/RevealGameOverPanel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Score/UpdateTarget.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Setting/Difficulty Degree/InitialDifficultyDegree.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Setting/Difficulty Degree/SetDifficultyDegree.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Setting/ResetSetting.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Setting/Sensitivity/ChangeSensitivity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/PauseGame.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/UnityMainThreadDispatcher.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@1.21.18/Editor/Settings/AddressableAssetSettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@1.21.18/Editor/Settings/AddressableScenesManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@1.21.18/Runtime/ResourceManager/ResourceProviders/ISceneProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.9.7/Runtime/Behaviours/CinemachineCollider.cs" root0="SKIP_HIGHLIGHTING" />
@@ -100,6 +83,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/MoveDirection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Layout/LayoutRebuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualeffectgraph@14.0.8/Editor/Models/VFXModel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualeffectgraph@14.0.8/Editor/Models/VFXSystemNames.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -154,7 +138,7 @@
       <method v="2" />
     </configuration>
     <configuration name="独立播放器" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/../足球demo 2.0\Football.exe" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../足球demo 2.0/Football.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="D:\unity\project\足球demo" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -286,7 +270,9 @@
       <workItem from="1702218847955" duration="2860000" />
       <workItem from="1702256307225" duration="2288000" />
       <workItem from="1702262206597" duration="3984000" />
-      <workItem from="1702280558108" duration="5477000" />
+      <workItem from="1702280558108" duration="5687000" />
+      <workItem from="1702350892112" duration="892000" />
+      <workItem from="1702467497582" duration="5962000" />
     </task>
     <servers />
   </component>

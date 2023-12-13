@@ -74,6 +74,7 @@
      <Compile Include="Assets\Scripts\UI\Score\AddedScoreUI.cs" />
      <Compile Include="Assets\Scripts\TimeCounter.cs" />
      <Compile Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutoDestructShuriken.cs" />
+     <Compile Include="Assets\Scripts\UI\UpdateLevelInfo.cs" />
      <Compile Include="Assets\Scripts\Goal\Miss Goal.cs" />
      <Compile Include="Assets\Scripts\Utilities\QuaternionExtensions.cs" />
      <Compile Include="Assets\Scripts\UI\Setting\Direction\InitialDirectionText.cs" />
@@ -85,6 +86,7 @@
      <Compile Include="Assets\Scripts\SO\PlayAudioEventSO.cs" />
      <Compile Include="Assets\Scripts\Football\Explode.cs" />
      <Compile Include="Assets\Scripts\Utilities\SetActive.cs" />
+     <Compile Include="Assets\Scripts\UI\Score\UpdateTarget.cs" />
      <Compile Include="Assets\Scripts\Utilities\WindChange.cs" />
      <Compile Include="Assets\Scripts\Audio\AudioDefinition.cs" />
      <Compile Include="Assets\Scripts\Utilities\PauseGame.cs" />
@@ -98,8 +100,10 @@
      <Compile Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_New.cs" />
      <Compile Include="Assets\Scripts\UI\RevealMenuInfo.cs" />
      <Compile Include="Assets\Scripts\GameProcess\GameTarget.cs" />
+     <Compile Include="Assets\Scripts\UI\RevealGameOverPanel.cs" />
      <Compile Include="Assets\Scripts\UI\Score\Score.cs" />
      <Compile Include="Assets\Scripts\Football\KickCheck.cs" />
+     <Compile Include="Assets\Scripts\GameProcess\BackToMainMenu.cs" />
      <Compile Include="Assets\Scripts\SO\GameObjectEventSO.cs" />
      <Compile Include="Assets\Scripts\DataProcessing\SetIMUInitialQuaternion.cs" />
      <Compile Include="Assets\Scripts\UI\Score\GoldCoin.cs" />

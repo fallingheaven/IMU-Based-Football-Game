@@ -2,23 +2,33 @@ using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 
-public class RevealSensitivityPanel : MonoBehaviour, IRevealUI
+public class RevealGameOverPanel : MonoBehaviour, IRevealUI
 {
     public float fadeTime;
     private CanvasGroup _canvasGroup;
     private bool _fading = false;
 
+    [Header("事件监听")] 
+    public VoidEventSO gameOverEventSO;
+
     private void OnEnable()
     {
+        gameOverEventSO.onEventRaised += Reveal;
         _canvasGroup = GetComponent<CanvasGroup>();
+    }
+
+    private void OnDisable()
+    {
+        gameOverEventSO.onEventRaised -= Reveal;
     }
 
     public void Reveal()
     {
+        Debug.Log(1);
         if (_fading) return;
         _fading = true;
         
-        gameObject.SetActive(true);
+        Debug.Log(2);
         transform.localScale = new Vector3(0.58f, 0.58f, 0.58f);
         
         StartCoroutine(RevealPanel());
@@ -45,6 +55,6 @@ public class RevealSensitivityPanel : MonoBehaviour, IRevealUI
         yield return tweener.WaitForCompletion();
 
         if (_fading) yield break;
-        gameObject.SetActive(false);
+        transform.localScale = Vector3.zero;
     }
 }

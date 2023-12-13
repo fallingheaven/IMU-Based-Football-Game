@@ -12559,7 +12559,8 @@ MonoBehaviour:
   settingData: {fileID: 11400000, guid: dcfd24bb417b0ba47a3f9d2e08021a72, type: 2}
   resetData: {fileID: 11400000, guid: 8edd9bfaff5d05f48b193a6092da8856, type: 2}
   sensitivitySlider: {fileID: 1868297025}
-  text: {fileID: 0}
+  directionText: {fileID: 785699246}
+  difficultyText: {fileID: 922684494}
 --- !u!114 &1600482441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14094,12 +14095,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameTarget: {fileID: 11400000, guid: de90d225ebc667c458916f81d0ad5e5e, type: 2}
   scoreData: {fileID: 11400000, guid: bb65fee3069e5444cb52967519df070c, type: 2}
-  sceneLoadEventSO: {fileID: 11400000, guid: da02b467a7ce688498904348efd50b36, type: 2}
   startLevelEventSO: {fileID: 11400000, guid: 48af9d2b7e1c6454bbc9e26b56f2620e, type: 2}
+  gameOverEventSO: {fileID: 11400000, guid: 2ec9f1e09349bba438f113618a157fb4, type: 2}
   nextLevelEventSO: {fileID: 11400000, guid: 8977ab2945f8ca0409641ecfa70464b5, type: 2}
+  levelTime: 10
   newGameEventSO: {fileID: 11400000, guid: faec54a85db0663488181461b83d0575, type: 2}
-  mainMenu: {fileID: 11400000, guid: 8a61114af641f2547b7bc57c01fa5c45, type: 2}
-  transition: {fileID: 172982679}
 --- !u!1 &1927698021
 GameObject:
   m_ObjectHideFlags: 0

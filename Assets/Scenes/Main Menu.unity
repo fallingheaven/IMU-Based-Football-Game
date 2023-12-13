@@ -1703,9 +1703,9 @@ MonoBehaviour:
     type: 3}
   poolSize: 1
   availableNum: 0
-  ReturnFootballEventSO: {fileID: 11400000, guid: a017de5da615d1c49a0a12c1e723c5ef,
+  ReturnCharacterEventSO: {fileID: 11400000, guid: a017de5da615d1c49a0a12c1e723c5ef,
     type: 2}
-  nextLevelEventSO: {fileID: 11400000, guid: 48af9d2b7e1c6454bbc9e26b56f2620e, type: 2}
+  nextLevelEventSO: {fileID: 11400000, guid: 8977ab2945f8ca0409641ecfa70464b5, type: 2}
 --- !u!4 &1902082470
 Transform:
   m_ObjectHideFlags: 0

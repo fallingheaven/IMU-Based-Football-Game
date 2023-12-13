@@ -1,24 +1,42 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 // 发球器
 public class ServeFootball : MonoBehaviour
 {
     public float bombChance;
-    public GameObject bomb;
     
     public float serveTimeGap; // 发球间隔
     private float _currentTimeGap; // 当前间隔剩余
     public bool serving = false; // 发球状态
-    private CharacterPool _characterPool;
-
+    public CharacterPool footballPool;
+    public CharacterPool bombPool;
+    
     public Vector3 initPosition; // 发球位置
     public Vector3 serveVelocity; // 发球速度矢量
     public float absoluteVelocity; // 发球速度大小
     public GameObject player;
 
+    [Header("事件监听")] 
+    public VoidEventSO nextLevelEventSO;
+    public VoidEventSO gameOverEventSO;
+
+    private void OnEnable()
+    {
+        nextLevelEventSO.onEventRaised += StopServe;
+        gameOverEventSO.onEventRaised += StopServe;
+    }
+
+    private void OnDisable()
+    {
+        nextLevelEventSO.onEventRaised -= StopServe;
+        gameOverEventSO.onEventRaised -= StopServe;
+    }
+
     private void Start()
     {
-        _characterPool = GetComponent<CharacterPool>();
+        // footballPool = GetComponent<CharacterPool>();
         player = GameObject.Find("Kick Checker");
         SetServeVelocity();
     }
@@ -51,12 +69,13 @@ public class ServeFootball : MonoBehaviour
             }
             case true when _currentTimeGap <= 0:
             {
-                if (_characterPool.availableNum <= 0) break;
+                if (footballPool.availableNum <= 0) break;
                 
                 // 如果随机到炸弹
                 if (Random.Range(0, 1f) <= bombChance)
                 {
-                    var tmpBomb = Instantiate(bomb, initPosition, Quaternion.identity);
+                    var tmpBomb = bombPool.GetCharacterFromPool();
+                    tmpBomb.transform.position = initPosition;
                     Serve(tmpBomb);
 
                     _currentTimeGap = serveTimeGap;
@@ -64,7 +83,7 @@ public class ServeFootball : MonoBehaviour
                 }
                 
                 // 取一个可用的球发射出去
-                var football = _characterPool.GetCharacterFromPool();
+                var football = footballPool.GetCharacterFromPool();
                 football.transform.position = initPosition;
                 football.GetComponent<ShootFootball>().hit = false;
                 Serve(football);
@@ -87,5 +106,10 @@ public class ServeFootball : MonoBehaviour
     public void StartServe()
     {
         serving = true;
+    }
+
+    private void StopServe()
+    {
+        serving = false;
     }
 }

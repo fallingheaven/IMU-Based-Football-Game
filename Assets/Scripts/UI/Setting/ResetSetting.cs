@@ -7,13 +7,18 @@ public class ResetSetting : MonoBehaviour
     public SettingDataSO settingData;
     public SettingDataSO resetData;
     public Slider sensitivitySlider;
-    public TextMeshProUGUI text;
+    public TextMeshProUGUI directionText;
+    public TextMeshProUGUI difficultyText;
     
     public void ResetSettings()
     {
         settingData.imuSensitivity = resetData.imuSensitivity;
-        settingData.direction = resetData.direction;
         sensitivitySlider.value = 0f;
-        text.text = SharedDictionary.DirectionDictionary[resetData.direction];
+        
+        settingData.direction = resetData.direction;
+        directionText.text = SharedDictionary.DirectionDictionary[resetData.direction];
+
+        settingData.difficulty = resetData.difficulty;
+        difficultyText.text = SharedDictionary.DifficultyDictionary[resetData.difficulty];
     }
 }

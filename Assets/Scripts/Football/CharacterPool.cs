@@ -10,26 +10,23 @@ public class CharacterPool : MonoBehaviour
     public int availableNum; // 当前可用数量，用于判断
     
     [Header("事件监听")]
-    public GameObjectEventSO ReturnFootballEventSO;
+    public GameObjectEventSO ReturnCharacterEventSO;
     public VoidEventSO nextLevelEventSO;
     
     private readonly List<GameObject> _characterPool = new List<GameObject>();
 
     private void OnEnable()
     {
-        ReturnFootballEventSO.OnEventRaised += ReturnCharacterToPool;
+        ReturnCharacterEventSO.OnEventRaised += ReturnCharacterToPool;
         nextLevelEventSO.onEventRaised += NextLevel;
+        
+        Init();
     }
 
     private void OnDisable()
     {
-        ReturnFootballEventSO.OnEventRaised -= ReturnCharacterToPool;
+        ReturnCharacterEventSO.OnEventRaised -= ReturnCharacterToPool;
         nextLevelEventSO.onEventRaised -= NextLevel;
-    }
-
-    private void Start()
-    {
-        Init();
     }
 
     private void Init()
@@ -38,7 +35,7 @@ public class CharacterPool : MonoBehaviour
         availableNum = poolSize;
         for (var i = 0; i < poolSize; i++)
         {
-            var character = Instantiate(characterPrefab, transform, true);
+            var character = Instantiate(characterPrefab, transform, false);
             character.name = characterPrefab.name;
             character.SetActive(false);
             _characterPool.Add(character);

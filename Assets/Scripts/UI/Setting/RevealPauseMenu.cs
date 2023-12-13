@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
@@ -10,7 +9,7 @@ public class RevealPauseMenu : MonoBehaviour, IRevealUI
     private bool _fading = false;
     private bool _finished = false;
 
-    private void Start()
+    private void OnEnable()
     {
         _canvasGroup = GetComponent<CanvasGroup>();
     }
@@ -23,8 +22,8 @@ public class RevealPauseMenu : MonoBehaviour, IRevealUI
         // var _localPosition = transform.localPosition;
         // transform.localPosition = new Vector3(_localPosition.x, -1080, _localPosition.z);
         // transform.localScale = Vector3.one;
-        transform.localScale = new Vector3(0.95f, 0.95f, 0.95f);
         gameObject.SetActive(true);
+        transform.localScale = new Vector3(0.98f, 0.98f, 0.98f);
         
         StartCoroutine(RevealMenu());
     }
