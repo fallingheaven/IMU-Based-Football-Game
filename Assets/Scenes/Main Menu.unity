@@ -1703,7 +1703,9 @@ MonoBehaviour:
     type: 3}
   poolSize: 1
   availableNum: 0
-  ReturnCharacterEventSO: {fileID: 11400000, guid: a017de5da615d1c49a0a12c1e723c5ef,
+  delayedReturnFootballEventSO: {fileID: 11400000, guid: 6a0c8d173f5a8aa49a80ceb7fce2b866,
+    type: 2}
+  returnCharacterEventSO: {fileID: 11400000, guid: a017de5da615d1c49a0a12c1e723c5ef,
     type: 2}
   nextLevelEventSO: {fileID: 11400000, guid: 8977ab2945f8ca0409641ecfa70464b5, type: 2}
   pauseGameEventSO: {fileID: 11400000, guid: be3e09e0a6871fe4aaf1bc85b2f091d2, type: 2}
@@ -1734,7 +1736,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 182d22dbde1289848ad4cb5441633f37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initPosition: {x: -1.5, y: 5, z: 0}
+  initPosition: {x: -1.5, y: 4, z: 0}
+  pauseGameEventSO: {fileID: 11400000, guid: be3e09e0a6871fe4aaf1bc85b2f091d2, type: 2}
+  resumeEventSO: {fileID: 11400000, guid: ce61a2cc129ef264c86a729f2a42936c, type: 2}
 --- !u!1 &2109832659
 GameObject:
   m_ObjectHideFlags: 0

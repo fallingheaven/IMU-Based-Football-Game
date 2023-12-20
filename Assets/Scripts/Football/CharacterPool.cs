@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,10 @@ public class CharacterPool : MonoBehaviour
     public GameObject characterPrefab; // 需要生成的对象
     public int poolSize; // 池子大小
     public int availableNum; // 当前可用数量，用于判断
-    
-    [Header("事件监听")]
-    public GameObjectEventSO ReturnCharacterEventSO;
+
+    [Header("事件监听")] 
+    public GameObjectFloatFloatEventSO delayedReturnFootballEventSO;
+    public GameObjectEventSO returnCharacterEventSO;
     public VoidEventSO nextLevelEventSO;
     public VoidEventSO pauseGameEventSO;
     
@@ -18,18 +20,20 @@ public class CharacterPool : MonoBehaviour
 
     private void OnEnable()
     {
-        ReturnCharacterEventSO.OnEventRaised += ReturnCharacterToPool;
+        returnCharacterEventSO.OnEventRaised += ReturnCharacterToPool;
         nextLevelEventSO.onEventRaised += NextLevel;
         pauseGameEventSO.onEventRaised += ReturnAllCharacter;
+        delayedReturnFootballEventSO.onEventRaised += DelayedReturnCharacterToPool;
         
         Init();
     }
 
     private void OnDisable()
     {
-        ReturnCharacterEventSO.OnEventRaised -= ReturnCharacterToPool;
+        returnCharacterEventSO.OnEventRaised -= ReturnCharacterToPool;
         nextLevelEventSO.onEventRaised -= NextLevel;
         pauseGameEventSO.onEventRaised -= ReturnAllCharacter;
+        delayedReturnFootballEventSO.onEventRaised -= DelayedReturnCharacterToPool;
     }
 
     private void Init()
@@ -62,7 +66,7 @@ public class CharacterPool : MonoBehaviour
             availableNum--;
             return character;
         }
-
+        
         return null;
     }
 
@@ -77,6 +81,18 @@ public class CharacterPool : MonoBehaviour
         character.SetActive(false);
     }
 
+    private void DelayedReturnCharacterToPool(GameObject character, float time)
+    {
+        StartCoroutine(DelayedReturn(character, time));
+    }
+
+    private IEnumerator DelayedReturn(GameObject character, float time)
+    {
+        yield return new WaitForSeconds(time);
+        
+        ReturnCharacterToPool(character);
+    }
+    
     private void NextLevel()
     {
         foreach (var football in _characterPool)

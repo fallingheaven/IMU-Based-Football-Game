@@ -68,12 +68,14 @@
      <Compile Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RandomDir.cs" />
      <Compile Include="Assets\Scripts\Scene Load\SceneLoader.cs" />
      <Compile Include="Assets\Scripts\SO\VoidEventSO.cs" />
+     <Compile Include="Assets\Scripts\GoalKeeper\GoalKeeperJump.cs" />
      <Compile Include="Assets\Scripts\UI\Setting\ResetSetting.cs" />
      <Compile Include="Assets\Scripts\UI\Setting\Direction\SetPlayerRealWorldDirection.cs" />
      <Compile Include="Assets\Animations\Dotween UI Animator\DOTween\Modules\DOTweenModuleSprite.cs" />
      <Compile Include="Assets\Scripts\SO\WindSO.cs" />
      <Compile Include="Assets\Scripts\UI\Score\AddedScoreUI.cs" />
      <Compile Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutoDestructShuriken.cs" />
+     <Compile Include="Assets\Scripts\GoalKeeper\BlockFootball.cs" />
      <Compile Include="Assets\Scripts\UI\UpdateLevelInfo.cs" />
      <Compile Include="Assets\Scripts\Goal\Miss Goal.cs" />
      <Compile Include="Assets\Scripts\Utilities\QuaternionExtensions.cs" />
@@ -88,8 +90,10 @@
      <Compile Include="Assets\Scripts\Utilities\SetActive.cs" />
      <Compile Include="Assets\Scripts\UI\Score\UpdateTarget.cs" />
      <Compile Include="Assets\Scripts\Utilities\WindChange.cs" />
+     <Compile Include="Assets\Scripts\Player\KickAnimation.cs" />
      <Compile Include="Assets\Scripts\Audio\AudioDefinition.cs" />
      <Compile Include="Assets\Scripts\Utilities\PauseGame.cs" />
+     <Compile Include="Assets\Scripts\GoalKeeper\SeeFootball.cs" />
      <Compile Include="Assets\Scripts\Scene Load\Teleport.cs" />
      <Compile Include="Assets\Scripts\SO\QuatEventSO.cs" />
      <Compile Include="Assets\Scripts\Football\SetStableFootball.cs" />
@@ -99,6 +103,7 @@
      <Compile Include="Assets\Scripts\SO\GameSceneSO.cs" />
      <Compile Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_New.cs" />
      <Compile Include="Assets\Scripts\Utilities\TimeCounter.cs" />
+     <Compile Include="Assets\Scripts\SO\GameObjectFloatEventSO.cs" />
      <Compile Include="Assets\Scripts\UI\RevealMenuInfo.cs" />
      <Compile Include="Assets\Scripts\GameProcess\GameTarget.cs" />
      <Compile Include="Assets\Scripts\UI\RevealGameOverPanel.cs" />
@@ -150,6 +155,7 @@
      <Folder Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX4 Prefabs\Electric" />
      <None Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX (legacy)\Shaders\CFX3 Multiply Color.shader" />
      <Folder Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Sword Trails\Ice" />
+     <Folder Include="Assets\Art Assets\Model\Easy Primitive People\Materials" />
      <Folder Include="Assets\Audio\KickFootball" />
      <None Include="Assets\Art Assets\UI\Extra Clean UI\Fonts\HowToInstall.txt" />
      <Folder Include="Assets\Animations\Dotween UI Animator\DOTween\Modules" />
@@ -231,9 +237,11 @@
      <Folder Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX (legacy)\Materials\Blood" />
      <Folder Include="Assets\Art Assets\FX\JMO Assets" />
      <Folder Include="Assets\Art Assets\Model\Materials" />
+     <Folder Include="Assets\Animations\Character" />
      <None Include="Assets\Animations\Dotween UI Animator\DOTween\readme.txt" />
      <Folder Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX (legacy)\Materials\Misc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+     <Folder Include="Assets\Art Assets\Model\Easy Primitive People\Prefab" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
      <Folder Include="Assets\Art Assets\Image" />
      <Folder Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Eerie" />
@@ -254,6 +262,7 @@
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <Folder Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX2 Prefabs\Skull &amp; Ghosts Effects" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+     <Folder Include="Assets\Scripts\Player" />
      <Folder Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Explosions" />
      <Folder Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX3 Prefabs\Misc" />
      <Folder Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX (legacy)\Mesh" />
@@ -280,6 +289,7 @@
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <Folder Include="Assets\Art Assets\UI\Extra Clean UI\Fonts" />
      <Folder Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX (legacy)\Materials" />
+     <Folder Include="Assets\Art Assets\Model\Easy Primitive People" />
      <Folder Include="Assets\Settings\Input System" />
      <Folder Include="Assets\Scripts\Goal" />
      <Folder Include="Assets\Scripts\SO" />
@@ -1036,14 +1046,14 @@
      <Reference Include="Unity.RenderPipelines.Universal.Runtime">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.PlasticSCM.Editor">
-     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+     <Reference Include="UnityEngine.XR.LegacyInputHelpers">
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
      </Reference>
-     <Reference Include="UnityEngine.XR.LegacyInputHelpers">
-     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+     <Reference Include="Unity.PlasticSCM.Editor">
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline.Editor">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
@@ -1054,14 +1064,14 @@
      <Reference Include="Unity.ShaderGraph.Editor">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.VisualStudio.Editor">
-     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
-     </Reference>
      <Reference Include="UnityEditor.SpatialTracking">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\UnityEditor.SpatialTracking.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Recorder.Base">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Recorder.Base.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VisualStudio.Editor">
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.UI">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>

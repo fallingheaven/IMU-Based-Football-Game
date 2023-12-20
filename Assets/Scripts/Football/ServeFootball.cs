@@ -20,6 +20,9 @@ public class ServeFootball : MonoBehaviour
     
     private bool _pause = false;
 
+    [Header("事件")] 
+    public GameObjectFloatFloatEventSO delayedReturnFootballEventSO;
+    
     [Header("事件监听")] 
     public VoidEventSO nextLevelEventSO;
     public VoidEventSO gameOverEventSO;
@@ -97,6 +100,8 @@ public class ServeFootball : MonoBehaviour
                 football.transform.position = initPosition;
                 football.GetComponent<ShootFootball>().hit = false;
                 Serve(football);
+                
+                delayedReturnFootballEventSO.RaiseEvent(football.gameObject, 10f);
         
                 _currentTimeGap = serveTimeGap;
                 

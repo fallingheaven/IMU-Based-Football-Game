@@ -805,14 +805,14 @@
      <Reference Include="Unity.RenderPipelines.Universal.Runtime">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.PlasticSCM.Editor">
-     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+     <Reference Include="UnityEngine.XR.LegacyInputHelpers">
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
      </Reference>
-     <Reference Include="UnityEngine.XR.LegacyInputHelpers">
-     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+     <Reference Include="Unity.PlasticSCM.Editor">
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline.Editor">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
@@ -823,14 +823,14 @@
      <Reference Include="Unity.ShaderGraph.Editor">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.VisualStudio.Editor">
-     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
-     </Reference>
      <Reference Include="UnityEditor.SpatialTracking">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\UnityEditor.SpatialTracking.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Recorder.Base">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.Recorder.Base.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VisualStudio.Editor">
+     <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.UI">
      <HintPath>D:\unity\project\IMU-Based-Football-Game\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>

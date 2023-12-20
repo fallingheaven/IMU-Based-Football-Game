@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
     {
         ResetLevel();
         StartNextLevel();
-        Debug.Log(gameTarget.currentLevel);
+        // Debug.Log(gameTarget.currentLevel);
     }
     
     private IEnumerator NextLevelTransition()

@@ -17,8 +17,8 @@ GameObject:
   - component: {fileID: 7555474768728724474}
   - component: {fileID: -5249041059457773736}
   - component: {fileID: -7779662927379920634}
-  - component: {fileID: -4419398845432814090}
   - component: {fileID: 8269880361122047017}
+  - component: {fileID: -4419398845432814090}
   - component: {fileID: -3039941977102087052}
   m_Layer: 10
   m_Name: Football
@@ -207,6 +207,19 @@ MonoBehaviour:
   missLayer:
     serializedVersion: 2
     m_Bits: 256
+--- !u!114 &8269880361122047017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317321580502127193}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a6ea04074f6e924e989422e21685b62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  windSO: {fileID: 11400000, guid: 40de708c448c8d94381ccc2b348bdad6, type: 2}
 --- !u!96 &-4419398845432814090
 TrailRenderer:
   serializedVersion: 3
@@ -320,19 +333,6 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
---- !u!114 &8269880361122047017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317321580502127193}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a6ea04074f6e924e989422e21685b62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  windSO: {fileID: 11400000, guid: 40de708c448c8d94381ccc2b348bdad6, type: 2}
 --- !u!114 &-3039941977102087052
 MonoBehaviour:
   m_ObjectHideFlags: 0
