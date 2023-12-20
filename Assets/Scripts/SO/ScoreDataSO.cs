@@ -5,5 +5,6 @@ using UnityEngine;
 public class ScoreDataSO : ScriptableObject
 {
     public float currentScore;
+    public int combo;
     public List<float> previousScore;
 }

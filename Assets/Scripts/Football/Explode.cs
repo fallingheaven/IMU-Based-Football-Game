@@ -31,6 +31,11 @@ public class Explode : MonoBehaviour
         explode.Play();
         mainPart.SetActive(false);
         yield return new WaitForSeconds(1f);
+        ReturnBomb();
+    }
+
+    public void ReturnBomb()
+    {
         returnBombEventSO.RaiseEvent(gameObject);
     }
 }

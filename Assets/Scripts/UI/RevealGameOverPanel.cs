@@ -24,11 +24,11 @@ public class RevealGameOverPanel : MonoBehaviour, IRevealUI
 
     public void Reveal()
     {
-        Debug.Log(1);
+        // Debug.Log(1);
         if (_fading) return;
         _fading = true;
         
-        Debug.Log(2);
+        // Debug.Log(2);
         transform.localScale = new Vector3(0.58f, 0.58f, 0.58f);
         
         StartCoroutine(RevealPanel());

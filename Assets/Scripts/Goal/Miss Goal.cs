@@ -22,7 +22,7 @@ public class MissGoal : MonoBehaviour, IFootballChecker
             }
             case BallType.Bomb:
             {
-                Destroy(col.gameObject);
+                col.GetComponent<Explode>().ReturnBomb();
                 break;
             }
             case BallType.Goldball:

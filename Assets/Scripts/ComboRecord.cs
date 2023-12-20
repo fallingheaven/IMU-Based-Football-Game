@@ -7,44 +7,52 @@ public class ComboRecord : MonoBehaviour
 {
     public float fadeTime;
     public float comboGap;
+    public ScoreDataSO scoreData;
     
     private TimeCounter _timeCounter;
-    private int _combo = 0;
     private TextMeshProUGUI _textMeshProUGUI;
+    
     [Header("事件监听")]
     public FloatEventSO updateScoreEventSO;
+    public VoidEventSO nextLevelEventSO;
+    public VoidEventSO startLevelEventSO;
 
     private void Start()
     {
-        _timeCounter = new TimeCounter();
         _textMeshProUGUI = GetComponent<TextMeshProUGUI>();
     }
 
     private void OnEnable()
     {
+        _timeCounter = new TimeCounter();
+        
         updateScoreEventSO.OnEventRaised += RefreshCombo;
+        nextLevelEventSO.onEventRaised += _timeCounter.Pause;
+        startLevelEventSO.onEventRaised += _timeCounter.Resume;
     }
 
     private void OnDisable()
     {
         updateScoreEventSO.OnEventRaised -= RefreshCombo;
+        nextLevelEventSO.onEventRaised -=  _timeCounter.Pause;
+        startLevelEventSO.onEventRaised -=  _timeCounter.Resume;
     }
 
     private void FixedUpdate()
     {
-        // Debug.Log(_combo);
+        // Debug.Log(scoreData.combo);
         _timeCounter.FixedUpdate();
         
         if (_timeCounter.End())
         {
-            _combo = 0;
+            scoreData.combo = 0;
             _textMeshProUGUI.text = "";
             return;
         }
         
-        if (_combo >= 1)
+        if (scoreData.combo >= 1)
         {
-            _textMeshProUGUI.text = $"×{_combo}";
+            _textMeshProUGUI.text = $"×{scoreData.combo}";
         }
     }
 
@@ -53,12 +61,12 @@ public class ComboRecord : MonoBehaviour
         // Debug.Log(addedScore);
         if (addedScore <= 0)
         {
-            _combo = 0;
+            scoreData.combo = 0;
             _textMeshProUGUI.text = "";
             return;
         }
 
-        _combo++;
+        scoreData.combo++;
         _timeCounter.StartTimeCount(comboGap);
         StartCoroutine(RefreshAnimation());
     }

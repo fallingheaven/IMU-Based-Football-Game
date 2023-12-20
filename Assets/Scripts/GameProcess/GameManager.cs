@@ -111,7 +111,11 @@ public class GameManager : MonoBehaviour
     
     public void EndGame()
     {
-        Debug.Log("结束游戏");
+        // Debug.Log("结束游戏");
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
         Application.Quit();
+#endif
     }
 }

@@ -12,6 +12,7 @@ public class CharacterPool : MonoBehaviour
     [Header("事件监听")]
     public GameObjectEventSO ReturnCharacterEventSO;
     public VoidEventSO nextLevelEventSO;
+    public VoidEventSO pauseGameEventSO;
     
     private readonly List<GameObject> _characterPool = new List<GameObject>();
 
@@ -19,6 +20,7 @@ public class CharacterPool : MonoBehaviour
     {
         ReturnCharacterEventSO.OnEventRaised += ReturnCharacterToPool;
         nextLevelEventSO.onEventRaised += NextLevel;
+        pauseGameEventSO.onEventRaised += ReturnAllCharacter;
         
         Init();
     }
@@ -27,6 +29,7 @@ public class CharacterPool : MonoBehaviour
     {
         ReturnCharacterEventSO.OnEventRaised -= ReturnCharacterToPool;
         nextLevelEventSO.onEventRaised -= NextLevel;
+        pauseGameEventSO.onEventRaised -= ReturnAllCharacter;
     }
 
     private void Init()
@@ -84,5 +87,13 @@ public class CharacterPool : MonoBehaviour
         _characterPool.Clear();
         
         Init();
+    }
+
+    private void ReturnAllCharacter()
+    {
+        foreach (var character in _characterPool)
+        {
+            ReturnCharacterToPool(character);
+        }
     }
 }

@@ -47,16 +47,37 @@ public class Score : MonoBehaviour
             _scoreString[i] = '0';
         }
         
-        // Debug.Log(score);
-        // Debug.Log(new string(_scoreString));
         _scoreInfo.text = $"分数：        {new string(_scoreString)}"; // 8个空格
     }
 
     private void UpdateScore(float a)
     {
-        scoreData.currentScore += a;
+        scoreData.currentScore += a * ReturnComboCoefficient(scoreData.combo);
         if (scoreData.currentScore < 0) scoreData.currentScore = 0;
         
         scoreChangeEventSO.RaiseEvent(scoreData.currentScore);
+    }
+
+    private float ReturnComboCoefficient(int combo)
+    {
+        var coefficient = 1f;
+        if (scoreData.combo >= 5)
+        {
+            coefficient = 1.5f;
+        }
+        else if (scoreData.combo >= 15)
+        {
+            coefficient = 2f;
+        }
+        else if (scoreData.combo >= 30)
+        {
+            coefficient = 3f;
+        }
+        else if (scoreData.combo >= 50)
+        {
+            coefficient = 5f;
+        }
+
+        return coefficient;
     }
 }

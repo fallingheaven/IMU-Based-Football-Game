@@ -1706,6 +1706,7 @@ MonoBehaviour:
   ReturnCharacterEventSO: {fileID: 11400000, guid: a017de5da615d1c49a0a12c1e723c5ef,
     type: 2}
   nextLevelEventSO: {fileID: 11400000, guid: 8977ab2945f8ca0409641ecfa70464b5, type: 2}
+  pauseGameEventSO: {fileID: 11400000, guid: be3e09e0a6871fe4aaf1bc85b2f091d2, type: 2}
 --- !u!4 &1902082470
 Transform:
   m_ObjectHideFlags: 0

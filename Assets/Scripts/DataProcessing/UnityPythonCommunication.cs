@@ -27,6 +27,11 @@ public class UnityPythonCommunication : MonoBehaviour
         public VoidEventSO imuKickEventSO;
         public VoidEventSO onConnectedEventSO;
 
+        // [Header("事件监听")] 
+        // public VoidEventSO pauseGameEventSO;
+        // public VoidEventSO resumeGameEventSO;
+
+        // private bool _pause = false;
         private bool _isReceiving = false;
         private bool _stopReceiving = false;
         private readonly ManualResetEvent _receiveCompleteEvent = new ManualResetEvent(false);
@@ -122,6 +127,8 @@ public class UnityPythonCommunication : MonoBehaviour
         _previousAcc = Vector3.zero;
         while (!_stopReceiving)
         {
+            // if (_pause) continue;
+
             // Debug.Log(_stream.CanRead);
             // 数据是否可读
             if (!_stream.CanRead)
@@ -177,9 +184,6 @@ public class UnityPythonCommunication : MonoBehaviour
                     {
                         UnityMainThreadDispatcher.Enqueue(() =>
                         {
-                            // Debug.Log($"{_previousAcc.sqrMagnitude - currentAcc.sqrMagnitude}," +
-                            //           $"{settingData.imuSensitivity}" + 
-                            //           $"{_previousAcc.sqrMagnitude - currentAcc.sqrMagnitude > settingData.imuSensitivity}");
                             imuKickEventSO.RaiseEvent();
                         });
                     }
@@ -193,15 +197,6 @@ public class UnityPythonCommunication : MonoBehaviour
 
         _receiveCompleteEvent.Set();
     }
-    
-    // // 用于处理 Python 脚本的标准输出的事件处理程序，这里不需要
-    // private void OutputHandler(object sendingProcess, DataReceivedEventArgs outLine)
-    // {
-    //     if (!string.IsNullOrEmpty(outLine.Data))
-    //     {
-    //         Debug.Log("Python Output: " + outLine.Data); // 在 Unity 控制台中显示 Python 输出
-    //     }
-    // }
 
     // 退出应用
     private void OnApplicationQuit()
@@ -246,4 +241,14 @@ public class UnityPythonCommunication : MonoBehaviour
         var quaternion = new Quaternion(_quat[0], _quat[1], _quat[2], _quat[3]);
         SetIMUInitialQuaternion.InitImuQuaternion(quaternion);
     }
+    //
+    // private void PauseReceive()
+    // {
+    //     _pause = true;
+    // }
+    //
+    // private void ResumeReceive()
+    // {
+    //     _pause = false;
+    // }
 }

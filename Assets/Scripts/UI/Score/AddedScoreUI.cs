@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class AddedScoreUI : MonoBehaviour
 {
+    public float offset;
+    public ScoreDataSO scoreData;
     private GameObject _currentScoreUI;
+    
     [Header("事件监听")]
-    public FloatEventSO scoreChangeEventSO;
+    public FloatEventSO updateScoreEventSO;
     public GameObject addedScoreGameObject;
 
     private void OnEnable()
     {
-        scoreChangeEventSO.OnEventRaised += Generate;
+        updateScoreEventSO.OnEventRaised += Generate;
     }
 
     private void OnDisable()
     {
-        scoreChangeEventSO.OnEventRaised -= Generate;
+        updateScoreEventSO.OnEventRaised -= Generate;
     }
 
     private void Generate(float addedScore)
@@ -27,13 +30,11 @@ public class AddedScoreUI : MonoBehaviour
         }
         
         _currentScoreUI = Instantiate(addedScoreGameObject, transform, true);
-        _currentScoreUI.transform.localPosition = new Vector3(20 - GetLength(Math.Abs(addedScore)) * 40, 50, 0);
+        _currentScoreUI.transform.localPosition = new Vector3(offset - GetLength(Math.Abs(addedScore)) * 40, 50, 0);
+
+        _currentScoreUI.GetComponent<TextMeshProUGUI>().text =
+            $"+{addedScore}×{ReturnComboCoefficient(scoreData.combo)}";
         
-        _currentScoreUI.GetComponent<TextMeshProUGUI>().text = (addedScore >= 0) switch
-        {
-            true  => $"+{addedScore}",
-            false => $"-{-addedScore}"
-        };
         var scoreAnimation = _currentScoreUI.GetComponent<RevealAddedScore>();
         scoreAnimation.Reveal();
     }
@@ -49,5 +50,28 @@ public class AddedScoreUI : MonoBehaviour
         }
 
         return length - 1;
+    }
+    
+    private float ReturnComboCoefficient(int combo)
+    {
+        var coefficient = 1f;
+        if (scoreData.combo >= 5)
+        {
+            coefficient = 1.5f;
+        }
+        else if (scoreData.combo >= 15)
+        {
+            coefficient = 2f;
+        }
+        else if (scoreData.combo >= 30)
+        {
+            coefficient = 3f;
+        }
+        else if (scoreData.combo >= 50)
+        {
+            coefficient = 5f;
+        }
+
+        return coefficient;
     }
 }

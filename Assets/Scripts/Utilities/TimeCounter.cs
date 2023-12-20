@@ -5,14 +5,15 @@ using UnityEngine.Events;
 public class TimeCounter
 {
     private TimeCounter _timeCounter;
-    // private float _currentTime;
-    public float _currentTime;
+    private float _currentTime;
+    private float _totalTime;
     private bool _onCount = false;
     private UnityEvent _eventToDo;
+    private bool _pause;
     
     public void FixedUpdate()
     {
-        if (!_onCount)
+        if (!_onCount || _pause)
         {
             return;
         }
@@ -30,8 +31,10 @@ public class TimeCounter
     
     public void StartTimeCount(float duration, UnityEvent eventToDo = null)
     {
+        _pause = false;
         _onCount = true;
         _currentTime = duration;
+        _totalTime = duration;
         _eventToDo = eventToDo;
     }
 
@@ -43,5 +46,16 @@ public class TimeCounter
     public bool End()
     {
         return !_onCount;
+    }
+
+    public void Pause()
+    {
+        _pause = true;
+    }
+
+    public void Resume()
+    {
+        _pause = false;
+        StartTimeCount(_totalTime);
     }
 }

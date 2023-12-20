@@ -17,21 +17,29 @@ public class ServeFootball : MonoBehaviour
     public Vector3 serveVelocity; // 发球速度矢量
     public float absoluteVelocity; // 发球速度大小
     public GameObject player;
+    
+    private bool _pause = false;
 
     [Header("事件监听")] 
     public VoidEventSO nextLevelEventSO;
     public VoidEventSO gameOverEventSO;
+    public VoidEventSO pauseGameEventSO;
+    public VoidEventSO resumeGameEventSO;
 
     private void OnEnable()
     {
         nextLevelEventSO.onEventRaised += StopServe;
         gameOverEventSO.onEventRaised += StopServe;
+        pauseGameEventSO.onEventRaised += PauseReceive;
+        resumeGameEventSO.onEventRaised += ResumeReceive;
     }
 
     private void OnDisable()
     {
         nextLevelEventSO.onEventRaised -= StopServe;
         gameOverEventSO.onEventRaised -= StopServe;
+        pauseGameEventSO.onEventRaised -= PauseReceive;
+        resumeGameEventSO.onEventRaised -= ResumeReceive;
     }
 
     private void Start()
@@ -55,6 +63,8 @@ public class ServeFootball : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (_pause) return;
+        
         switch (serving)
         {
             case false when _currentTimeGap <= 0:
@@ -111,5 +121,15 @@ public class ServeFootball : MonoBehaviour
     private void StopServe()
     {
         serving = false;
+    }
+    
+    private void PauseReceive()
+    {
+        _pause = true;
+    }
+    
+    private void ResumeReceive()
+    {
+        _pause = false;
     }
 }

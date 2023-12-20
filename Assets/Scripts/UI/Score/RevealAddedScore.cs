@@ -33,7 +33,7 @@ public class RevealAddedScore : MonoBehaviour, IRevealUI
         Tweener tweener = _text.DOColor(Color.clear, fadeTime / 2).SetEase(Ease.Linear);
         yield return tweener.WaitForCompletion();
 
-        gameObject.SetActive(false);
+        // gameObject.SetActive(false);
         Destroy(gameObject);
     }
     

@@ -7,28 +7,29 @@ public class KickCheck : MonoBehaviour
     private List<GameObject> _colliders = new List<GameObject>();
     public ParticleSystem kickParticle; // 特效粒子
     public FloatEventSO updateScoreEventSO;
+    private bool _pause = false;
         
     [Header("事件监听")] 
     public VoidEventSO imuKickEventSO;
     public VoidEventSO clearColliderEventSO;
+    public VoidEventSO pauseGameEventSO;
+    public VoidEventSO resumeGameEventSO;
 
     private void OnEnable()
     {
         imuKickEventSO.onEventRaised += Kick;
         clearColliderEventSO.onEventRaised += ClearCollider;
+        pauseGameEventSO.onEventRaised += PauseReceive;
+        resumeGameEventSO.onEventRaised += ResumeReceive;
     }
 
     private void OnDisable()
     {
         imuKickEventSO.onEventRaised -= Kick;
         clearColliderEventSO.onEventRaised -= ClearCollider;
+        pauseGameEventSO.onEventRaised -= PauseReceive;
+        resumeGameEventSO.onEventRaised -= ResumeReceive;
     }
-
-    private void Start()
-    {
-        // BallLayer = LayerMask.NameToLayer("Ball");
-    }
-    
 
     private void OnTriggerEnter(Collider col)
     {
@@ -48,6 +49,8 @@ public class KickCheck : MonoBehaviour
     // 把数组中所有的球都踢出去
     private void Kick()
     {
+        if (_pause) return;
+        
         // Debug.Log(_colliders.Count);
         // Debug.Log("Shoot!");
         if (_colliders is not { Count: > 0 })
@@ -80,5 +83,15 @@ public class KickCheck : MonoBehaviour
     private void ClearCollider()
     {
         _colliders.Clear();
+    }
+    
+    private void PauseReceive()
+    {
+        _pause = true;
+    }
+    
+    private void ResumeReceive()
+    {
+        _pause = false;
     }
 }
