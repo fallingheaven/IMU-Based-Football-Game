@@ -57,7 +57,10 @@ public class ShootFootball : MonoBehaviour
             return;
         }
 
-        StartCoroutine(HitPause());
+        if (gameObject.activeSelf)
+        {
+            StartCoroutine(HitPause());
+        }
         
         _kickAudio.PlayAudio();
         _shakeCinema.Shake();

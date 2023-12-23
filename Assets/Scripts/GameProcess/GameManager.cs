@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public VoidEventSO startLevelEventSO;
     public VoidEventSO gameOverEventSO; 
     public VoidEventSO nextLevelEventSO;
+    public FloatFloatEventSO updateLevelTimeCounterEventSO;
     public float levelTime;
 
     [Header("事件监听")]
@@ -48,6 +49,7 @@ public class GameManager : MonoBehaviour
         if (_levelTimeCounter.End()) return;
         
         _levelTimeCounter.FixedUpdate();
+        updateLevelTimeCounterEventSO.RaiseEvent(_levelTimeCounter.GetCurrentTime(), _levelTimeCounter.GetTotalTime());
         
         if (!_levelTimeCounter.End()) return;
         
@@ -82,6 +84,7 @@ public class GameManager : MonoBehaviour
         // transition.SetTrigger("End");
         
         _levelTimeCounter.StartTimeCount(levelTime);
+        yield return new WaitForSeconds(1.5f); // 为了显示关卡信息的时间间隔
         startLevelEventSO.RaiseEvent();
         yield return null;
     }

@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    public GameObject StartInfo;
+    private bool _isMainMenu;
+    
     [Header("事件监听")] 
         
         public SceneLoadEventSO sceneLoadEventSO;
@@ -51,6 +54,9 @@ public class SceneLoader : MonoBehaviour
 
     private void OnLoadEvent(GameSceneSO sceneToLoad, bool fadeScreen)
     {
+        _isMainMenu = sceneToLoad.sceneType == SceneType.Menu;
+        StartInfo.SetActive(false);
+        
         (_sceneToLoad, _fadeScreen) = (sceneToLoad, fadeScreen);
 
         if (_sceneToLoad == null)
@@ -113,6 +119,8 @@ public class SceneLoader : MonoBehaviour
     private IEnumerator OnSceneLoaded(AsyncOperationHandle<SceneInstance> handle)
      {
          transition.SetTrigger("End");
+         StartInfo.SetActive(_isMainMenu);
+         
          // if (scene.name != _sceneToLoad.sceneReference.editorAsset.name) return;
          // Debug.Log("加载完成");
          

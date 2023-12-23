@@ -54,6 +54,7 @@
      <Compile Include="Assets\Animations\Dotween UI Animator\DOTween\Modules\DOTweenModulePhysics2D.cs" />
      <Compile Include="Assets\Scripts\Goal\Score Goal.cs" />
      <Compile Include="Assets\Scripts\Goal\IFootballChecker.cs" />
+     <Compile Include="Assets\Scripts\UI\Standings\RevealStandingMenu.cs" />
      <Compile Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_LightFlicker.cs" />
      <Compile Include="Assets\Scripts\GoalKeeper\GoalKeeperMove.cs" />
      <Compile Include="Assets\Scripts\Camera\CinemaShake.cs" />
@@ -68,6 +69,7 @@
      <Compile Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RandomDir.cs" />
      <Compile Include="Assets\Scripts\Scene Load\SceneLoader.cs" />
      <Compile Include="Assets\Scripts\SO\VoidEventSO.cs" />
+     <Compile Include="Assets\UpdateLevelTimeCounter.cs" />
      <Compile Include="Assets\Scripts\GoalKeeper\GoalKeeperJump.cs" />
      <Compile Include="Assets\Scripts\UI\Setting\ResetSetting.cs" />
      <Compile Include="Assets\Scripts\UI\Setting\Direction\SetPlayerRealWorldDirection.cs" />
@@ -75,6 +77,7 @@
      <Compile Include="Assets\Scripts\SO\WindSO.cs" />
      <Compile Include="Assets\Scripts\UI\Score\AddedScoreUI.cs" />
      <Compile Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutoDestructShuriken.cs" />
+     <Compile Include="Assets\Scripts\UI\Standings\ScoreInfo.cs" />
      <Compile Include="Assets\Scripts\GoalKeeper\BlockFootball.cs" />
      <Compile Include="Assets\Scripts\UI\UpdateLevelInfo.cs" />
      <Compile Include="Assets\Scripts\Goal\Miss Goal.cs" />
@@ -98,6 +101,7 @@
      <Compile Include="Assets\Scripts\SO\QuatEventSO.cs" />
      <Compile Include="Assets\Scripts\Football\SetStableFootball.cs" />
      <Compile Include="Assets\Scripts\DataProcessing\UnityPythonCommunication.cs" />
+     <Compile Include="Assets\IdleAnimationState.cs" />
      <Compile Include="Assets\Scripts\SO\SceneLoadEventSO.cs" />
      <Compile Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_LightIntensityFade.cs" />
      <Compile Include="Assets\Scripts\SO\GameSceneSO.cs" />
@@ -107,6 +111,7 @@
      <Compile Include="Assets\Scripts\UI\RevealMenuInfo.cs" />
      <Compile Include="Assets\Scripts\GameProcess\GameTarget.cs" />
      <Compile Include="Assets\Scripts\UI\RevealGameOverPanel.cs" />
+     <Compile Include="Assets\KickAnimationState.cs" />
      <Compile Include="Assets\Scripts\UI\Score\Score.cs" />
      <Compile Include="Assets\Scripts\Football\KickCheck.cs" />
      <Compile Include="Assets\Scripts\GameProcess\BackToMainMenu.cs" />
@@ -116,6 +121,7 @@
      <Compile Include="Assets\Scripts\Camera\CinemaShakeManager.cs" />
      <Compile Include="Assets\Settings\Input System\InputSystem.cs" />
      <Compile Include="Assets\Scripts\UI\Setting\Sensitivity\SensitivityAnimationResponse.cs" />
+     <Compile Include="Assets\Scripts\UI\Standings\RevealAllStandings.cs" />
      <Compile Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
      <Compile Include="Assets\Scripts\Football\CharacterPool.cs" />
      <Compile Include="Assets\Scripts\Utilities\UnityMainThreadDispatcher.cs" />
@@ -123,6 +129,7 @@
      <Compile Include="Assets\Scripts\SO\SettingDataSO.cs" />
      <Compile Include="Assets\Animations\Dotween UI Animator\DOTween\Modules\DOTweenModulePhysics.cs" />
      <Compile Include="Assets\Scripts\Football\ServeFootball.cs" />
+     <Compile Include="Assets\Scripts\SO\FloatFloatEventSO.cs" />
      <Compile Include="Assets\Scripts\Utilities\Enums.cs" />
      <Compile Include="Assets\Scripts\Utilities\TransferCameraTransform.cs" />
      <Compile Include="Assets\Scripts\UI\RevealNewLevelUI.cs" />
@@ -179,6 +186,7 @@
      <Folder Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX2 Prefabs\Electric" />
      <Folder Include="Assets\Art Assets\UI\Belevich\2D Casual Game UI HD\Scenes" />
      <Folder Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Nature" />
+     <Folder Include="Assets\Scripts\UI\Standings" />
      <Folder Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Liquids" />
      <Folder Include="Assets\TextMesh Pro\Resources\Fonts &amp; Materials" />
      <Folder Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX (legacy)\CFX3 Prefabs" />

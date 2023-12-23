@@ -58,4 +58,14 @@ public class TimeCounter
         _pause = false;
         StartTimeCount(_totalTime);
     }
+
+    public float GetCurrentTime()
+    {
+        return _currentTime;
+    }
+
+    public float GetTotalTime()
+    {
+        return _totalTime;
+    }
 }

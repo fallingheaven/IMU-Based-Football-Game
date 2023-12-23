@@ -13,7 +13,9 @@ public class MissGoal : MonoBehaviour, IFootballChecker
     
     public void OnTriggerEnter(Collider col)
     {
-        switch (col.gameObject.GetComponent<Ball>().type)
+        if (!col.gameObject.activeSelf) return;
+        
+        switch (col.gameObject.GetComponent<Ball>()?.type)
         {
             case BallType.Football:
             {
@@ -22,7 +24,10 @@ public class MissGoal : MonoBehaviour, IFootballChecker
             }
             case BallType.Bomb:
             {
-                col.GetComponent<Explode>().ReturnBomb();
+                if (col.gameObject.activeSelf)
+                {
+                    col.GetComponent<Explode>().ReturnBomb();
+                }
                 break;
             }
             case BallType.Goldball:

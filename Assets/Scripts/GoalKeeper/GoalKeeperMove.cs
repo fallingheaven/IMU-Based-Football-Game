@@ -25,13 +25,26 @@ public class GoalKeeperMove : MonoBehaviour
     {
         var pos = transform.position;
         
-        transform.position = _moveLeft switch
+        if (pos.x - moveRange.x < 2 || pos.x - moveRange.y > 2)
         {
-            true => new Vector3(Mathf.MoveTowards(pos.x, moveRange.x - 0.5f, Time.deltaTime * moveVelocity),
-                pos.y, pos.z),
-            false => new Vector3(Mathf.MoveTowards(pos.x, moveRange.y + 0.5f, Time.deltaTime * moveVelocity),
-                pos.y, pos.z),
-        };
+            transform.position = _moveLeft switch
+            {
+                true => new Vector3(Mathf.MoveTowards(pos.x, moveRange.x - 0.5f, Time.deltaTime * moveVelocity * 2),
+                    pos.y, pos.z),
+                false => new Vector3(Mathf.MoveTowards(pos.x, moveRange.y + 0.5f, Time.deltaTime * moveVelocity * 2),
+                    pos.y, pos.z),
+            };
+        }
+        else
+        {
+            transform.position = _moveLeft switch
+            {
+                true => new Vector3(Mathf.MoveTowards(pos.x, moveRange.x - 0.5f, Time.deltaTime * moveVelocity),
+                    pos.y, pos.z),
+                false => new Vector3(Mathf.MoveTowards(pos.x, moveRange.y + 0.5f, Time.deltaTime * moveVelocity),
+                    pos.y, pos.z),
+            };
+        }
         
         if (pos.x - moveRange.x < 0)
         {

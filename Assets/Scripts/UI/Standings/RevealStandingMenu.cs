@@ -2,7 +2,7 @@ using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 
-public class RevealPauseMenu : MonoBehaviour, IRevealUI
+public class RevealStandingMenu : MonoBehaviour, IRevealUI
 {
     public float fadeTime;
     private CanvasGroup _canvasGroup;

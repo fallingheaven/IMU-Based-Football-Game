@@ -9,13 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edd23825ce76e9b47af992476f83f260, type: 3}
-  m_Name: SoccerField
+  m_Script: {fileID: 11500000, guid: 34168bdd2e21207468afd6c79e5f211d, type: 3}
+  m_Name: Update Level Time Counter Event SO
   m_EditorClassIdentifier: 
-  sceneType: 0
-  sceneReference:
-    m_AssetGUID: 04cca609dba72b64a9980966596add06
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
-  initialPosition: {x: 0.5, y: 1, z: 36}

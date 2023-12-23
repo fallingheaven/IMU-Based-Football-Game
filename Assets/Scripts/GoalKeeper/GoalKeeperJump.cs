@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class GoalKeeperJump : MonoBehaviour
@@ -12,10 +13,12 @@ public class GoalKeeperJump : MonoBehaviour
 
     public void Jump(Vector3 target)
     {
-        var force = new Vector3(target.x, target.y, 0) - transform.position;
+        _rigidbody.velocity = Vector3.zero;
+        
+        var force = new Vector3(target.x, target.y + 2f, 0) - transform.position;
         force.z = 0f;
-        force.x /= force.sqrMagnitude;
-        force.y /= force.sqrMagnitude;
+        force.x /= (float)Math.Pow(Math.Pow(target.x, 2) + Math.Pow(target.y, 2), 0.5f);
+        force.y /= (float)Math.Pow(Math.Pow(target.x, 2) + Math.Pow(target.y, 2), 0.5f);
         
         _rigidbody.AddForce(force * jumpForce, ForceMode.Impulse);
     }
