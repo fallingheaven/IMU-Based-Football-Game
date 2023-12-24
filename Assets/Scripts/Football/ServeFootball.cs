@@ -26,6 +26,7 @@ public class ServeFootball : MonoBehaviour
     [Header("事件监听")] 
     public VoidEventSO nextLevelEventSO;
     public VoidEventSO gameOverEventSO;
+    public VoidEventSO gameSuccessEventSO;
     public VoidEventSO pauseGameEventSO;
     public VoidEventSO resumeGameEventSO;
 
@@ -33,6 +34,7 @@ public class ServeFootball : MonoBehaviour
     {
         nextLevelEventSO.onEventRaised += StopServe;
         gameOverEventSO.onEventRaised += StopServe;
+        gameSuccessEventSO.onEventRaised += StopServe;
         pauseGameEventSO.onEventRaised += PauseReceive;
         resumeGameEventSO.onEventRaised += ResumeReceive;
     }
@@ -41,6 +43,7 @@ public class ServeFootball : MonoBehaviour
     {
         nextLevelEventSO.onEventRaised -= StopServe;
         gameOverEventSO.onEventRaised -= StopServe;
+        gameSuccessEventSO.onEventRaised -= StopServe;
         pauseGameEventSO.onEventRaised -= PauseReceive;
         resumeGameEventSO.onEventRaised -= ResumeReceive;
     }

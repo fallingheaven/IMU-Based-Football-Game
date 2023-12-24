@@ -15,7 +15,7 @@ public class SeeFootball : MonoBehaviour
     {
         if (col.gameObject.layer == checkedLayer)
         {
-            Debug.Log("jump");
+            // Debug.Log("jump");
             jump.Invoke(col.transform.position);
         }
     }

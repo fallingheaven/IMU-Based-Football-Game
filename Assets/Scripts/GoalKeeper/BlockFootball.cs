@@ -15,7 +15,7 @@ public class BlockFootball : MonoBehaviour
         // Debug.Log("trigger");
         if (col.gameObject.layer == footballLayer)
         {
-            Debug.Log("Block!");
+            // Debug.Log("Block!");
             col.GetComponent<Rigidbody>().velocity = Vector3.zero;
             col.GetComponent<Rigidbody>().AddForce((col.transform.position - transform.position).normalized * 10f, 
                 ForceMode.Impulse);

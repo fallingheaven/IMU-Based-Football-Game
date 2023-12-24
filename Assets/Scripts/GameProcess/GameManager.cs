@@ -9,13 +9,15 @@ public class GameManager : MonoBehaviour
     public ScoreDataSO scoreData;
     // public SceneLoadEventSO sceneLoadEventSO;
     public VoidEventSO startLevelEventSO;
-    public VoidEventSO gameOverEventSO; 
+    public VoidEventSO gameOverEventSO;
+    public VoidEventSO gameSuccessEventSO;
     public VoidEventSO nextLevelEventSO;
     public FloatFloatEventSO updateLevelTimeCounterEventSO;
     public float levelTime;
 
     [Header("事件监听")]
     public VoidEventSO newGameEventSO;
+    public VoidEventSO pauseGameEventSO;
     
     [Header("场景返回")]
     private readonly TimeCounter _levelTimeCounter = new TimeCounter();
@@ -24,22 +26,32 @@ public class GameManager : MonoBehaviour
     {
         { Difficulty.Easy   , 1.01f }, 
         { Difficulty.Normal , 1.05f }, 
-        { Difficulty.Hard   , 1.1f  }, 
-        { Difficulty.Crazy  , 1.2f  }
+        { Difficulty.Hard   , 1.08f  }, 
+        { Difficulty.Crazy  , 1.10f  }
+    };
+    
+    private readonly Dictionary<Difficulty, float> _levelLength = new Dictionary<Difficulty, float>()
+    {
+        { Difficulty.Easy   , 10f }, 
+        { Difficulty.Normal , 15f }, 
+        { Difficulty.Hard   , 20f }, 
+        { Difficulty.Crazy  , 30f }
     };
 
     private void OnEnable()
     {
         // nextLevelEventSO.onEventRaised += StartNextLevel;
         newGameEventSO.onEventRaised += NewGame;
+        pauseGameEventSO.onEventRaised += _levelTimeCounter.Pause;
         // newGameEventSO.onEventRaised += StartNextLevel;
-        
+
     }
 
     private void OnDisable()
     {
         // nextLevelEventSO.onEventRaised -= StartNextLevel;
         newGameEventSO.onEventRaised -= NewGame;
+        pauseGameEventSO.onEventRaised -= _levelTimeCounter.Pause;
         // newGameEventSO.onEventRaised -= StartNextLevel;
     }
 
@@ -55,7 +67,7 @@ public class GameManager : MonoBehaviour
         
         if (scoreData.currentScore < gameTarget.currentTarget)
         {
-            Debug.Log("游戏结束");
+            // Debug.Log("游戏结束");
             // ResetLevel();
             // sceneLoadEventSO.RaiseSceneLoadEvent(mainMenu, true);
             gameOverEventSO.RaiseEvent();
@@ -63,8 +75,13 @@ public class GameManager : MonoBehaviour
 
         else if (scoreData.currentScore >= gameTarget.currentTarget)
         {
-            Debug.Log("下一关");
-
+            // Debug.Log("下一关");
+            if (Math.Abs(gameTarget.currentLevel - _levelLength[gameTarget.difficultyDegree]) < 1e-6)
+            {
+                gameSuccessEventSO.RaiseEvent();
+                return;
+            }
+            
             StartNextLevel();
             nextLevelEventSO.RaiseEvent();
         }
@@ -83,9 +100,10 @@ public class GameManager : MonoBehaviour
         // yield return new WaitForSeconds(1f);
         // transition.SetTrigger("End");
         
-        _levelTimeCounter.StartTimeCount(levelTime);
-        yield return new WaitForSeconds(1.5f); // 为了显示关卡信息的时间间隔
         startLevelEventSO.RaiseEvent();
+        yield return new WaitForSeconds(1.5f);// 为了显示关卡信息的时间间隔
+        _levelTimeCounter.StartTimeCount(levelTime);
+        
         yield return null;
     }
     

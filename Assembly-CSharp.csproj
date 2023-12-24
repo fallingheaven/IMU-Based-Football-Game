@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\Scene Load\UpdateLoadSlider.cs" />
      <Compile Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RotateCamera.cs" />
      <Compile Include="Assets\RecordScore.cs" />
+     <Compile Include="Assets\RevealGameSuccessPanel.cs" />
      <Compile Include="Assets\Scripts\GameProcess\GameManager.cs" />
      <Compile Include="Assets\Scripts\Football\ShootFootball.cs" />
      <Compile Include="Assets\Art Assets\FX\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RandomDir.cs" />
