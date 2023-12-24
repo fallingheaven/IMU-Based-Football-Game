@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
         if (scoreData.currentScore < gameTarget.currentTarget)
         {
             Debug.Log("游戏结束");
-            ResetLevel();
+            // ResetLevel();
             // sceneLoadEventSO.RaiseSceneLoadEvent(mainMenu, true);
             gameOverEventSO.RaiseEvent();
         }

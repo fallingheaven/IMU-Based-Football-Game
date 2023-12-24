@@ -6,5 +6,5 @@ public class ScoreDataSO : ScriptableObject
 {
     public float currentScore;
     public int combo;
-    public List<float> previousScore;
+    public readonly List<ScoreInfo> previousScore = new List<ScoreInfo>();
 }

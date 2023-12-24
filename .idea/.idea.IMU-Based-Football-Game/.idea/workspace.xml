@@ -8,10 +8,39 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.IMU-Based-Football-Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.IMU-Based-Football-Game/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/Windows/addressables_content_state.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/Windows/addressables_content_state.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DataSO/GameProcess/Score Data SO.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DataSO/GameProcess/Score Data SO.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IdleAnimationState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IdleAnimationState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KickAnimationState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KickAnimationState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Readme.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Readme.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Persistent.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Persistent.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SoccerField.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SoccerField.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameProcess/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameProcess/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SO/ScoreDataSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SO/ScoreDataSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Standings/RevealAllStandings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Standings/RevealAllStandings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Standings/ScoreInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Standings/ScoreInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-Balanced.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/URP-Balanced.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-HighFidelity.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/URP-HighFidelity.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Icons.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Icons/URP.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Icons/URP.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Layout.wlt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Layout.wlt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Scripts/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Scripts/Readme.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Scripts/Readme.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/CFXR.WelcomeScreen.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CFXR.WelcomeScreen.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CFXRDemo.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CFXRDemo.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CFXREditor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CFXREditor.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CFXRRuntime.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CFXRRuntime.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IMU-Based-Football-Game.sln" beforeDir="false" afterPath="$PROJECT_DIR$/IMU-Based-Football-Game.sln" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KinoBloom.Runtime.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/KinoBloom.Runtime.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ToonyColorsPro.Demo.Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ToonyColorsPro.Demo.Editor.csproj" afterDir="false" />
     </list>
@@ -24,8 +53,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/IdleAnimationState.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/KickAnimationState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/RecordScore.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScoreChange.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Audio/AudioDefinition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Football/Explode.cs" root0="FORCE_HIGHLIGHTING" />
@@ -112,15 +140,15 @@
   },
   "keyToStringList": {
     "rider.external.source.directories": [
-      "C:\\Users\\星夜\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
-      "C:\\Users\\星夜\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
-      "C:\\Users\\星夜\\AppData\\Local\\Symbols\\src"
+      "C:\\Users\\WQC20\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
+      "C:\\Users\\WQC20\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
+      "C:\\Users\\WQC20\\AppData\\Local\\Symbols\\src"
     ]
   }
 }]]></component>
   <component name="RunManager" selected="附加到 Unity 编辑器.附加到 Unity 编辑器">
     <configuration name="启动 Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="F:\U3D\2022.3.3f1c1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="D:\unity\2022.3.3f1c1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath D:\unity\project\IMU-Based-Football-Game -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\unity\project\IMU-Based-Football-Game" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -152,7 +180,7 @@
       <method v="2" />
     </configuration>
     <configuration name="单元测试(批处理模式)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="F:\U3D\2022.3.3f1c1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="D:\unity\2022.3.3f1c1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath D:\unity\project\IMU-Based-Football-Game -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\unity\project\IMU-Based-Football-Game" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -280,6 +308,7 @@
       <workItem from="1703312292717" duration="2589000" />
       <workItem from="1703348424065" duration="1354000" />
       <workItem from="1703350777082" duration="4573000" />
+      <workItem from="1703400136886" duration="7657000" />
     </task>
     <servers />
   </component>

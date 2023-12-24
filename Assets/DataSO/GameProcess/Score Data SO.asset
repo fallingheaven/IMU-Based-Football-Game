@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6127e87b3f666004491d3c1230169c50, type: 3}
   m_Name: Score Data SO
   m_EditorClassIdentifier: 
-  currentScore: 20
-  previousScore: []
+  currentScore: 0
+  combo: 0
