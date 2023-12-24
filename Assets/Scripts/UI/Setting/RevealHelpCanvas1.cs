@@ -12,8 +12,9 @@ public class RevealHelpCanvas1 : MonoBehaviour
 
     private void OnEnable()
     {
-        _maxindex=1;
+        _maxindex = 2;
         _index = 0;
+        canvas[_index].gameObject.SetActive(true);
     }
 
     public void Next()
